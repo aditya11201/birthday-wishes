@@ -1035,17 +1035,12 @@ class ScreenManager {
     // --- Cake ---
     if (screen.showCake) {
       cakeContainer.classList.add("active");
-<<<<<<< Updated upstream
       const cakeEl = cakeContainer.querySelector(".cake");
       if (screen.cakeLit) {
         cakeEl.classList.remove("cake--unlit");
       } else {
         cakeEl.classList.add("cake--unlit");
       }
-=======
-      const flames = cakeContainer.querySelectorAll(".fuego");
-      flames.forEach((f) => (f.style.display = screen.cakeUnlit ? "none" : ""));
->>>>>>> Stashed changes
     } else {
       cakeContainer.classList.remove("active");
     }
