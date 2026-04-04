@@ -7,38 +7,38 @@
    1. CSS Custom Properties (Design Tokens)
    -------------------------------------------------------------------------- */
 :root {
-  /* Core Palette */
-  --color-primary: #0076DE;
-  --color-primary-dim: #005bb0;
-  --color-primary-container: #004a8c;
+    /* Core Palette */
+    --color-primary: #0076de;
+    --color-primary-dim: #005bb0;
+    --color-primary-container: #004a8c;
 
-  /* Surfaces (Dark Theme) */
-  --color-surface: #0e0e0e;
-  --color-surface-container-lowest: #000000;
-  --color-surface-container-low: #131313;
-  --color-surface-container: #1a1a1a;
-  --color-surface-container-high: #20201f;
-  --color-surface-container-highest: #262626;
-  --color-surface-bright: #2c2c2c;
+    /* Surfaces (Dark Theme) */
+    --color-surface: #0e0e0e;
+    --color-surface-container-lowest: #000000;
+    --color-surface-container-low: #131313;
+    --color-surface-container: #1a1a1a;
+    --color-surface-container-high: #20201f;
+    --color-surface-container-highest: #262626;
+    --color-surface-bright: #2c2c2c;
 
-  /* On-Surface */
-  --color-on-surface: #ffffff;
-  --color-on-surface-variant: #adaaaa;
-  --color-outline: #767575;
-  --color-outline-variant: #484847;
+    /* On-Surface */
+    --color-on-surface: #ffffff;
+    --color-on-surface-variant: #adaaaa;
+    --color-outline: #767575;
+    --color-outline-variant: #484847;
 
-  /* Accent */
-  --color-spotify-green: #1DB954;
-  --color-error: #ff6e84;
+    /* Accent */
+    --color-spotify-green: #1db954;
+    --color-error: #ff6e84;
 
-  /* Typography */
-  --font-headline: 'Noto Serif', serif;
-  --font-body: 'Plus Jakarta Sans', sans-serif;
-  --font-epilogue: 'Epilogue', serif;
+    /* Typography */
+    --font-headline: "Noto Serif", serif;
+    --font-body: "Plus Jakarta Sans", sans-serif;
+    --font-epilogue: "Epilogue", serif;
 
-  /* Transitions */
-  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
-  --ease-smooth: cubic-bezier(0.65, 0, 0.35, 1);
+    /* Transitions */
+    --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --ease-smooth: cubic-bezier(0.65, 0, 0.35, 1);
 }
 
 /* --------------------------------------------------------------------------
@@ -47,744 +47,797 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 html {
-  -webkit-text-size-adjust: 100%;
-  scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
 }
 
 body {
-  background-color: var(--color-surface-container-lowest);
-  color: var(--color-on-surface);
-  font-family: var(--font-body);
-  overflow: hidden;
-  min-height: 100vh;
-  min-height: 100dvh;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    background-color: var(--color-surface-container-lowest);
+    color: var(--color-on-surface);
+    font-family: var(--font-body);
+    overflow: hidden;
+    min-height: 100vh;
+    min-height: 100dvh;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 button {
-  cursor: pointer;
-  border: none;
-  background: none;
-  font: inherit;
-  color: inherit;
+    cursor: pointer;
+    border: none;
+    background: none;
+    font: inherit;
+    color: inherit;
 }
 
 /* --------------------------------------------------------------------------
    3. Material Symbols
    -------------------------------------------------------------------------- */
 .material-symbols-outlined {
-  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    font-variation-settings:
+        "FILL" 0,
+        "wght" 400,
+        "GRAD" 0,
+        "opsz" 24;
 }
 
 /* --------------------------------------------------------------------------
    4. Main Canvas
    -------------------------------------------------------------------------- */
 #app-canvas {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  height: 100dvh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  transition: background-image 1s ease-in-out;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 1s ease-in-out;
 }
 
 /* Overlay layer for darkening backgrounds */
 #overlay {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-  transition: background 1s ease-in-out;
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    transition: background 1s ease-in-out;
 }
 
 .overlay--blackout {
-  background: linear-gradient(rgba(0, 0, 0, 0.92), rgba(0, 0, 0, 0.95));
+    background: linear-gradient(rgba(0, 0, 0, 0.92), rgba(0, 0, 0, 0.95));
 }
 
 .overlay--light {
-  background: rgba(0, 0, 0, 0.20);
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .overlay--medium {
-  background: rgba(0, 0, 0, 0.40);
+    background: rgba(0, 0, 0, 0.4);
 }
 
 /* --------------------------------------------------------------------------
    5. Central Content Area
    -------------------------------------------------------------------------- */
 #content-area {
-  position: relative;
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2.5rem;
-  text-align: center;
-  padding: 1.5rem;
-  max-width: 42rem;
-  width: 100%;
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+    text-align: center;
+    padding: 1.5rem;
+    max-width: 42rem;
+    width: 100%;
 }
 
 /* --------------------------------------------------------------------------
    6. Typography Components
    -------------------------------------------------------------------------- */
 .label-subtle {
-  font-family: var(--font-body);
-  font-size: 0.625rem; /* 10px */
-  text-transform: uppercase;
-  letter-spacing: 0.4em;
-  color: rgba(255, 255, 255, 0.7);
-  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.3));
+    font-family: var(--font-body);
+    font-size: 0.625rem; /* 10px */
+    text-transform: uppercase;
+    letter-spacing: 0.4em;
+    color: rgba(255, 255, 255, 0.7);
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.3));
 }
 
 .title-editorial {
-  font-family: var(--font-epilogue);
-  font-weight: 300;
-  font-style: italic;
-  color: white;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
-  padding-bottom: 0.25rem;
-  font-size: 1.5rem;
-  line-height: 1.4;
+    font-family: var(--font-epilogue);
+    font-weight: 300;
+    font-style: italic;
+    color: white;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+    padding-bottom: 0.25rem;
+    font-size: 1.5rem;
+    line-height: 1.4;
 }
 
 @media (min-width: 768px) {
-  .title-editorial {
-    font-size: 1.875rem;
-  }
+    .title-editorial {
+        font-size: 1.875rem;
+    }
 }
 
 /* Typing animation container */
 .typing-container {
-  display: inline-block;
+    display: inline-block;
 }
 
 .typing-text {
-  border-right: 2px solid rgba(255, 255, 255, 0.5);
-  white-space: nowrap;
-  overflow: hidden;
-  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+    border-right: 2px solid rgba(255, 255, 255, 0.5);
+    white-space: nowrap;
+    overflow: hidden;
+    animation:
+        typing 3.5s steps(40, end),
+        blink-caret 0.75s step-end infinite;
+}
+
+/* Blinking cursor shown on title during JS delete/typewriter animation */
+.title-editorial.cursor-active {
+    border-right: 2px solid rgba(255, 255, 255, 0.6);
+    animation: blink-caret 0.65s step-end infinite;
+    padding-right: 2px;
 }
 
 .footer-date {
-  font-family: var(--font-body);
-  font-size: 0.625rem;
-  color: rgba(255, 255, 255, 0.4);
-  letter-spacing: 0.4em;
-  text-transform: uppercase;
-  margin-top: 1rem;
-  transition: opacity 0.7s ease;
+    font-family: var(--font-body);
+    font-size: 0.625rem;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    transition: opacity 0.7s ease;
 }
 
 /* --------------------------------------------------------------------------
    7. Glass Button Component
    -------------------------------------------------------------------------- */
 .glass-button {
-  background: rgba(0, 118, 222, 0.1);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(0, 118, 222, 0.5);
-  border-radius: 9999px;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1.25rem 3rem;
-  transition: all 0.5s ease-out;
+    background: rgba(0, 118, 222, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 118, 222, 0.5);
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.25rem 3rem;
+    transition: all 0.5s ease-out;
 }
 
 .glass-button:hover {
-  transform: scale(1.05);
+    transform: scale(1.05);
 }
 
 .glass-button:active {
-  transform: scale(0.95);
+    transform: scale(0.95);
 }
 
 .glass-button--secondary {
-  background: rgba(0, 118, 222, 0.15);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(0, 118, 222, 0.4);
-  padding: 0.75rem 2.5rem;
-  gap: 0.75rem;
+    background: rgba(0, 118, 222, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(0, 118, 222, 0.4);
+    padding: 0.75rem 2.5rem;
+    gap: 0.75rem;
 }
 
 .btn-icon {
-  color: var(--color-primary);
-  font-size: 1.5rem;
+    color: var(--color-primary);
+    font-size: 1.5rem;
 }
 
 .btn-label {
-  font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 0.875rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: var(--color-primary);
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 0.875rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--color-primary);
 }
 
 .btn-label--white {
-  color: white;
-  font-family: var(--font-epilogue);
-  font-weight: 500;
-  letter-spacing: 0.2em;
+    color: white;
+    font-family: var(--font-epilogue);
+    font-weight: 500;
+    letter-spacing: 0.2em;
 }
 
 .btn-label--small {
-  font-family: var(--font-epilogue);
-  font-weight: 600;
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: white;
+    font-family: var(--font-epilogue);
+    font-weight: 600;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: white;
 }
 
 /* Glow effect */
 .glow-effect {
-  box-shadow: 0 0 20px rgba(0, 118, 222, 0.4),
-              0 0 40px rgba(0, 118, 222, 0.2);
+    box-shadow:
+        0 0 20px rgba(0, 118, 222, 0.4),
+        0 0 40px rgba(0, 118, 222, 0.2);
 }
 
 .glow-effect:hover {
-  box-shadow: 0 0 30px rgba(0, 118, 222, 0.6),
-              0 0 50px rgba(0, 118, 222, 0.3);
+    box-shadow:
+        0 0 30px rgba(0, 118, 222, 0.6),
+        0 0 50px rgba(0, 118, 222, 0.3);
+}
+
+/* ── Action button: waiting / disabled state during screen transitions ── */
+#action-btn.btn-waiting {
+    pointer-events: none;
+    cursor: default;
+}
+
+#action-btn.btn-waiting .glass-button {
+    opacity: 0.45;
+    box-shadow: none;
+    border-color: rgba(0, 118, 222, 0.2);
+}
+
+#action-btn.btn-waiting .glow-effect {
+    box-shadow: none;
+}
+
+#action-btn.btn-waiting .btn-icon {
+    color: rgba(0, 118, 222, 0.55);
+}
+
+#action-btn.btn-waiting .btn-label {
+    color: rgba(0, 118, 222, 0.55);
+    letter-spacing: 0.18em;
 }
 
 /* Choice buttons container */
 #choice-buttons {
-  display: none;
-  flex-direction: column;
-  gap: 1.5rem;
-  align-items: center;
+    display: none;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
 }
 
 @media (min-width: 768px) {
-  #choice-buttons {
-    flex-direction: row;
-  }
+    #choice-buttons {
+        flex-direction: row;
+    }
 }
 
 #choice-buttons.active {
-  display: flex;
+    display: flex;
 }
 
 /* --------------------------------------------------------------------------
    8. Spotify "Now Playing" Widget
    -------------------------------------------------------------------------- */
 #spotify-widget {
-  position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  z-index: 50;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-  pointer-events: none;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 50;
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
+    pointer-events: none;
 }
 
 #spotify-widget.active {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
 }
 
 .spotify-card {
-  background: rgba(0, 0, 0, 0.9);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-radius: 9999px;
-  padding: 0.75rem 1rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-  min-width: 280px;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 9999px;
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    min-width: 280px;
 }
 
 .spotify-icon {
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 50%;
-  background: var(--color-spotify-green);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: var(--color-spotify-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
 }
 
 .spotify-icon svg {
-  width: 1.5rem;
-  height: 1.5rem;
-  fill: black;
+    width: 1.5rem;
+    height: 1.5rem;
+    fill: black;
 }
 
 .spotify-info {
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  min-width: 0;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    min-width: 0;
 }
 
 .spotify-label {
-  font-size: 0.625rem;
-  font-weight: 700;
-  color: var(--color-spotify-green);
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  margin-bottom: 0.125rem;
+    font-size: 0.625rem;
+    font-weight: 700;
+    color: var(--color-spotify-green);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.125rem;
 }
 
 .spotify-song {
-  color: white;
-  font-size: 0.875rem;
-  font-weight: 700;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  line-height: 1.25;
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.25;
 }
 
 .spotify-artist {
-  color: rgba(255, 255, 255, 0.6);
-  font-size: 0.6875rem;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.6875rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* Music equalizer bars */
 .music-bars {
-  display: flex;
-  align-items: flex-end;
-  gap: 0.25rem;
-  height: 1rem;
-  width: 1.5rem;
-  padding: 0 0.25rem;
+    display: flex;
+    align-items: flex-end;
+    gap: 0.25rem;
+    height: 1rem;
+    width: 1.5rem;
+    padding: 0 0.25rem;
 }
 
 .music-bar {
-  width: 0.25rem;
-  background: var(--color-spotify-green);
-  border-radius: 9999px;
-  animation: music-bar-bounce 1s ease-in-out infinite;
+    width: 0.25rem;
+    background: var(--color-spotify-green);
+    border-radius: 9999px;
+    animation: music-bar-bounce 1s ease-in-out infinite;
 }
 
 .music-bar:nth-child(2) {
-  animation-delay: 0.2s;
+    animation-delay: 0.2s;
 }
 
 .music-bar:nth-child(3) {
-  animation-delay: 0.4s;
+    animation-delay: 0.4s;
 }
 
 /* --------------------------------------------------------------------------
    9. Cake Component (Pure CSS)
    -------------------------------------------------------------------------- */
 #cake-container {
-  transition: all 0.8s var(--ease-spring);
-  transform: scale(0.5);
-  opacity: 0;
-  display: none;
-  flex-shrink: 0;
-  margin-bottom: 1rem;
-  justify-content: center;
-  align-items: center;
+    transition: all 0.8s var(--ease-spring);
+    transform: scale(0.5);
+    opacity: 0;
+    display: none;
+    flex-shrink: 0;
+    margin-bottom: 1rem;
+    justify-content: center;
+    align-items: center;
 }
 
 #cake-container.active {
-  display: flex;
-  transform: scale(1);
-  opacity: 1;
-  z-index: 20;
+    display: flex;
+    transform: scale(1);
+    opacity: 1;
+    z-index: 20;
 }
 
 /* --- CSS Cake Structure --- */
 .cake {
-  --cake-size: 180px;
-  position: relative;
-  width: var(--cake-size);
-  height: var(--cake-size);
-  filter: drop-shadow(0 0 40px rgba(0, 118, 222, 0.3));
+    --cake-size: 180px;
+    position: relative;
+    width: var(--cake-size);
+    height: var(--cake-size);
+    filter: drop-shadow(0 0 40px rgba(0, 118, 222, 0.3));
 }
 
 @media (min-width: 768px) {
-  .cake {
-    --cake-size: 240px;
-  }
+    .cake {
+        --cake-size: 240px;
+    }
 }
 
 /* Base plate */
 .cake::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: calc(var(--cake-size) / 50);
-  background: rgba(255, 255, 255, 0.9);
-  border-radius: 100%;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: calc(var(--cake-size) / 50);
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 100%;
 }
 
 /* Sponge / bizcocho */
 .bizcocho {
-  background: linear-gradient(180deg, #8B5E3C 0%, #6D3826 50%, #5A2D1A 100%);
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50%;
-  height: 33%;
-  border-radius: 4px 4px 8px 8px;
+    background: linear-gradient(180deg, #8b5e3c 0%, #6d3826 50%, #5a2d1a 100%);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 33%;
+    border-radius: 4px 4px 8px 8px;
 }
 
 /* Sponge cream layers */
 .bizcocho::after,
 .bizcocho::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: calc(var(--cake-size) / 20);
-  background: rgba(236, 231, 227, 0.6);
-  left: 0;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: calc(var(--cake-size) / 20);
+    background: rgba(236, 231, 227, 0.6);
+    left: 0;
 }
 
 .bizcocho::after {
-  top: 30%;
+    top: 30%;
 }
 
 .bizcocho::before {
-  top: 60%;
+    top: 60%;
 }
 
 /* Frosting / cobertura */
 .cobertura {
-  background: linear-gradient(180deg, #f5f0ec 0%, #ece7e3 100%);
-  border-radius: calc(var(--cake-size) / 2);
-  position: absolute;
-  top: 60%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 56%;
-  height: 12.5%;
-  z-index: 10;
+    background: linear-gradient(180deg, #f5f0ec 0%, #ece7e3 100%);
+    border-radius: calc(var(--cake-size) / 2);
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 56%;
+    height: 12.5%;
+    z-index: 10;
 }
 
 /* Frosting drip — left */
 .cobertura::after {
-  content: "";
-  position: absolute;
-  width: calc(var(--cake-size) / 20);
-  height: calc(var(--cake-size) / 10);
-  background: rgba(236, 231, 227, 1);
-  border-radius: 100%;
-  top: calc(var(--cake-size) / 15);
-  right: calc(var(--cake-size) / 7);
+    content: "";
+    position: absolute;
+    width: calc(var(--cake-size) / 20);
+    height: calc(var(--cake-size) / 10);
+    background: rgba(236, 231, 227, 1);
+    border-radius: 100%;
+    top: calc(var(--cake-size) / 15);
+    right: calc(var(--cake-size) / 7);
 }
 
 /* Frosting drip — right */
 .cobertura::before {
-  content: "";
-  position: absolute;
-  width: calc(var(--cake-size) / 20);
-  height: calc(var(--cake-size) / 10);
-  background: rgba(236, 231, 227, 1);
-  border-radius: 100%;
-  top: calc(var(--cake-size) / 10);
-  right: calc(var(--cake-size) / 11);
+    content: "";
+    position: absolute;
+    width: calc(var(--cake-size) / 20);
+    height: calc(var(--cake-size) / 10);
+    background: rgba(236, 231, 227, 1);
+    border-radius: 100%;
+    top: calc(var(--cake-size) / 10);
+    right: calc(var(--cake-size) / 11);
 }
 
 /* Candle / velas */
 .velas {
-  background: linear-gradient(180deg, #ffffff 0%, #e8e8e8 100%);
-  border-radius: 100%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: calc(var(--cake-size) / 20);
-  height: calc(var(--cake-size) / 6);
-  z-index: 11;
+    background: linear-gradient(180deg, #ffffff 0%, #e8e8e8 100%);
+    border-radius: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(var(--cake-size) / 20);
+    height: calc(var(--cake-size) / 6);
+    z-index: 11;
 }
 
 /* Candle stripes */
 .velas::after,
 .velas::before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: calc(var(--cake-size) / 45);
-  background: rgba(255, 0, 0, 0.35);
-  left: 0;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: calc(var(--cake-size) / 45);
+    background: rgba(255, 0, 0, 0.35);
+    left: 0;
 }
 
 .velas::after {
-  top: 25%;
+    top: 25%;
 }
 
 .velas::before {
-  top: 50%;
+    top: 50%;
 }
 
 /* Fire / fuego (animated flame) */
 .fuego {
-  border-radius: 100%;
-  position: absolute;
-  top: -14px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: calc(var(--cake-size) / 15);
-  height: calc(var(--cake-size) / 8);
-  z-index: 12;
+    border-radius: 100%;
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(var(--cake-size) / 15);
+    height: calc(var(--cake-size) / 8);
+    z-index: 12;
 }
 
 /* Flame glow */
 .fuego:first-child {
-  box-shadow: 0 0 40px 10px rgba(248, 233, 209, 0.25);
+    box-shadow: 0 0 40px 10px rgba(248, 233, 209, 0.25);
 }
 
-.fuego:nth-child(1) { animation: fuego 2s ease-in-out infinite; }
-.fuego:nth-child(2) { animation: fuego 1.5s ease-in-out infinite; }
-.fuego:nth-child(3) { animation: fuego 1s ease-in-out infinite; }
-.fuego:nth-child(4) { animation: fuego 0.5s ease-in-out infinite; }
-.fuego:nth-child(5) { animation: fuego 0.2s ease-in-out infinite; }
+.fuego:nth-child(1) {
+    animation: fuego 2s ease-in-out infinite;
+}
+.fuego:nth-child(2) {
+    animation: fuego 1.5s ease-in-out infinite;
+}
+.fuego:nth-child(3) {
+    animation: fuego 1s ease-in-out infinite;
+}
+.fuego:nth-child(4) {
+    animation: fuego 0.5s ease-in-out infinite;
+}
+.fuego:nth-child(5) {
+    animation: fuego 0.2s ease-in-out infinite;
+}
 
 /* --------------------------------------------------------------------------
    10. Banner Component
    -------------------------------------------------------------------------- */
 #birthday-banner {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  z-index: 25;
-  pointer-events: none;
-  max-width: 500px;
-  width: 85%;
-  padding: 0.5rem 1rem;
-  display: none;
-  justify-content: center;
-  transform: translate(-50%, -120%);
-  opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: 25;
+    pointer-events: none;
+    max-width: 500px;
+    width: 85%;
+    padding: 0.5rem 1rem;
+    display: none;
+    justify-content: center;
+    transform: translate(-50%, -120%);
+    opacity: 0;
 }
 
 #birthday-banner.active {
-  display: flex;
-  animation: bannerDrop 1.8s var(--ease-spring) forwards;
+    display: flex;
+    animation: bannerDrop 1.8s var(--ease-spring) forwards;
 }
 
 .banner-image {
-  width: 100%;
-  height: auto;
-  filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.4));
-  animation: bannerSwing 3s ease-in-out 1.8s infinite;
-  transform-origin: top center;
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.4));
+    animation: bannerSwing 3s ease-in-out 1.8s infinite;
+    transform-origin: top center;
 }
 
 /* --------------------------------------------------------------------------
    11. Balloon System
    -------------------------------------------------------------------------- */
 #balloon-container {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  display: none;
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    display: none;
 }
 
 #balloon-container.active {
-  display: block;
+    display: block;
 }
 
 /* Simple bouncing balloons (screens 14-15) */
 .balloon-bounce {
-  position: absolute;
-  animation-name: bounce-x, bounce-y;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.2));
-  pointer-events: none;
-  z-index: 1;
-  opacity: 0.8;
+    position: absolute;
+    animation-name: bounce-x, bounce-y;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.2));
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.8;
 }
 
 /* Letter balloons (screens 16-18) */
 #letter-balloon-container {
-  position: absolute;
-  inset: 0;
-  z-index: 10;
-  display: none;
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    display: none;
 }
 
 #letter-balloon-container.active {
-  display: block;
+    display: block;
 }
 
 .letter-balloon {
-  position: absolute;
-  animation-name: bounce-x, bounce-y;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  transition: all 1.8s var(--ease-spring);
-  z-index: 5;
-  width: 80px;
-  height: 110px;
+    position: absolute;
+    animation-name: bounce-x, bounce-y;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    transition: all 1.8s var(--ease-spring);
+    z-index: 5;
+    width: 80px;
+    height: 110px;
 }
 
 .letter-balloon img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .letter-balloon.converged {
-  animation: none !important;
+    animation: none !important;
 }
 
 .balloon-text {
-  position: absolute;
-  top: 35%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-weight: 900;
-  font-size: 1.75rem;
-  color: #FFFFFF;
-  text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.8),
-               2px 2px 4px rgba(0, 0, 0, 0.9);
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.6s ease-out;
-  z-index: 40;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: 900;
+    font-size: 1.75rem;
+    color: #ffffff;
+    text-shadow:
+        0px 0px 8px rgba(0, 0, 0, 0.8),
+        2px 2px 4px rgba(0, 0, 0, 0.9);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.6s ease-out;
+    z-index: 40;
 }
 
 .balloon-text.visible {
-  opacity: 1;
+    opacity: 1;
 }
 
 /* --------------------------------------------------------------------------
    12. Typewriter Component
    -------------------------------------------------------------------------- */
 #typewriter-area {
-  display: none;
-  max-width: 42rem;
-  padding: 0 1.5rem;
-  height: 10rem;
-  align-items: center;
-  justify-content: center;
-  transition: opacity 0.7s ease;
+    display: none;
+    max-width: 42rem;
+    padding: 0 1.5rem;
+    height: 10rem;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.7s ease;
 }
 
 #typewriter-area.active {
-  display: flex;
+    display: flex;
 }
 
 .typewriter-text {
-  font-family: var(--font-epilogue);
-  font-size: 1.25rem;
-  font-weight: 300;
-  font-style: italic;
-  line-height: 1.6;
-  color: white;
+    font-family: var(--font-epilogue);
+    font-size: 1.25rem;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.6;
+    color: white;
 }
 
 @media (min-width: 768px) {
-  .typewriter-text {
-    font-size: 1.5rem;
-  }
+    .typewriter-text {
+        font-size: 1.5rem;
+    }
 }
 
 .cursor-blink {
-  display: inline-block;
-  width: 3px;
-  height: 1.2em;
-  background-color: var(--color-primary);
-  margin-left: 4px;
-  animation: blink 0.8s infinite;
-  vertical-align: middle;
+    display: inline-block;
+    width: 3px;
+    height: 1.2em;
+    background-color: var(--color-primary);
+    margin-left: 4px;
+    animation: blink 0.8s infinite;
+    vertical-align: middle;
 }
 
 /* --------------------------------------------------------------------------
    13. Final Message Component
    -------------------------------------------------------------------------- */
 #final-message {
-  display: none;
-  max-width: 42rem;
-  padding: 0 1.5rem 2.5rem;
-  margin-top: 2rem;
-  opacity: 0;
-  transition: all 1s ease-out;
+    display: none;
+    max-width: 42rem;
+    padding: 0 1.5rem 2.5rem;
+    margin-top: 2rem;
+    opacity: 0;
+    transition: all 1s ease-out;
 }
 
 #final-message.active {
-  display: block;
+    display: block;
 }
 
 #final-message.visible {
-  opacity: 1;
+    opacity: 1;
 }
 
 .final-message-text {
-  font-family: var(--font-epilogue);
-  font-size: 1.25rem;
-  font-weight: 500;
-  font-style: italic;
-  line-height: 1.6;
-  color: white;
-  text-align: center;
-  filter: drop-shadow(0 0 15px rgba(0, 118, 222, 0.4));
+    font-family: var(--font-epilogue);
+    font-size: 1.25rem;
+    font-weight: 500;
+    font-style: italic;
+    line-height: 1.6;
+    color: white;
+    text-align: center;
+    filter: drop-shadow(0 0 15px rgba(0, 118, 222, 0.4));
 }
 
 @media (min-width: 768px) {
-  .final-message-text {
-    font-size: 1.5rem;
-  }
+    .final-message-text {
+        font-size: 1.5rem;
+    }
 }
 
 /* --------------------------------------------------------------------------
    14. Main Content Shift / Transitions
    -------------------------------------------------------------------------- */
 .main-content-shift {
-  transition: transform 0.8s var(--ease-smooth);
-  z-index: 20;
+    transition: transform 0.8s var(--ease-smooth);
+    z-index: 20;
 }
 
 .main-content {
-  transition: transform 1.2s var(--ease-spring);
+    transition: transform 1.2s var(--ease-spring);
 }
 
 /* Screen fade transitions */
 .screen-transition {
-  transition: opacity 0.6s ease-in-out;
+    transition: opacity 0.6s ease-in-out;
 }
 
 .fade-out {
-  opacity: 0;
-  pointer-events: none;
+    opacity: 0;
+    pointer-events: none;
 }
 
 .fade-in {
-  opacity: 1;
-  pointer-events: auto;
+    opacity: 1;
+    pointer-events: auto;
 }
 
 /* --------------------------------------------------------------------------
@@ -793,145 +846,184 @@ button {
 
 /* Typing effect */
 @keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
 }
 
 @keyframes blink-caret {
-  from, to { border-color: transparent; }
-  50% { border-color: rgba(255, 255, 255, 0.5); }
+    from,
+    to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: rgba(255, 255, 255, 0.5);
+    }
 }
 
 /* Music equalizer bars */
 @keyframes music-bar-bounce {
-  0%, 100% { height: 4px; }
-  50% { height: 12px; }
+    0%,
+    100% {
+        height: 4px;
+    }
+    50% {
+        height: 12px;
+    }
 }
 
 /* Balloon bouncing */
 @keyframes bounce-x {
-  0% { left: 0%; }
-  100% { left: calc(100% - 5rem); }
+    0% {
+        left: 0%;
+    }
+    100% {
+        left: calc(100% - 5rem);
+    }
 }
 
 @keyframes bounce-y {
-  0% { top: 10%; }
-  100% { top: calc(90% - 7rem); }
+    0% {
+        top: 10%;
+    }
+    100% {
+        top: calc(90% - 7rem);
+    }
 }
 
 /* Banner drop with bounce */
 @keyframes bannerDrop {
-  0% {
-    transform: translate(-50%, -120%);
-    opacity: 0;
-  }
-  50% {
-    transform: translate(-50%, 8%);
-    opacity: 1;
-  }
-  70% {
-    transform: translate(-50%, -3%);
-  }
-  100% {
-    transform: translate(-50%, 0%);
-    opacity: 1;
-  }
+    0% {
+        transform: translate(-50%, -120%);
+        opacity: 0;
+    }
+    50% {
+        transform: translate(-50%, 8%);
+        opacity: 1;
+    }
+    70% {
+        transform: translate(-50%, -3%);
+    }
+    100% {
+        transform: translate(-50%, 0%);
+        opacity: 1;
+    }
 }
 
 /* Banner gentle swing */
 @keyframes bannerSwing {
-  0%, 100% { transform: rotate(0deg); }
-  25% { transform: rotate(1.5deg); }
-  75% { transform: rotate(-1.5deg); }
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(1.5deg);
+    }
+    75% {
+        transform: rotate(-1.5deg);
+    }
 }
 
 /* Candle flame animation */
 @keyframes fuego {
-  0% {
-    background: rgba(254, 248, 97, 0.5);
-    transform: translateX(-50%) translateY(0) scale(1);
-  }
-  50% {
-    background: rgba(255, 50, 0, 0.1);
-    transform: translateX(-50%) translateY(-36px) scale(0);
-  }
-  100% {
-    background: rgba(254, 248, 97, 0.5);
-    transform: translateX(-50%) translateY(0) scale(1);
-  }
+    0% {
+        background: rgba(254, 248, 97, 0.5);
+        transform: translateX(-50%) translateY(0) scale(1);
+    }
+    50% {
+        background: rgba(255, 50, 0, 0.1);
+        transform: translateX(-50%) translateY(-36px) scale(0);
+    }
+    100% {
+        background: rgba(254, 248, 97, 0.5);
+        transform: translateX(-50%) translateY(0) scale(1);
+    }
 }
 
 /* Cursor blink for typewriter */
 @keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
 }
 
 /* Pulse (for initial dark screen) */
 @keyframes gentle-pulse {
-  0%, 100% { opacity: 0.9; }
-  50% { opacity: 0.6; }
+    0%,
+    100% {
+        opacity: 0.9;
+    }
+    50% {
+        opacity: 0.6;
+    }
 }
 
 .animate-pulse-gentle {
-  animation: gentle-pulse 3s ease-in-out infinite;
+    animation: gentle-pulse 3s ease-in-out infinite;
 }
 
 /* --------------------------------------------------------------------------
    16. Utility / Helper Classes
    -------------------------------------------------------------------------- */
 .hidden {
-  display: none !important;
+    display: none !important;
 }
 
 .visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
 }
 
 /* --------------------------------------------------------------------------
    17. Responsive Adjustments
    -------------------------------------------------------------------------- */
 @media (max-width: 480px) {
-  .glass-button {
-    padding: 1rem 2rem;
-    gap: 0.75rem;
-  }
+    .glass-button {
+        padding: 1rem 2rem;
+        gap: 0.75rem;
+    }
 
-  .btn-label {
-    font-size: 0.75rem;
-    letter-spacing: 0.15em;
-  }
+    .btn-label {
+        font-size: 0.75rem;
+        letter-spacing: 0.15em;
+    }
 
-  .spotify-card {
-    min-width: 240px;
-    padding: 0.5rem 0.75rem;
-  }
+    .spotify-card {
+        min-width: 240px;
+        padding: 0.5rem 0.75rem;
+    }
 
-  #spotify-widget {
-    bottom: 1rem;
-    right: 1rem;
-  }
+    #spotify-widget {
+        bottom: 1rem;
+        right: 1rem;
+    }
 
-  .cake {
-    --cake-size: 140px;
-  }
+    .cake {
+        --cake-size: 140px;
+    }
 }
 
 @media (max-width: 360px) {
-  .title-editorial {
-    font-size: 1.25rem;
-  }
+    .title-editorial {
+        font-size: 1.25rem;
+    }
 
-  #content-area {
-    gap: 1.5rem;
-    padding: 1rem;
-  }
+    #content-area {
+        gap: 1.5rem;
+        padding: 1rem;
+    }
 }
