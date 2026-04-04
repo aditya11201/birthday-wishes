@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html class="dark" lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A special birthday celebration experience for Stasya Annesty — an interactive, cinematic birthday wishes journey.">
+  <title>Tasya's Gala — Birthday Wishes</title>
+
+  <!-- ============================================================
+       External Fonts
+       ============================================================ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Epilogue:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+
+  <!-- ============================================================
+       TailwindCSS CDN (consolidated config)
+       ============================================================ -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'primary': '#0076DE',
+            'primary-dim': '#005bb0',
+            'primary-container': '#004a8c',
+            'surface': '#0e0e0e',
+            'surface-container-lowest': '#000000',
+            'surface-container-low': '#131313',
+            'surface-container': '#1a1a1a',
+            'surface-container-high': '#20201f',
+            'surface-container-highest': '#262626',
+            'surface-bright': '#2c2c2c',
+            'on-surface': '#ffffff',
+            'on-surface-variant': '#adaaaa',
+            'outline': '#767575',
+            'outline-variant': '#484847',
+            'background': '#0e0e0e',
+            'error': '#ff6e84',
+          },
+          fontFamily: {
+            'headline': ['Noto Serif', 'serif'],
+            'body': ['Plus Jakarta Sans', 'sans-serif'],
+            'label': ['Plus Jakarta Sans', 'sans-serif'],
+            'epilogue': ['Epilogue', 'serif'],
+          },
+          borderRadius: {
+            'DEFAULT': '1rem',
+            'lg': '2rem',
+            'xl': '3rem',
+            'full': '9999px',
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- ============================================================
+       Custom Styles
+       ============================================================ -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- ============================================================
+       MAIN APPLICATION CANVAS
+       ============================================================ -->
+  <main id="app-canvas">
+
+    <!-- Overlay Layer (blackout / ambient tint) -->
+    <div id="overlay" class="overlay--blackout"></div>
+
+    <!-- Birthday Banner (slides down when activated) -->
+    <div id="birthday-banner" aria-hidden="true">
+      <img
+        class="banner-image"
+        src="banner.png"
+        alt="Happy Birthday Banner"
+      >
+    </div>
+
+    <!-- Simple Decorative Balloons Container -->
+    <div id="balloon-container" aria-hidden="true"></div>
+
+    <!-- Letter Balloons Container (STASYA + ANNESTY) -->
+    <div id="letter-balloon-container" aria-hidden="true"></div>
+
+    <!-- ========================================================
+         CENTRAL CONTENT AREA
+         ======================================================== -->
+    <div id="content-area">
+
+      <!-- CSS Cake with Animated Flame -->
+      <div id="cake-container" aria-label="Birthday Cake">
+        <div class="cake">
+          <!-- Candle -->
+          <div class="velas">
+            <!-- 5 flame layers for realistic fire -->
+            <div class="fuego"></div>
+            <div class="fuego"></div>
+            <div class="fuego"></div>
+            <div class="fuego"></div>
+            <div class="fuego"></div>
+          </div>
+          <!-- Frosting -->
+          <div class="cobertura"></div>
+          <!-- Sponge -->
+          <div class="bizcocho"></div>
+        </div>
+      </div>
+
+      <!-- Title Section -->
+      <div id="title-section" class="space-y-4">
+        <span id="screen-subtitle" class="label-subtle"></span>
+        <div id="title-wrapper">
+          <h1 id="screen-title" class="title-editorial"></h1>
+        </div>
+      </div>
+
+      <!-- Primary Action Button -->
+      <button id="action-btn" class="group" type="button" aria-label="Continue">
+        <div class="glass-button glow-effect">
+          <span class="material-symbols-outlined btn-icon">lightbulb</span>
+          <span class="btn-label">Turn On The Light</span>
+        </div>
+      </button>
+
+      <!-- Choice Buttons (KUE vs ADIT) -->
+      <div id="choice-buttons" role="group" aria-label="Birthday choices">
+        <button id="choice-kue" class="group" type="button">
+          <div class="glass-button glow-effect">
+            <span class="material-symbols-outlined btn-icon" style="font-variation-settings: 'FILL' 1;">cake</span>
+            <span class="btn-label--white">KUE</span>
+          </div>
+        </button>
+        <button id="choice-adit" class="group" type="button">
+          <div class="glass-button glow-effect">
+            <span class="material-symbols-outlined btn-icon" style="font-variation-settings: 'FILL' 1;">favorite</span>
+            <span class="btn-label--white">ADIT</span>
+          </div>
+        </button>
+      </div>
+
+      <!-- "Pesan dari Adit" Button (hidden until finale) -->
+      <button
+        id="adit-message-btn"
+        class="group"
+        type="button"
+        style="display: none; opacity: 0; pointer-events: none; transition: opacity 1s ease-out;"
+        aria-label="Open message from Adit"
+      >
+        <div class="glass-button glass-button--secondary glow-effect">
+          <span class="material-symbols-outlined btn-icon" style="font-size: 1.25rem;">mail</span>
+          <span class="btn-label--small">Pesan dari adit</span>
+        </div>
+      </button>
+
+      <!-- Typewriter Area (hidden until Adit's message) -->
+      <div id="typewriter-area" aria-live="polite">
+        <p class="typewriter-text">
+          <span id="typewriter-text"></span><span class="cursor-blink"></span>
+        </p>
+      </div>
+
+      <!-- Final Grand Message (hidden until typewriter completes) -->
+      <div id="final-message">
+        <p class="final-message-text">
+          Watching you grow another year older is the greatest gift of all.
+          You bring light into every room you enter, and I hope this year
+          is as spectacular as the person you are.
+          May all your dreams take flight today.
+        </p>
+      </div>
+
+      <!-- Footer Date -->
+      <p id="footer-date" class="footer-date">09.24.2024</p>
+    </div>
+  </main>
+
+  <!-- ============================================================
+       SPOTIFY "NOW PLAYING" WIDGET
+       (Fixed position, bottom-right)
+       ============================================================ -->
+  <aside id="spotify-widget" aria-label="Now Playing">
+    <div class="spotify-card">
+      <!-- Spotify Icon -->
+      <div class="spotify-icon">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.491 17.306c-.215.353-.678.463-1.031.248-2.857-1.745-6.453-2.14-10.688-1.173-.404.093-.812-.162-.905-.566-.093-.404.162-.812.566-.905 4.634-1.06 8.608-.61 11.808 1.345.353.215.463.678.248 1.031zm1.466-3.255c-.271.44-.848.578-1.288.307-3.27-2.01-8.254-2.592-12.12-1.417-.496.15-1.022-.129-1.173-.625-.15-.496.129-1.022.625-1.173 4.417-1.341 9.918-.683 13.65 1.611.44.27.578.847.306 1.287zm.127-3.41c-3.923-2.33-10.39-2.545-14.154-1.402-.601.182-1.235-.164-1.418-.765-.182-.601.164-1.235.765-1.418 4.316-1.31 11.464-1.06 15.98 1.621.541.321.716 1.021.395 1.562-.32.542-1.02.716-1.562.395z"/>
+        </svg>
+      </div>
+      <!-- Song Info -->
+      <div class="spotify-info">
+        <span class="spotify-label">Now Playing</span>
+        <h3 id="spotify-song-name" class="spotify-song">Each Time You Fall in Love</h3>
+        <p id="spotify-artist-name" class="spotify-artist">Cigarettes After Sex</p>
+      </div>
+      <!-- Animated Equalizer Bars -->
+      <div class="music-bars">
+        <div class="music-bar"></div>
+        <div class="music-bar"></div>
+        <div class="music-bar"></div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ============================================================
+       Suppressed Navigation (SEO / Accessibility)
+       ============================================================ -->
+  <nav class="visually-hidden" aria-label="Page sections">
+    <h2>Tasya's Gala</h2>
+    <ul>
+      <li>Our Story</li>
+      <li>The Reveal</li>
+      <li>Wishes</li>
+    </ul>
+  </nav>
+
+  <!-- ============================================================
+       Application Logic
+       ============================================================ -->
+  <script src="script.js"></script>
+</body>
+</html>
