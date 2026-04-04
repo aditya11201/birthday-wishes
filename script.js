@@ -43,7 +43,7 @@ const ASSETS = Object.freeze({
    2. Screen Definitions (The Narrative)
    -------------------------------------------------------------------------- */
 const SCREENS = [
-  // ── State 1: Dark Room — "Nyalakan Lampu" ─────────────────────────────
+  // ── State 1: Dark Room ─────────────────────────────────────────────────
   {
     id: "dark-room",
     subtitle: "",
@@ -56,7 +56,7 @@ const SCREENS = [
     animatePulse: true,
     showTyping: false,
   },
-  // ── State 2: Lights on — auto-erase → auto-advance ──────────────────
+  // ── State 2: Lights on — auto-erase → auto-advance ────────────────────
   {
     id: "light-on",
     subtitle: "DIBUAT DENGAN SEPENUH HATI",
@@ -67,153 +67,9 @@ const SCREENS = [
     bg: ASSETS.bg.litRoom,
     overlay: "light",
     showTyping: true,
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
     autoEraseAndAdvance: true,
-=======
-    autoAdvance: true,
->>>>>>> Stashed changes
-=======
-    autoAdvance: true,
->>>>>>> Stashed changes
-=======
-    autoAdvance: true,
->>>>>>> Stashed changes
-=======
-    autoAdvance: true,
->>>>>>> Stashed changes
-=======
-    autoAdvance: true,
->>>>>>> Stashed changes
-=======
-    autoAdvance: true,
->>>>>>> Stashed changes
-=======
-    autoAdvance: true,
->>>>>>> Stashed changes
-=======
-    autoAdvance: true,
->>>>>>> Stashed changes
-=======
-    autoAdvance: true,
->>>>>>> Stashed changes
-=======
-    autoAdvance: true,
->>>>>>> Stashed changes
-=======
-    autoAdvance: true,
->>>>>>> Stashed changes
-=======
-    autoAdvance: true,
->>>>>>> Stashed changes
-=======
-    autoAdvance: true,
->>>>>>> Stashed changes
-=======
-    autoAdvance: true,
->>>>>>> Stashed changes
-=======
-    autoAdvance: true,
->>>>>>> Stashed changes
-=======
-    autoAdvance: true,
->>>>>>> Stashed changes
-=======
-    autoAdvance: true,
->>>>>>> Stashed changes
-=======
-    autoAdvance: true,
->>>>>>> Stashed changes
-=======
-    autoAdvance: true,
->>>>>>> Stashed changes
-=======
-    autoAdvance: true,
->>>>>>> Stashed changes
-=======
-    autoAdvance: true,
->>>>>>> Stashed changes
-=======
-    autoAdvance: true,
->>>>>>> Stashed changes
-=======
-    autoAdvance: true,
->>>>>>> Stashed changes
-=======
-    autoAdvance: true,
->>>>>>> Stashed changes
-=======
-    autoAdvance: true,
->>>>>>> Stashed changes
-=======
-    autoAdvance: true,
->>>>>>> Stashed changes
-=======
-    autoAdvance: true,
->>>>>>> Stashed changes
-=======
-    autoAdvance: true,
->>>>>>> Stashed changes
-=======
-    autoAdvance: true,
->>>>>>> Stashed changes
-=======
-    autoAdvance: true,
->>>>>>> Stashed changes
-=======
-    autoAdvance: true,
->>>>>>> Stashed changes
-=======
-    autoAdvance: true,
->>>>>>> Stashed changes
-=======
-    autoAdvance: true,
->>>>>>> Stashed changes
-=======
-    autoAdvance: true,
->>>>>>> Stashed changes
-=======
-    autoAdvance: true,
->>>>>>> Stashed changes
-=======
-    autoAdvance: true,
->>>>>>> Stashed changes
   },
-  // ── State 3: Play music prompt ───────────────────────────────────────
+  // ── State 3: Play music prompt ─────────────────────────────────────────
   {
     id: "play-music",
     subtitle: "DIBUAT DENGAN SEPENUH HATI",
@@ -225,7 +81,7 @@ const SCREENS = [
     overlay: "light",
     showTyping: true,
   },
-  // ── State 4: Wrong song — Spotify appears, auto-advance ─────────────
+  // ── State 4: Wrong song — Spotify appears, auto-advance ────────────────
   {
     id: "wrong-song",
     subtitle: "DIBUAT DENGAN SEPENUH HATI",
@@ -242,7 +98,7 @@ const SCREENS = [
       artist: "Cigarettes After Sex",
     },
   },
-  // ── State 5: Fix the song ────────────────────────────────────────────
+  // ── State 5: Fix the song ──────────────────────────────────────────────
   {
     id: "fix-song",
     subtitle: "DIBUAT DENGAN SEPENUH HATI",
@@ -258,7 +114,7 @@ const SCREENS = [
       artist: "Cigarettes After Sex",
     },
   },
-  // ── State 6: Correct song — auto-advance ─────────────────────────────
+  // ── State 6: Correct song — auto-advance ───────────────────────────────
   {
     id: "correct-song",
     subtitle: "DIBUAT DENGAN SEPENUH HATI",
@@ -272,7 +128,7 @@ const SCREENS = [
     autoAdvance: true,
     spotify: { song: "Happy Birthday", artist: "Cigarettes After Sex" },
   },
-  // ── State 7: Spotify disappears — auto-advance ──────────────────────
+  // ── State 7: Spotify disappears — auto-advance ─────────────────────────
   {
     id: "decorate-prompt",
     subtitle: "DIBUAT DENGAN SEPENUH HATI",
@@ -285,7 +141,7 @@ const SCREENS = [
     showTyping: true,
     autoAdvance: true,
   },
-  // ── State 8: Help decorate ───────────────────────────────────────────
+  // ── State 8: Help decorate ─────────────────────────────────────────────
   {
     id: "help-decorate",
     subtitle: "DIBUAT DENGAN SEPENUH HATI",
@@ -297,151 +153,7 @@ const SCREENS = [
     overlay: "light",
     showTyping: true,
   },
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-  // ── State 9: Room decorated — banner drops, auto-advance ────────────
-=======
-  // 8: Room decorated
->>>>>>> Stashed changes
-=======
-  // 8: Room decorated
->>>>>>> Stashed changes
-=======
-  // 8: Room decorated
->>>>>>> Stashed changes
-=======
-  // 8: Room decorated
->>>>>>> Stashed changes
-=======
-  // 8: Room decorated
->>>>>>> Stashed changes
-=======
-  // 8: Room decorated
->>>>>>> Stashed changes
-=======
-  // 8: Room decorated
->>>>>>> Stashed changes
-=======
-  // 8: Room decorated
->>>>>>> Stashed changes
-=======
-  // 8: Room decorated
->>>>>>> Stashed changes
-=======
-  // 8: Room decorated
->>>>>>> Stashed changes
-=======
-  // 8: Room decorated
->>>>>>> Stashed changes
-=======
-  // 8: Room decorated
->>>>>>> Stashed changes
-=======
-  // 8: Room decorated
->>>>>>> Stashed changes
-=======
-  // 8: Room decorated
->>>>>>> Stashed changes
-=======
-  // 8: Room decorated
->>>>>>> Stashed changes
-=======
-  // 8: Room decorated
->>>>>>> Stashed changes
-=======
-  // 8: Room decorated
->>>>>>> Stashed changes
-=======
-  // 8: Room decorated
->>>>>>> Stashed changes
-=======
-  // 8: Room decorated
->>>>>>> Stashed changes
-=======
-  // 8: Room decorated
->>>>>>> Stashed changes
-=======
-  // 8: Room decorated
->>>>>>> Stashed changes
-=======
-  // 8: Room decorated
->>>>>>> Stashed changes
-=======
-  // 8: Room decorated
->>>>>>> Stashed changes
-=======
-  // 8: Room decorated
->>>>>>> Stashed changes
-=======
-  // 8: Room decorated
->>>>>>> Stashed changes
-=======
-  // 8: Room decorated
->>>>>>> Stashed changes
-=======
-  // 8: Room decorated
->>>>>>> Stashed changes
-=======
-  // 8: Room decorated
->>>>>>> Stashed changes
-=======
-  // 8: Room decorated
->>>>>>> Stashed changes
-=======
-  // 8: Room decorated
->>>>>>> Stashed changes
-=======
-  // 8: Room decorated
->>>>>>> Stashed changes
-=======
-  // 8: Room decorated
->>>>>>> Stashed changes
-=======
-  // 8: Room decorated
->>>>>>> Stashed changes
-=======
-  // 8: Room decorated
->>>>>>> Stashed changes
-=======
-  // 8: Room decorated
->>>>>>> Stashed changes
-=======
-  // 8: Room decorated
->>>>>>> Stashed changes
+  // ── State 9: Room decorated — banner drops, auto-advance ───────────────
   {
     id: "room-decorated",
     subtitle: "DIBUAT DENGAN SEPENUH HATI",
@@ -452,9 +164,10 @@ const SCREENS = [
     bg: ASSETS.bg.litRoom,
     overlay: "light",
     showTyping: true,
+    showBanner: true,
     autoAdvance: true,
   },
-  // ── State 10: The Choice — "Kue" or "Adit" ──────────────────────────
+  // ── State 10: The Choice — "Kue" or "Adit" ────────────────────────────
   {
     id: "the-choice",
     subtitle: "DIBUAT DENGAN SEPENUH HATI",
@@ -464,1126 +177,10 @@ const SCREENS = [
     showTyping: true,
     showChoices: true,
   },
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-  // ── State 10B: Adit branch — auto-advance to cake ───────────────────
-=======
-  // 10: Adit Branch
-=======
-  // 10: Adit Branch
-=======
-  // 10: Adit Branch
-=======
-  // 10: Adit Branch
-=======
-  // 10: Adit Branch
-=======
-  // 10: Adit Branch
-=======
-  // 10: Adit Branch
-=======
-  // 10: Adit Branch
-=======
-  // 10: Adit Branch
-=======
-  // 10: Adit Branch
-=======
-  // 10: Adit Branch
-=======
-  // 10: Adit Branch
-=======
-  // 10: Adit Branch
-=======
-  // 10: Adit Branch
-=======
-  // 10: Adit Branch
-=======
-  // 10: Adit Branch
-=======
-  // 10: Adit Branch
-=======
-  // 10: Adit Branch
-=======
-  // 10: Adit Branch
-=======
-  // 10: Adit Branch
-=======
-  // 10: Adit Branch
-=======
-  // 10: Adit Branch
-=======
-  // 10: Adit Branch
-=======
-  // 10: Adit Branch
-=======
-  // 10: Adit Branch
-=======
-  // 10: Adit Branch
-=======
-  // 10: Adit Branch
-=======
-  // 10: Adit Branch
-=======
-  // 10: Adit Branch
-=======
-  // 10: Adit Branch
-=======
-  // 10: Adit Branch
-=======
-  // 10: Adit Branch
-=======
-  // 10: Adit Branch
-=======
-  // 10: Adit Branch
-=======
-  // 10: Adit Branch
-=======
-  // 10: Adit Branch
+  // ── State 10B: Adit branch — auto-advance to cake ──────────────────────
   {
     id: "adit-branch",
     subtitle: "DIBUAT DENGAN SEPENUH HATI",
-    title: "NO NO YA STASYAA ADIT PUNYA AKUU ~KAREN CANGTIPP YANG NGOMONG",
-    btnLabel: "MENUNGGU PERINTAH...",
-    btnIcon: "auto_awesome",
-    btnIconFill: true,
-    bg: ASSETS.bg.litRoom,
-    overlay: "medium",
-    showTyping: true,
-    autoAdvance: true,
-  },
-  // 11: Unlit Cake
-  {
-    id: "unlit-cake",
-    subtitle: "",
-    title: "Nah Tinggal nyalain lilinnya",
-    btnLabel: "Nyalakan Lilinnya",
-    btnIcon: "local_fire_department",
-    btnIconFill: true,
-    bg: ASSETS.bg.partyRoom,
-    overlay: "none",
-    showTyping: true,
-    showCake: true,
-    cakeUnlit: true,
-  },
-  // 12: Cake appears
->>>>>>> Stashed changes
-  {
-    id: "adit-branch",
-    subtitle: "DIBUAT DENGAN SEPENUH HATI",
-    title: "NO NO YA STASYAA ADIT PUNYA AKUU ~KAREN CANGTIPP YANG NGOMONG",
-    btnLabel: "MENUNGGU PERINTAH...",
-    btnIcon: "auto_awesome",
-    btnIconFill: true,
-    bg: ASSETS.bg.litRoom,
-    overlay: "medium",
-    showTyping: true,
-    autoAdvance: true,
-  },
-  // 11: Unlit Cake
-  {
-    id: "unlit-cake",
-    subtitle: "",
-    title: "Nah Tinggal nyalain lilinnya",
-    btnLabel: "Nyalakan Lilinnya",
-    btnIcon: "local_fire_department",
-    btnIconFill: true,
-    bg: ASSETS.bg.partyRoom,
-    overlay: "none",
-    showTyping: true,
-    showCake: true,
-    cakeUnlit: true,
-  },
-  // 12: Cake appears
->>>>>>> Stashed changes
-  {
-    id: "adit-branch",
-    subtitle: "DIBUAT DENGAN SEPENUH HATI",
-    title: "NO NO YA STASYAA ADIT PUNYA AKUU ~KAREN CANGTIPP YANG NGOMONG",
-    btnLabel: "MENUNGGU PERINTAH...",
-    btnIcon: "auto_awesome",
-    btnIconFill: true,
-    bg: ASSETS.bg.litRoom,
-    overlay: "medium",
-    showTyping: true,
-    autoAdvance: true,
-  },
-  // 11: Unlit Cake
-  {
-    id: "unlit-cake",
-    subtitle: "",
-    title: "Nah Tinggal nyalain lilinnya",
-    btnLabel: "Nyalakan Lilinnya",
-    btnIcon: "local_fire_department",
-    btnIconFill: true,
-    bg: ASSETS.bg.partyRoom,
-    overlay: "none",
-    showTyping: true,
-    showCake: true,
-    cakeUnlit: true,
-  },
-  // 12: Cake appears
->>>>>>> Stashed changes
-  {
-    id: "adit-branch",
-    subtitle: "DIBUAT DENGAN SEPENUH HATI",
-    title: "NO NO YA STASYAA ADIT PUNYA AKUU ~KAREN CANGTIPP YANG NGOMONG",
-    btnLabel: "MENUNGGU PERINTAH...",
-    btnIcon: "auto_awesome",
-    btnIconFill: true,
-    bg: ASSETS.bg.litRoom,
-    overlay: "medium",
-    showTyping: true,
-    autoAdvance: true,
-  },
-  // 11: Unlit Cake
-  {
-    id: "unlit-cake",
-    subtitle: "",
-    title: "Nah Tinggal nyalain lilinnya",
-    btnLabel: "Nyalakan Lilinnya",
-    btnIcon: "local_fire_department",
-    btnIconFill: true,
-    bg: ASSETS.bg.partyRoom,
-    overlay: "none",
-    showTyping: true,
-    showCake: true,
-    cakeUnlit: true,
-  },
-  // 12: Cake appears
->>>>>>> Stashed changes
-  {
-    id: "adit-branch",
-    subtitle: "DIBUAT DENGAN SEPENUH HATI",
-    title: "NO NO YA STASYAA ADIT PUNYA AKUU ~KAREN CANGTIPP YANG NGOMONG",
-    btnLabel: "MENUNGGU PERINTAH...",
-    btnIcon: "auto_awesome",
-    btnIconFill: true,
-    bg: ASSETS.bg.litRoom,
-    overlay: "medium",
-    showTyping: true,
-    autoAdvance: true,
-  },
-  // 11: Unlit Cake
-  {
-    id: "unlit-cake",
-    subtitle: "",
-    title: "Nah Tinggal nyalain lilinnya",
-    btnLabel: "Nyalakan Lilinnya",
-    btnIcon: "local_fire_department",
-    btnIconFill: true,
-    bg: ASSETS.bg.partyRoom,
-    overlay: "none",
-    showTyping: true,
-    showCake: true,
-    cakeUnlit: true,
-  },
-  // 12: Cake appears
->>>>>>> Stashed changes
-  {
-    id: "adit-branch",
-    subtitle: "DIBUAT DENGAN SEPENUH HATI",
-    title: "NO NO YA STASYAA ADIT PUNYA AKUU ~KAREN CANGTIPP YANG NGOMONG",
-    btnLabel: "MENUNGGU PERINTAH...",
-    btnIcon: "auto_awesome",
-    btnIconFill: true,
-    bg: ASSETS.bg.litRoom,
-    overlay: "medium",
-    showTyping: true,
-    autoAdvance: true,
-  },
-  // 11: Unlit Cake
-  {
-    id: "unlit-cake",
-    subtitle: "",
-    title: "Nah Tinggal nyalain lilinnya",
-    btnLabel: "Nyalakan Lilinnya",
-    btnIcon: "local_fire_department",
-    btnIconFill: true,
-    bg: ASSETS.bg.partyRoom,
-    overlay: "none",
-    showTyping: true,
-    showCake: true,
-    cakeUnlit: true,
-  },
-  // 12: Cake appears
->>>>>>> Stashed changes
-  {
-    id: "adit-branch",
-    subtitle: "DIBUAT DENGAN SEPENUH HATI",
-    title: "NO NO YA STASYAA ADIT PUNYA AKUU ~KAREN CANGTIPP YANG NGOMONG",
-    btnLabel: "MENUNGGU PERINTAH...",
-    btnIcon: "auto_awesome",
-    btnIconFill: true,
-    bg: ASSETS.bg.litRoom,
-    overlay: "medium",
-    showTyping: true,
-    autoAdvance: true,
-  },
-  // 11: Unlit Cake
-  {
-    id: "unlit-cake",
-    subtitle: "",
-    title: "Nah Tinggal nyalain lilinnya",
-    btnLabel: "Nyalakan Lilinnya",
-    btnIcon: "local_fire_department",
-    btnIconFill: true,
-    bg: ASSETS.bg.partyRoom,
-    overlay: "none",
-    showTyping: true,
-    showCake: true,
-    cakeUnlit: true,
-  },
-  // 12: Cake appears
->>>>>>> Stashed changes
-  {
-    id: "adit-branch",
-    subtitle: "DIBUAT DENGAN SEPENUH HATI",
-    title: "NO NO YA STASYAA ADIT PUNYA AKUU ~KAREN CANGTIPP YANG NGOMONG",
-    btnLabel: "MENUNGGU PERINTAH...",
-    btnIcon: "auto_awesome",
-    btnIconFill: true,
-    bg: ASSETS.bg.litRoom,
-    overlay: "medium",
-    showTyping: true,
-    autoAdvance: true,
-  },
-  // 11: Unlit Cake
-  {
-    id: "unlit-cake",
-    subtitle: "",
-    title: "Nah Tinggal nyalain lilinnya",
-    btnLabel: "Nyalakan Lilinnya",
-    btnIcon: "local_fire_department",
-    btnIconFill: true,
-    bg: ASSETS.bg.partyRoom,
-    overlay: "none",
-    showTyping: true,
-    showCake: true,
-    cakeUnlit: true,
-  },
-  // 12: Cake appears
->>>>>>> Stashed changes
-  {
-    id: "adit-branch",
-    subtitle: "DIBUAT DENGAN SEPENUH HATI",
-    title: "NO NO YA STASYAA ADIT PUNYA AKUU ~KAREN CANGTIPP YANG NGOMONG",
-    btnLabel: "MENUNGGU PERINTAH...",
-    btnIcon: "auto_awesome",
-    btnIconFill: true,
-    bg: ASSETS.bg.litRoom,
-    overlay: "medium",
-    showTyping: true,
-    autoAdvance: true,
-  },
-  // 11: Unlit Cake
-  {
-    id: "unlit-cake",
-    subtitle: "",
-    title: "Nah Tinggal nyalain lilinnya",
-    btnLabel: "Nyalakan Lilinnya",
-    btnIcon: "local_fire_department",
-    btnIconFill: true,
-    bg: ASSETS.bg.partyRoom,
-    overlay: "none",
-    showTyping: true,
-    showCake: true,
-    cakeUnlit: true,
-  },
-  // 12: Cake appears
->>>>>>> Stashed changes
-  {
-    id: "adit-branch",
-    subtitle: "DIBUAT DENGAN SEPENUH HATI",
-    title: "NO NO YA STASYAA ADIT PUNYA AKUU ~KAREN CANGTIPP YANG NGOMONG",
-    btnLabel: "MENUNGGU PERINTAH...",
-    btnIcon: "auto_awesome",
-    btnIconFill: true,
-    bg: ASSETS.bg.litRoom,
-    overlay: "medium",
-    showTyping: true,
-    autoAdvance: true,
-  },
-  // 11: Unlit Cake
-  {
-    id: "unlit-cake",
-    subtitle: "",
-    title: "Nah Tinggal nyalain lilinnya",
-    btnLabel: "Nyalakan Lilinnya",
-    btnIcon: "local_fire_department",
-    btnIconFill: true,
-    bg: ASSETS.bg.partyRoom,
-    overlay: "none",
-    showTyping: true,
-    showCake: true,
-    cakeUnlit: true,
-  },
-  // 12: Cake appears
->>>>>>> Stashed changes
-  {
-    id: "adit-branch",
-    subtitle: "DIBUAT DENGAN SEPENUH HATI",
-    title: "NO NO YA STASYAA ADIT PUNYA AKUU ~KAREN CANGTIPP YANG NGOMONG",
-    btnLabel: "MENUNGGU PERINTAH...",
-    btnIcon: "auto_awesome",
-    btnIconFill: true,
-    bg: ASSETS.bg.litRoom,
-    overlay: "medium",
-    showTyping: true,
-    autoAdvance: true,
-  },
-  // 11: Unlit Cake
-  {
-    id: "unlit-cake",
-    subtitle: "",
-    title: "Nah Tinggal nyalain lilinnya",
-    btnLabel: "Nyalakan Lilinnya",
-    btnIcon: "local_fire_department",
-    btnIconFill: true,
-    bg: ASSETS.bg.partyRoom,
-    overlay: "none",
-    showTyping: true,
-    showCake: true,
-    cakeUnlit: true,
-  },
-  // 12: Cake appears
->>>>>>> Stashed changes
-  {
-    id: "adit-branch",
-    subtitle: "DIBUAT DENGAN SEPENUH HATI",
-    title: "NO NO YA STASYAA ADIT PUNYA AKUU ~KAREN CANGTIPP YANG NGOMONG",
-    btnLabel: "MENUNGGU PERINTAH...",
-    btnIcon: "auto_awesome",
-    btnIconFill: true,
-    bg: ASSETS.bg.litRoom,
-    overlay: "medium",
-    showTyping: true,
-    autoAdvance: true,
-  },
-  // 11: Unlit Cake
-  {
-    id: "unlit-cake",
-    subtitle: "",
-    title: "Nah Tinggal nyalain lilinnya",
-    btnLabel: "Nyalakan Lilinnya",
-    btnIcon: "local_fire_department",
-    btnIconFill: true,
-    bg: ASSETS.bg.partyRoom,
-    overlay: "none",
-    showTyping: true,
-    showCake: true,
-    cakeUnlit: true,
-  },
-  // 12: Cake appears
->>>>>>> Stashed changes
-  {
-    id: "adit-branch",
-    subtitle: "DIBUAT DENGAN SEPENUH HATI",
-    title: "NO NO YA STASYAA ADIT PUNYA AKUU ~KAREN CANGTIPP YANG NGOMONG",
-    btnLabel: "MENUNGGU PERINTAH...",
-    btnIcon: "auto_awesome",
-    btnIconFill: true,
-    bg: ASSETS.bg.litRoom,
-    overlay: "medium",
-    showTyping: true,
-    autoAdvance: true,
-  },
-  // 11: Unlit Cake
-  {
-    id: "unlit-cake",
-    subtitle: "",
-    title: "Nah Tinggal nyalain lilinnya",
-    btnLabel: "Nyalakan Lilinnya",
-    btnIcon: "local_fire_department",
-    btnIconFill: true,
-    bg: ASSETS.bg.partyRoom,
-    overlay: "none",
-    showTyping: true,
-    showCake: true,
-    cakeUnlit: true,
-  },
-  // 12: Cake appears
->>>>>>> Stashed changes
-  {
-    id: "adit-branch",
-    subtitle: "DIBUAT DENGAN SEPENUH HATI",
-    title: "NO NO YA STASYAA ADIT PUNYA AKUU ~KAREN CANGTIPP YANG NGOMONG",
-    btnLabel: "MENUNGGU PERINTAH...",
-    btnIcon: "auto_awesome",
-    btnIconFill: true,
-    bg: ASSETS.bg.litRoom,
-    overlay: "medium",
-    showTyping: true,
-    autoAdvance: true,
-  },
-  // 11: Unlit Cake
-  {
-    id: "unlit-cake",
-    subtitle: "",
-    title: "Nah Tinggal nyalain lilinnya",
-    btnLabel: "Nyalakan Lilinnya",
-    btnIcon: "local_fire_department",
-    btnIconFill: true,
-    bg: ASSETS.bg.partyRoom,
-    overlay: "none",
-    showTyping: true,
-    showCake: true,
-    cakeUnlit: true,
-  },
-  // 12: Cake appears
->>>>>>> Stashed changes
-  {
-    id: "adit-branch",
-    subtitle: "DIBUAT DENGAN SEPENUH HATI",
-    title: "NO NO YA STASYAA ADIT PUNYA AKUU ~KAREN CANGTIPP YANG NGOMONG",
-    btnLabel: "MENUNGGU PERINTAH...",
-    btnIcon: "auto_awesome",
-    btnIconFill: true,
-    bg: ASSETS.bg.litRoom,
-    overlay: "medium",
-    showTyping: true,
-    autoAdvance: true,
-  },
-  // 11: Unlit Cake
-  {
-    id: "unlit-cake",
-    subtitle: "",
-    title: "Nah Tinggal nyalain lilinnya",
-    btnLabel: "Nyalakan Lilinnya",
-    btnIcon: "local_fire_department",
-    btnIconFill: true,
-    bg: ASSETS.bg.partyRoom,
-    overlay: "none",
-    showTyping: true,
-    showCake: true,
-    cakeUnlit: true,
-  },
-  // 12: Cake appears
->>>>>>> Stashed changes
-  {
-    id: "adit-branch",
-    subtitle: "DIBUAT DENGAN SEPENUH HATI",
-    title: "NO NO YA STASYAA ADIT PUNYA AKUU ~KAREN CANGTIPP YANG NGOMONG",
-    btnLabel: "MENUNGGU PERINTAH...",
-    btnIcon: "auto_awesome",
-    btnIconFill: true,
-    bg: ASSETS.bg.litRoom,
-    overlay: "medium",
-    showTyping: true,
-    autoAdvance: true,
-  },
-  // 11: Unlit Cake
-  {
-    id: "unlit-cake",
-    subtitle: "",
-    title: "Nah Tinggal nyalain lilinnya",
-    btnLabel: "Nyalakan Lilinnya",
-    btnIcon: "local_fire_department",
-    btnIconFill: true,
-    bg: ASSETS.bg.partyRoom,
-    overlay: "none",
-    showTyping: true,
-    showCake: true,
-    cakeUnlit: true,
-  },
-  // 12: Cake appears
->>>>>>> Stashed changes
-  {
-    id: "adit-branch",
-    subtitle: "DIBUAT DENGAN SEPENUH HATI",
-    title: "NO NO YA STASYAA ADIT PUNYA AKUU ~KAREN CANGTIPP YANG NGOMONG",
-    btnLabel: "MENUNGGU PERINTAH...",
-    btnIcon: "auto_awesome",
-    btnIconFill: true,
-    bg: ASSETS.bg.litRoom,
-    overlay: "medium",
-    showTyping: true,
-    autoAdvance: true,
-  },
-  // 11: Unlit Cake
-  {
-    id: "unlit-cake",
-    subtitle: "",
-    title: "Nah Tinggal nyalain lilinnya",
-    btnLabel: "Nyalakan Lilinnya",
-    btnIcon: "local_fire_department",
-    btnIconFill: true,
-    bg: ASSETS.bg.partyRoom,
-    overlay: "none",
-    showTyping: true,
-    showCake: true,
-    cakeUnlit: true,
-  },
-  // 12: Cake appears
->>>>>>> Stashed changes
-  {
-    id: "adit-branch",
-    subtitle: "DIBUAT DENGAN SEPENUH HATI",
-    title: "NO NO YA STASYAA ADIT PUNYA AKUU ~KAREN CANGTIPP YANG NGOMONG",
-    btnLabel: "MENUNGGU PERINTAH...",
-    btnIcon: "auto_awesome",
-    btnIconFill: true,
-    bg: ASSETS.bg.litRoom,
-    overlay: "medium",
-    showTyping: true,
-    autoAdvance: true,
-  },
-  // 11: Unlit Cake
-  {
-    id: "unlit-cake",
-    subtitle: "",
-    title: "Nah Tinggal nyalain lilinnya",
-    btnLabel: "Nyalakan Lilinnya",
-    btnIcon: "local_fire_department",
-    btnIconFill: true,
-    bg: ASSETS.bg.partyRoom,
-    overlay: "none",
-    showTyping: true,
-    showCake: true,
-    cakeUnlit: true,
-  },
-  // 12: Cake appears
->>>>>>> Stashed changes
-  {
-    id: "adit-branch",
-    subtitle: "DIBUAT DENGAN SEPENUH HATI",
-    title: "NO NO YA STASYAA ADIT PUNYA AKUU ~KAREN CANGTIPP YANG NGOMONG",
-    btnLabel: "MENUNGGU PERINTAH...",
-    btnIcon: "auto_awesome",
-    btnIconFill: true,
-    bg: ASSETS.bg.litRoom,
-    overlay: "medium",
-    showTyping: true,
-    autoAdvance: true,
-  },
-  // 11: Unlit Cake
-  {
-    id: "unlit-cake",
-    subtitle: "",
-    title: "Nah Tinggal nyalain lilinnya",
-    btnLabel: "Nyalakan Lilinnya",
-    btnIcon: "local_fire_department",
-    btnIconFill: true,
-    bg: ASSETS.bg.partyRoom,
-    overlay: "none",
-    showTyping: true,
-    showCake: true,
-    cakeUnlit: true,
-  },
-  // 12: Cake appears
->>>>>>> Stashed changes
-  {
-    id: "adit-branch",
-    subtitle: "DIBUAT DENGAN SEPENUH HATI",
-    title: "NO NO YA STASYAA ADIT PUNYA AKUU ~KAREN CANGTIPP YANG NGOMONG",
-    btnLabel: "MENUNGGU PERINTAH...",
-    btnIcon: "auto_awesome",
-    btnIconFill: true,
-    bg: ASSETS.bg.litRoom,
-    overlay: "medium",
-    showTyping: true,
-    autoAdvance: true,
-  },
-  // 11: Unlit Cake
-  {
-    id: "unlit-cake",
-    subtitle: "",
-    title: "Nah Tinggal nyalain lilinnya",
-    btnLabel: "Nyalakan Lilinnya",
-    btnIcon: "local_fire_department",
-    btnIconFill: true,
-    bg: ASSETS.bg.partyRoom,
-    overlay: "none",
-    showTyping: true,
-    showCake: true,
-    cakeUnlit: true,
-  },
-  // 12: Cake appears
->>>>>>> Stashed changes
-  {
-    id: "adit-branch",
-    subtitle: "DIBUAT DENGAN SEPENUH HATI",
-    title: "NO NO YA STASYAA ADIT PUNYA AKUU ~KAREN CANGTIPP YANG NGOMONG",
-    btnLabel: "MENUNGGU PERINTAH...",
-    btnIcon: "auto_awesome",
-    btnIconFill: true,
-    bg: ASSETS.bg.litRoom,
-    overlay: "medium",
-    showTyping: true,
-    autoAdvance: true,
-  },
-  // 11: Unlit Cake
-  {
-    id: "unlit-cake",
-    subtitle: "",
-    title: "Nah Tinggal nyalain lilinnya",
-    btnLabel: "Nyalakan Lilinnya",
-    btnIcon: "local_fire_department",
-    btnIconFill: true,
-    bg: ASSETS.bg.partyRoom,
-    overlay: "none",
-    showTyping: true,
-    showCake: true,
-    cakeUnlit: true,
-  },
-  // 12: Cake appears
->>>>>>> Stashed changes
-  {
-    id: "adit-branch",
-    subtitle: "DIBUAT DENGAN SEPENUH HATI",
-    title: "NO NO YA STASYAA ADIT PUNYA AKUU ~KAREN CANGTIPP YANG NGOMONG",
-    btnLabel: "MENUNGGU PERINTAH...",
-    btnIcon: "auto_awesome",
-    btnIconFill: true,
-    bg: ASSETS.bg.litRoom,
-    overlay: "medium",
-    showTyping: true,
-    autoAdvance: true,
-  },
-  // 11: Unlit Cake
-  {
-    id: "unlit-cake",
-    subtitle: "",
-    title: "Nah Tinggal nyalain lilinnya",
-    btnLabel: "Nyalakan Lilinnya",
-    btnIcon: "local_fire_department",
-    btnIconFill: true,
-    bg: ASSETS.bg.partyRoom,
-    overlay: "none",
-    showTyping: true,
-    showCake: true,
-    cakeUnlit: true,
-  },
-  // 12: Cake appears
->>>>>>> Stashed changes
-  {
-    id: "adit-branch",
-    subtitle: "DIBUAT DENGAN SEPENUH HATI",
-    title: "NO NO YA STASYAA ADIT PUNYA AKUU ~KAREN CANGTIPP YANG NGOMONG",
-    btnLabel: "MENUNGGU PERINTAH...",
-    btnIcon: "auto_awesome",
-    btnIconFill: true,
-    bg: ASSETS.bg.litRoom,
-    overlay: "medium",
-    showTyping: true,
-    autoAdvance: true,
-  },
-  // 11: Unlit Cake
-  {
-    id: "unlit-cake",
-    subtitle: "",
-    title: "Nah Tinggal nyalain lilinnya",
-    btnLabel: "Nyalakan Lilinnya",
-    btnIcon: "local_fire_department",
-    btnIconFill: true,
-    bg: ASSETS.bg.partyRoom,
-    overlay: "none",
-    showTyping: true,
-    showCake: true,
-    cakeUnlit: true,
-  },
-  // 12: Cake appears
->>>>>>> Stashed changes
-  {
-    id: "adit-branch",
-    subtitle: "DIBUAT DENGAN SEPENUH HATI",
-    title: "NO NO YA STASYAA ADIT PUNYA AKUU ~KAREN CANGTIPP YANG NGOMONG",
-    btnLabel: "MENUNGGU PERINTAH...",
-    btnIcon: "auto_awesome",
-    btnIconFill: true,
-    bg: ASSETS.bg.litRoom,
-    overlay: "medium",
-    showTyping: true,
-    autoAdvance: true,
-  },
-  // 11: Unlit Cake
-  {
-    id: "unlit-cake",
-    subtitle: "",
-    title: "Nah Tinggal nyalain lilinnya",
-    btnLabel: "Nyalakan Lilinnya",
-    btnIcon: "local_fire_department",
-    btnIconFill: true,
-    bg: ASSETS.bg.partyRoom,
-    overlay: "none",
-    showTyping: true,
-    showCake: true,
-    cakeUnlit: true,
-  },
-  // 12: Cake appears
->>>>>>> Stashed changes
-  {
-    id: "adit-branch",
-    subtitle: "DIBUAT DENGAN SEPENUH HATI",
-    title: "NO NO YA STASYAA ADIT PUNYA AKUU ~KAREN CANGTIPP YANG NGOMONG",
-    btnLabel: "MENUNGGU PERINTAH...",
-    btnIcon: "auto_awesome",
-    btnIconFill: true,
-    bg: ASSETS.bg.litRoom,
-    overlay: "medium",
-    showTyping: true,
-    autoAdvance: true,
-  },
-  // 11: Unlit Cake
-  {
-    id: "unlit-cake",
-    subtitle: "",
-    title: "Nah Tinggal nyalain lilinnya",
-    btnLabel: "Nyalakan Lilinnya",
-    btnIcon: "local_fire_department",
-    btnIconFill: true,
-    bg: ASSETS.bg.partyRoom,
-    overlay: "none",
-    showTyping: true,
-    showCake: true,
-    cakeUnlit: true,
-  },
-  // 12: Cake appears
->>>>>>> Stashed changes
-  {
-    id: "adit-branch",
-    subtitle: "DIBUAT DENGAN SEPENUH HATI",
-    title: "NO NO YA STASYAA ADIT PUNYA AKUU ~KAREN CANGTIPP YANG NGOMONG",
-    btnLabel: "MENUNGGU PERINTAH...",
-    btnIcon: "auto_awesome",
-    btnIconFill: true,
-    bg: ASSETS.bg.litRoom,
-    overlay: "medium",
-    showTyping: true,
-    autoAdvance: true,
-  },
-  // 11: Unlit Cake
-  {
-    id: "unlit-cake",
-    subtitle: "",
-    title: "Nah Tinggal nyalain lilinnya",
-    btnLabel: "Nyalakan Lilinnya",
-    btnIcon: "local_fire_department",
-    btnIconFill: true,
-    bg: ASSETS.bg.partyRoom,
-    overlay: "none",
-    showTyping: true,
-    showCake: true,
-    cakeUnlit: true,
-  },
-  // 12: Cake appears
->>>>>>> Stashed changes
-  {
-    id: "adit-branch",
-    subtitle: "DIBUAT DENGAN SEPENUH HATI",
-    title: "NO NO YA STASYAA ADIT PUNYA AKUU ~KAREN CANGTIPP YANG NGOMONG",
-    btnLabel: "MENUNGGU PERINTAH...",
-    btnIcon: "auto_awesome",
-    btnIconFill: true,
-    bg: ASSETS.bg.litRoom,
-    overlay: "medium",
-    showTyping: true,
-    autoAdvance: true,
-  },
-  // 11: Unlit Cake
-  {
-    id: "unlit-cake",
-    subtitle: "",
-    title: "Nah Tinggal nyalain lilinnya",
-    btnLabel: "Nyalakan Lilinnya",
-    btnIcon: "local_fire_department",
-    btnIconFill: true,
-    bg: ASSETS.bg.partyRoom,
-    overlay: "none",
-    showTyping: true,
-    showCake: true,
-    cakeUnlit: true,
-  },
-  // 12: Cake appears
->>>>>>> Stashed changes
-  {
-    id: "adit-branch",
-    subtitle: "DIBUAT DENGAN SEPENUH HATI",
-    title: "NO NO YA STASYAA ADIT PUNYA AKUU ~KAREN CANGTIPP YANG NGOMONG",
-    btnLabel: "MENUNGGU PERINTAH...",
-    btnIcon: "auto_awesome",
-    btnIconFill: true,
-    bg: ASSETS.bg.litRoom,
-    overlay: "medium",
-    showTyping: true,
-    autoAdvance: true,
-  },
-  // 11: Unlit Cake
-  {
-    id: "unlit-cake",
-    subtitle: "",
-    title: "Nah Tinggal nyalain lilinnya",
-    btnLabel: "Nyalakan Lilinnya",
-    btnIcon: "local_fire_department",
-    btnIconFill: true,
-    bg: ASSETS.bg.partyRoom,
-    overlay: "none",
-    showTyping: true,
-    showCake: true,
-    cakeUnlit: true,
-  },
-  // 12: Cake appears
->>>>>>> Stashed changes
-  {
-    id: "adit-branch",
-    subtitle: "DIBUAT DENGAN SEPENUH HATI",
-    title: "NO NO YA STASYAA ADIT PUNYA AKUU ~KAREN CANGTIPP YANG NGOMONG",
-    btnLabel: "MENUNGGU PERINTAH...",
-    btnIcon: "auto_awesome",
-    btnIconFill: true,
-    bg: ASSETS.bg.litRoom,
-    overlay: "medium",
-    showTyping: true,
-    autoAdvance: true,
-  },
-  // 11: Unlit Cake
-  {
-    id: "unlit-cake",
-    subtitle: "",
-    title: "Nah Tinggal nyalain lilinnya",
-    btnLabel: "Nyalakan Lilinnya",
-    btnIcon: "local_fire_department",
-    btnIconFill: true,
-    bg: ASSETS.bg.partyRoom,
-    overlay: "none",
-    showTyping: true,
-    showCake: true,
-    cakeUnlit: true,
-  },
-  // 12: Cake appears
->>>>>>> Stashed changes
-  {
-    id: "adit-branch",
-    subtitle: "DIBUAT DENGAN SEPENUH HATI",
-    title: "NO NO YA STASYAA ADIT PUNYA AKUU ~KAREN CANGTIPP YANG NGOMONG",
-    btnLabel: "MENUNGGU PERINTAH...",
-    btnIcon: "auto_awesome",
-    btnIconFill: true,
-    bg: ASSETS.bg.litRoom,
-    overlay: "medium",
-    showTyping: true,
-    autoAdvance: true,
-  },
-  // 11: Unlit Cake
-  {
-    id: "unlit-cake",
-    subtitle: "",
-    title: "Nah Tinggal nyalain lilinnya",
-    btnLabel: "Nyalakan Lilinnya",
-    btnIcon: "local_fire_department",
-    btnIconFill: true,
-    bg: ASSETS.bg.partyRoom,
-    overlay: "none",
-    showTyping: true,
-    showCake: true,
-    cakeUnlit: true,
-  },
-  // 12: Cake appears
->>>>>>> Stashed changes
-  {
-    id: "adit-branch",
-    subtitle: "DIBUAT DENGAN SEPENUH HATI",
-    title: "NO NO YA STASYAA ADIT PUNYA AKUU ~KAREN CANGTIPP YANG NGOMONG",
-    btnLabel: "MENUNGGU PERINTAH...",
-    btnIcon: "auto_awesome",
-    btnIconFill: true,
-    bg: ASSETS.bg.litRoom,
-    overlay: "medium",
-    showTyping: true,
-    autoAdvance: true,
-  },
-  // 11: Unlit Cake
-  {
-    id: "unlit-cake",
-    subtitle: "",
-    title: "Nah Tinggal nyalain lilinnya",
-    btnLabel: "Nyalakan Lilinnya",
-    btnIcon: "local_fire_department",
-    btnIconFill: true,
-    bg: ASSETS.bg.partyRoom,
-    overlay: "none",
-    showTyping: true,
-    showCake: true,
-    cakeUnlit: true,
-  },
-  // 12: Cake appears
->>>>>>> Stashed changes
-  {
-    id: "adit-branch",
-    subtitle: "DIBUAT DENGAN SEPENUH HATI",
-    title: "NO NO YA STASYAA ADIT PUNYA AKUU ~KAREN CANGTIPP YANG NGOMONG",
-    btnLabel: "MENUNGGU PERINTAH...",
-    btnIcon: "auto_awesome",
-    btnIconFill: true,
-    bg: ASSETS.bg.litRoom,
-    overlay: "medium",
-    showTyping: true,
-    autoAdvance: true,
-  },
-  // 11: Unlit Cake
-  {
-    id: "unlit-cake",
-    subtitle: "",
-    title: "Nah Tinggal nyalain lilinnya",
-    btnLabel: "Nyalakan Lilinnya",
-    btnIcon: "local_fire_department",
-    btnIconFill: true,
-    bg: ASSETS.bg.partyRoom,
-    overlay: "none",
-    showTyping: true,
-    showCake: true,
-    cakeUnlit: true,
-  },
-  // 12: Cake appears
->>>>>>> Stashed changes
-  {
-    id: "adit-branch",
-    subtitle: "DIBUAT DENGAN SEPENUH HATI",
-    title: "NO NO YA STASYAA ADIT PUNYA AKUU ~KAREN CANGTIPP YANG NGOMONG",
-    btnLabel: "MENUNGGU PERINTAH...",
-    btnIcon: "auto_awesome",
-    btnIconFill: true,
-    bg: ASSETS.bg.litRoom,
-    overlay: "medium",
-    showTyping: true,
-    autoAdvance: true,
-  },
-  // 11: Unlit Cake
-  {
-    id: "unlit-cake",
-    subtitle: "",
-    title: "Nah Tinggal nyalain lilinnya",
-    btnLabel: "Nyalakan Lilinnya",
-    btnIcon: "local_fire_department",
-    btnIconFill: true,
-    bg: ASSETS.bg.partyRoom,
-    overlay: "none",
-    showTyping: true,
-    showCake: true,
-    cakeUnlit: true,
-  },
-  // 12: Cake appears
->>>>>>> Stashed changes
-  {
-    id: "adit-branch",
-    subtitle: "DIBUAT DENGAN SEPENUH HATI",
-    title: "NO NO YA STASYAA ADIT PUNYA AKUU ~KAREN CANGTIPP YANG NGOMONG",
-    btnLabel: "MENUNGGU PERINTAH...",
-    btnIcon: "auto_awesome",
-    btnIconFill: true,
-    bg: ASSETS.bg.litRoom,
-    overlay: "medium",
-    showTyping: true,
-    autoAdvance: true,
-  },
-  // 11: Unlit Cake
-  {
-    id: "unlit-cake",
-    subtitle: "",
-    title: "Nah Tinggal nyalain lilinnya",
-    btnLabel: "Nyalakan Lilinnya",
-    btnIcon: "local_fire_department",
-    btnIconFill: true,
-    bg: ASSETS.bg.partyRoom,
-    overlay: "none",
-    showTyping: true,
-    showCake: true,
-    cakeUnlit: true,
-  },
-  // 12: Cake appears
->>>>>>> Stashed changes
-  {
-    id: "adit-branch",
-    subtitle: "DIBUAT DENGAN SEPENUH HATI",
-    title: "NO NO YA STASYAA ADIT PUNYA AKUU ~KAREN CANGTIPP YANG NGOMONG",
-    btnLabel: "MENUNGGU PERINTAH...",
-    btnIcon: "auto_awesome",
-    btnIconFill: true,
-    bg: ASSETS.bg.litRoom,
-    overlay: "medium",
-    showTyping: true,
-    autoAdvance: true,
-  },
-  // 11: Unlit Cake
-  {
-    id: "unlit-cake",
-    subtitle: "",
-    title: "Nah Tinggal nyalain lilinnya",
-    btnLabel: "Nyalakan Lilinnya",
-    btnIcon: "local_fire_department",
-    btnIconFill: true,
-    bg: ASSETS.bg.partyRoom,
-    overlay: "none",
-    showTyping: true,
-    showCake: true,
-    cakeUnlit: true,
-  },
-  // 12: Cake appears
->>>>>>> Stashed changes
-  {
-    id: "adit-branch",
-    subtitle: "DIBUAT DENGAN SEPENUH HATI",
-    title: "NO NO YA STASYAA ADIT PUNYA AKUU ~KAREN CANGTIPP YANG NGOMONG",
-    btnLabel: "MENUNGGU PERINTAH...",
-    btnIcon: "auto_awesome",
-    btnIconFill: true,
-    bg: ASSETS.bg.litRoom,
-    overlay: "medium",
-    showTyping: true,
-    autoAdvance: true,
-  },
-  // 11: Unlit Cake
-  {
-    id: "unlit-cake",
-    subtitle: "",
-    title: "Nah Tinggal nyalain lilinnya",
-    btnLabel: "Nyalakan Lilinnya",
-    btnIcon: "local_fire_department",
-    btnIconFill: true,
-    bg: ASSETS.bg.partyRoom,
-    overlay: "none",
-    showTyping: true,
-    showCake: true,
-    cakeUnlit: true,
-  },
-  // 12: Cake appears
->>>>>>> Stashed changes
-  {
-    id: "adit-branch",
-    subtitle: "",
     title: "NO NO YA STASYAA ADIT PUNYA AKUU ~KAREN CANGTIPP YANG NGOMONG",
     btnLabel: "MENUNGGU PERINTAH...",
     btnIcon: "auto_awesome",
@@ -1594,7 +191,7 @@ const SCREENS = [
     autoAdvance: true,
     autoAdvanceDelay: 3000,
   },
-  // ── State 11: Unlit cake — "Nyalakan Lilinnya" ──────────────────────
+  // ── State 11: Unlit cake ───────────────────────────────────────────────
   {
     id: "unlit-cake",
     subtitle: "",
@@ -1606,9 +203,9 @@ const SCREENS = [
     overlay: "none",
     showTyping: true,
     showCake: true,
-    cakeLit: false,
+    cakeUnlit: true,
   },
-  // ── State 12: Lit cake — auto-advance ───────────────────────────────
+  // ── State 12: Lit cake — auto-advance ──────────────────────────────────
   {
     id: "cake-lit",
     subtitle: "",
@@ -1620,10 +217,10 @@ const SCREENS = [
     overlay: "none",
     showTyping: true,
     showCake: true,
-    cakeLit: true,
+    cakeUnlit: false,
     autoAdvance: true,
   },
-  // ── State 13: Release balloons prompt ───────────────────────────────
+  // ── State 13: Release balloons prompt ──────────────────────────────────
   {
     id: "release-balloons",
     subtitle: "",
@@ -1635,591 +232,49 @@ const SCREENS = [
     overlay: "none",
     showTyping: true,
     showCake: true,
-    cakeLit: true,
+    cakeUnlit: false,
   },
-  // ── State 14: Balloons flying ───────────────────────────────────────
+  // ── State 14: Balloons flying ──────────────────────────────────────────
   {
     id: "balloons-flying",
     subtitle: "",
     title: "Nah balonnya udah terbang nih stasyaa",
     btnLabel: "HAPPY BIRTHDAY",
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
     btnIcon: "cake",
     btnIconFill: true,
-=======
-    btnIcon: "🥳🎉",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "🥳🎉",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "🥳🎉",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "🥳🎉",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "🥳🎉",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "🥳🎉",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "🥳🎉",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "🥳🎉",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "🥳🎉",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "🥳🎉",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "🥳🎉",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "🥳🎉",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "🥳🎉",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "🥳🎉",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "🥳🎉",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "🥳🎉",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "🥳🎉",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "🥳🎉",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "🥳🎉",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "🥳🎉",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "🥳🎉",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "🥳🎉",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "🥳🎉",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "🥳🎉",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "🥳🎉",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "🥳🎉",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "🥳🎉",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "🥳🎉",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "🥳🎉",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "🥳🎉",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "🥳🎉",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "🥳🎉",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "🥳🎉",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "🥳🎉",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "🥳🎉",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "🥳🎉",
-    btnIconFill: false,
->>>>>>> Stashed changes
     bg: ASSETS.bg.partyRoom,
     overlay: "none",
     showTyping: true,
     showCake: true,
-    cakeLit: true,
+    cakeUnlit: false,
     showBalloons: true,
   },
-  // ── State 15: Banner drops ──────────────────────────────────────────
+  // ── State 15: Banner drops ─────────────────────────────────────────────
   {
     id: "banner-drops",
     subtitle: "",
     title: "Gelooooo... anjay...",
     btnLabel: "stasyaa annesty",
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
     btnIcon: "favorite",
     btnIconFill: true,
-=======
-    btnIcon: "💕",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "💕",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "💕",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "💕",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "💕",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "💕",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "💕",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "💕",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "💕",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "💕",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "💕",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "💕",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "💕",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "💕",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "💕",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "💕",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "💕",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "💕",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "💕",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "💕",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "💕",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "💕",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "💕",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "💕",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "💕",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "💕",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "💕",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "💕",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "💕",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "💕",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "💕",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "💕",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "💕",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "💕",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "💕",
-    btnIconFill: false,
->>>>>>> Stashed changes
-=======
-    btnIcon: "💕",
-    btnIconFill: false,
->>>>>>> Stashed changes
     bg: ASSETS.bg.partyRoom,
     overlay: "none",
     showTyping: true,
     showCake: true,
-    cakeLit: true,
+    cakeUnlit: false,
     showBalloons: true,
     showBanner: true,
   },
-  // ── State 16: Grand Finale — letter balloons ────────────────────────
+  // ── State 16: Grand Finale — letter balloons ───────────────────────────
   {
     id: "grand-finale",
     subtitle: "",
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    title: "Gelooooo... anjay...",
-    btnLabel: "Pesan dari Adit",
-    btnIcon: "mail",
-    btnIconFill: true,
-=======
     title: "",
     btnLabel: "",
->>>>>>> Stashed changes
-=======
-    title: "",
-    btnLabel: "",
->>>>>>> Stashed changes
-=======
-    title: "",
-    btnLabel: "",
->>>>>>> Stashed changes
-=======
-    title: "",
-    btnLabel: "",
->>>>>>> Stashed changes
-=======
-    title: "",
-    btnLabel: "",
->>>>>>> Stashed changes
-=======
-    title: "",
-    btnLabel: "",
->>>>>>> Stashed changes
-=======
-    title: "",
-    btnLabel: "",
->>>>>>> Stashed changes
-=======
-    title: "",
-    btnLabel: "",
->>>>>>> Stashed changes
-=======
-    title: "",
-    btnLabel: "",
->>>>>>> Stashed changes
-=======
-    title: "",
-    btnLabel: "",
->>>>>>> Stashed changes
-=======
-    title: "",
-    btnLabel: "",
->>>>>>> Stashed changes
-=======
-    title: "",
-    btnLabel: "",
->>>>>>> Stashed changes
-=======
-    title: "",
-    btnLabel: "",
->>>>>>> Stashed changes
-=======
-    title: "",
-    btnLabel: "",
->>>>>>> Stashed changes
-=======
-    title: "",
-    btnLabel: "",
->>>>>>> Stashed changes
-=======
-    title: "",
-    btnLabel: "",
->>>>>>> Stashed changes
-=======
-    title: "",
-    btnLabel: "",
->>>>>>> Stashed changes
-=======
-    title: "",
-    btnLabel: "",
->>>>>>> Stashed changes
-=======
-    title: "",
-    btnLabel: "",
->>>>>>> Stashed changes
-=======
-    title: "",
-    btnLabel: "",
->>>>>>> Stashed changes
-=======
-    title: "",
-    btnLabel: "",
->>>>>>> Stashed changes
-=======
-    title: "",
-    btnLabel: "",
->>>>>>> Stashed changes
-=======
-    title: "",
-    btnLabel: "",
->>>>>>> Stashed changes
-=======
-    title: "",
-    btnLabel: "",
->>>>>>> Stashed changes
-=======
-    title: "",
-    btnLabel: "",
->>>>>>> Stashed changes
-=======
-    title: "",
-    btnLabel: "",
->>>>>>> Stashed changes
-=======
-    title: "",
-    btnLabel: "",
->>>>>>> Stashed changes
-=======
-    title: "",
-    btnLabel: "",
->>>>>>> Stashed changes
-=======
-    title: "",
-    btnLabel: "",
->>>>>>> Stashed changes
-=======
-    title: "",
-    btnLabel: "",
->>>>>>> Stashed changes
-=======
-    title: "",
-    btnLabel: "",
->>>>>>> Stashed changes
-=======
-    title: "",
-    btnLabel: "",
->>>>>>> Stashed changes
-=======
-    title: "",
-    btnLabel: "",
->>>>>>> Stashed changes
-=======
-    title: "",
-    btnLabel: "",
->>>>>>> Stashed changes
-=======
-    title: "",
-    btnLabel: "",
->>>>>>> Stashed changes
-=======
-    title: "",
-    btnLabel: "",
->>>>>>> Stashed changes
     bg: ASSETS.bg.finaleRoom,
     overlay: "none",
     showCake: true,
-    cakeLit: true,
+    cakeUnlit: false,
     showBanner: true,
     showLetterBalloons: true,
     isFinale: true,
@@ -2313,126 +368,17 @@ class ScreenManager {
     // Main action button
     $("action-btn").addEventListener("click", () => this.advance());
 
-<<<<<<< Updated upstream
-    // Choice buttons — track which was clicked
-    $("choice-kue").addEventListener("click", () => this.advanceChoice("kue"));
-    $("choice-adit").addEventListener("click", () => this.advanceChoice("adit"));
-=======
-    // Choice buttons
+    // Choice buttons — route to correct branch
     $("choice-kue").addEventListener("click", () => {
+      if (this.isTransitioning) return;
       const targetIndex = SCREENS.findIndex((s) => s.id === "unlit-cake");
       this.transitionTo(targetIndex);
     });
     $("choice-adit").addEventListener("click", () => {
+      if (this.isTransitioning) return;
       const targetIndex = SCREENS.findIndex((s) => s.id === "adit-branch");
       this.transitionTo(targetIndex);
     });
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
   }
 
   /**
@@ -2462,37 +408,7 @@ class ScreenManager {
   }
 
   /**
-   * Handle choice button clicks — routes to the correct branch.
-   * "Kue" → next screen (unlit cake). "Adit" → adit-branch screen.
-   * @param {string} choice - "kue" or "adit"
-   */
-  advanceChoice(choice) {
-    if (this.isTransitioning) return;
-
-    if (choice === "adit") {
-      // Find the adit-branch screen
-      const aditIndex = SCREENS.findIndex((s) => s.id === "adit-branch");
-      if (aditIndex !== -1) {
-        this.transitionTo(aditIndex);
-        return;
-      }
-    }
-
-    // "Kue" or fallback: skip the adit-branch screen, go straight to unlit-cake
-    const cakeIndex = SCREENS.findIndex((s) => s.id === "unlit-cake");
-    if (cakeIndex !== -1) {
-      this.transitionTo(cakeIndex);
-    } else {
-      this.advance();
-    }
-  }
-
-  /**
    * Special in-place animated transition for "Nyalakan Lampu" (screen 0 → 1).
-   * - Deletes old title text character by character (backspace effect)
-   * - Smoothly swaps button icon + label (fade, no page flip)
-   * - Crossfades overlay from blackout → light (lights-on effect)
-   * - Types new title text character by character (typewriter effect)
    * @param {number} index - Target screen index
    */
   async transitionLampSwitch(index) {
@@ -2505,29 +421,27 @@ class ScreenManager {
     const titleWrapper = $("title-wrapper");
     const subtitleEl = $("screen-subtitle");
     const actionBtn = $("action-btn");
-    const iconEl = actionBtn.querySelector(".btn-icon");
-    const labelEl = actionBtn.querySelector(".btn-label");
 
-    // ── 0. Remove pulse animation immediately ──────────────────────────────
+    // Remove pulse animation immediately
     titleWrapper.parentElement.classList.remove("animate-pulse-gentle");
 
-    // ── 1. Pre-load new background (still hidden under the blackout overlay)
+    // Pre-load new background
     canvas.style.backgroundImage = `url("${nextScreen.bg}")`;
 
-    // ── 2. Set button to "waiting" state — no blank moment ────────────────
+    // Set button to "waiting" state
     this.setBtnWaiting();
 
-    // ── 3. Show blinking cursor on title during deletion ───────────────────
+    // Show blinking cursor on title during deletion
     titleEl.classList.add("cursor-active");
 
-    // ── 4. Delete current title text character by character ───────────────
+    // Delete current title text character by character
     await this.deleteTextAnimated(titleEl);
 
-    // ── 6. "Lights on": transition overlay blackout → light (CSS handles it)
+    // "Lights on": transition overlay blackout → light
     overlay.className = "";
     overlay.classList.add("overlay--light");
 
-    // ── 7. Reveal subtitle with fade-in ───────────────────────────────────
+    // Reveal subtitle with fade-in
     if (nextScreen.subtitle) {
       subtitleEl.textContent = nextScreen.subtitle;
       subtitleEl.style.opacity = "0";
@@ -2538,54 +452,17 @@ class ScreenManager {
       }, 300);
     }
 
-    // ── 8. Update current state index ─────────────────────────────────────
+    // Update current state index
     this.currentIndex = index;
 
-    // ── 9. Type new title text character by character ─────────────────────
+    // Type new title text character by character
     await this.typeTextAnimated(titleEl, nextScreen.title, 45);
 
-    // ── 10. Remove cursor after typing completes ──────────────────────────
+    // Remove cursor after typing completes
     titleEl.classList.remove("cursor-active");
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    // ── 11. Handle autoEraseAndAdvance (State 2 special behavior) ──────────
+    // Handle autoEraseAndAdvance (State 2 special behavior)
     if (nextScreen.autoEraseAndAdvance) {
-      // Keep button in waiting state, pause to let user read, then erase and advance
       this.isTransitioning = false;
       setTimeout(async () => {
         titleEl.classList.add("cursor-active");
@@ -2596,95 +473,13 @@ class ScreenManager {
       return;
     }
 
-    // ── 12. Restore button with new screen's content ──────────────────────
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-    if (nextScreen.autoAdvance) {
-      this.isTransitioning = false;
-      setTimeout(() => this.advance(), 1500);
-      return;
-    }
-
-    // ── 11. Restore button with new screen's content ──────────────────────
->>>>>>> Stashed changes
+    // Restore button with new screen's content
     this.setBtnReady(nextScreen);
-
     this.isTransitioning = false;
   }
 
   /**
    * Deletes element text content character by character (backspace effect).
-   * @param {HTMLElement} element
-   * @returns {Promise<void>}
    */
   deleteTextAnimated(element) {
     return new Promise((resolve) => {
@@ -2706,10 +501,6 @@ class ScreenManager {
 
   /**
    * Types text into an element character by character (typewriter effect).
-   * @param {HTMLElement} element
-   * @param {string} text
-   * @param {number} speed - milliseconds per character
-   * @returns {Promise<void>}
    */
   typeTextAnimated(element, text, speed = 45) {
     return new Promise((resolve) => {
@@ -2728,17 +519,13 @@ class ScreenManager {
 
   /**
    * Crossfades the action button into a "waiting / disabled" state.
-   * Shows "MENUNGGU PERINTAH..." with a dimmed appearance so the user
-   * never sees a blank button, and the button cannot be interacted with.
    */
   setBtnWaiting() {
     const actionBtn = $("action-btn");
-    // Already in waiting state — nothing to change
     if (actionBtn.classList.contains("btn-waiting")) return;
     const iconEl = actionBtn.querySelector(".btn-icon");
     const labelEl = actionBtn.querySelector(".btn-label");
 
-    // Quickly fade out current content
     iconEl.style.transition = "opacity 0.15s ease";
     labelEl.style.transition = "opacity 0.15s ease";
     iconEl.style.opacity = "0";
@@ -2756,9 +543,6 @@ class ScreenManager {
 
   /**
    * Restores the action button from waiting state to the target screen's content.
-   * @param {Object} screen      - The target screen data object
-   * @param {boolean} fromHidden - Pass true when the button was display:none
-   *                               (e.g. coming from a choice-buttons screen)
    */
   setBtnReady(screen, fromHidden = false) {
     const actionBtn = $("action-btn");
@@ -2766,7 +550,6 @@ class ScreenManager {
     const labelEl = actionBtn.querySelector(".btn-label");
 
     if (fromHidden) {
-      // Button was hidden — set content, then fade the whole button in
       iconEl.textContent = screen.btnIcon;
       iconEl.style.fontVariationSettings = screen.btnIconFill ? '"FILL" 1' : "";
       labelEl.textContent = screen.btnLabel;
@@ -2781,7 +564,6 @@ class ScreenManager {
         actionBtn.style.transition = "";
       }, 60);
     } else {
-      // Button is visible in waiting state — fade out text, swap, fade in
       iconEl.style.transition = "opacity 0.2s ease";
       labelEl.style.transition = "opacity 0.2s ease";
       iconEl.style.opacity = "0";
@@ -2801,18 +583,6 @@ class ScreenManager {
 
   /**
    * Universal in-place animated transition between any two screens.
-   *
-   * Per-element behaviour:
-   *  • Title      — delete char-by-char → type char-by-char (when text changes)
-   *  • Button     — fade-out icon+label → swap content → fade-in (when changed)
-   *  • Subtitle   — fade-out → swap → fade-in (when changed)
-   *  • Overlay    — CSS `transition: background 1s ease-in-out` (built-in)
-   *  • Background — swapped instantly while overlay hides it
-   *  • Spotify    — song name fade-out → swap → fade-in (when changed)
-   *  • Cake / Balloons / Banner — their own CSS animations
-   *  • Choice buttons — fade-in AFTER title has finished typing
-   *
-   * @param {number} index - Target screen index
    */
   async transitionTo(index) {
     this.isTransitioning = true;
@@ -2830,18 +600,16 @@ class ScreenManager {
     const cakeContainer = $("cake-container");
     const balloonContainer = $("balloon-container");
     const bannerEl = $("birthday-banner");
-    const iconEl = actionBtn.querySelector(".btn-icon");
-    const labelEl = actionBtn.querySelector(".btn-label");
 
-    // ── Safety: remove dark-room pulse ────────────────────────────────
+    // Safety: remove dark-room pulse
     titleWrapper.parentElement.classList.remove("animate-pulse-gentle");
 
-    // ── Background (swap instantly — overlay hides the cut) ───────────
+    // Background swap
     if (next.bg !== current.bg) {
       canvas.style.backgroundImage = `url("${next.bg}")`;
     }
 
-    // ── Overlay (CSS transition: 1 s ease-in-out already defined) ─────
+    // Overlay transition
     if (next.overlay !== current.overlay) {
       overlay.className = "";
       switch (next.overlay) {
@@ -2855,17 +623,17 @@ class ScreenManager {
           overlay.classList.add("overlay--medium");
           break;
         default:
-          break; // "none" → just clear the class
+          break;
       }
     }
 
-    // ── Button: set to waiting state when title is animating ─────────
+    // Button: set to waiting state when title is animating
     const titleChanged = next.title !== current.title;
     if (titleChanged && current.btnLabel && !current.showChoices) {
       this.setBtnWaiting();
     }
 
-    // ── Transitioning FROM a choice-screen → fade out choice buttons ──
+    // Transitioning FROM a choice-screen → fade out choice buttons
     if (current.showChoices && !next.showChoices) {
       choiceButtons.style.transition = "opacity 0.3s ease";
       choiceButtons.style.opacity = "0";
@@ -2876,21 +644,19 @@ class ScreenManager {
       }, 350);
     }
 
-    // ── Title: strip CSS animation, add JS cursor, delete old text ─────
+    // Title: delete old text
     if (titleChanged) {
       titleWrapper.classList.remove("typing-container");
       titleEl.classList.remove("typing-text");
       titleEl.style.animation = "none";
       titleEl.offsetHeight; // reflow
       titleEl.classList.add("cursor-active");
-
       await this.deleteTextAnimated(titleEl);
     }
 
-    // ── Subtitle transition ────────────────────────────────────────────
+    // Subtitle transition
     if (next.subtitle !== current.subtitle) {
       if (!current.subtitle && next.subtitle) {
-        // Subtitle appearing
         subtitleEl.textContent = next.subtitle;
         subtitleEl.style.opacity = "0";
         subtitleEl.style.display = "";
@@ -2899,7 +665,6 @@ class ScreenManager {
           subtitleEl.style.opacity = "1";
         }, 200);
       } else if (current.subtitle && !next.subtitle) {
-        // Subtitle disappearing
         subtitleEl.style.transition = "opacity 0.5s ease";
         subtitleEl.style.opacity = "0";
         setTimeout(() => {
@@ -2907,7 +672,6 @@ class ScreenManager {
           subtitleEl.style.opacity = "";
         }, 500);
       } else {
-        // Subtitle text changing
         subtitleEl.style.transition = "opacity 0.3s ease";
         subtitleEl.style.opacity = "0";
         setTimeout(() => {
@@ -2917,15 +681,14 @@ class ScreenManager {
       }
     }
 
-    // ── Advance state index ────────────────────────────────────────────
+    // Advance state index
     this.currentIndex = index;
 
-    // ── Spotify widget ────────────────────────────────────────────────
+    // Spotify widget
     if (next.spotify) {
       const songEl = $("spotify-song-name");
       const artistEl = $("spotify-artist-name");
       if (current.spotify) {
-        // Widget already visible — animate song change if needed
         if (next.spotify.song !== current.spotify.song) {
           songEl.style.transition = "opacity 0.3s ease";
           songEl.style.opacity = "0";
@@ -2936,251 +699,28 @@ class ScreenManager {
           }, 300);
         }
       } else {
-        // Widget appearing
         songEl.textContent = next.spotify.song;
         artistEl.textContent = next.spotify.artist;
         spotifyWidget.classList.add("active");
       }
     } else if (current.spotify) {
-      // Widget disappearing
       spotifyWidget.classList.remove("active");
     }
 
-    // ── Cake ──────────────────────────────────────────────────────────
+    // Cake
     if (next.showCake && !current.showCake) {
       cakeContainer.classList.add("active");
     } else if (!next.showCake && current.showCake) {
       cakeContainer.classList.remove("active");
     }
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    // ── Cake lit/unlit toggle ─────────────────────────────────────────
-    if (next.showCake) {
-      const cakeEl = cakeContainer.querySelector(".cake");
-      if (next.cakeLit) {
-        cakeEl.classList.remove("cake--unlit");
-      } else {
-        cakeEl.classList.add("cake--unlit");
-      }
-=======
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
     // Toggle unlit state (flames)
     if (next.showCake) {
       const flames = cakeContainer.querySelectorAll(".fuego");
       flames.forEach((f) => (f.style.display = next.cakeUnlit ? "none" : ""));
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
     }
 
-    // ── Simple balloons ───────────────────────────────────────────────
+    // Simple balloons
     if (next.showBalloons) {
       if (!this.simpleBalloonsCreated) this.createSimpleBalloons();
       balloonContainer.classList.add("active");
@@ -3188,24 +728,23 @@ class ScreenManager {
       balloonContainer.classList.remove("active");
     }
 
-    // ── Banner ────────────────────────────────────────────────────────
+    // Banner
     if (next.showBanner && !current.showBanner) {
       bannerEl.classList.remove("active");
-      bannerEl.offsetHeight; // reflow → restart drop animation
+      bannerEl.offsetHeight; // reflow
       bannerEl.classList.add("active");
     } else if (!next.showBanner && current.showBanner) {
       bannerEl.classList.remove("active");
     }
 
-    // ── Type new title text ───────────────────────────────────────────
+    // Type new title text
     if (titleChanged) {
       await this.typeTextAnimated(titleEl, next.title, 45);
       titleEl.classList.remove("cursor-active");
     }
 
-    // ── Restore button / reveal choices AFTER title finishes typing ───
+    // Restore button / reveal choices AFTER title finishes typing
     if (next.showChoices && !current.showChoices) {
-      // Going TO choice screen: fade out the waiting button, then show choices
       actionBtn.style.transition = "opacity 0.3s ease";
       actionBtn.style.opacity = "0";
       setTimeout(() => {
@@ -3222,7 +761,7 @@ class ScreenManager {
         }, 60);
       }, 320);
     } else if (next.autoEraseAndAdvance) {
-      // State 2 special: auto-erase text, then auto-advance (no button click)
+      // State 2 special: auto-erase text, then auto-advance
       this.isTransitioning = false;
       setTimeout(async () => {
         titleEl.classList.add("cursor-active");
@@ -3232,15 +771,11 @@ class ScreenManager {
       }, 1500);
       return;
     } else if (next.autoAdvance) {
-      // Auto-advance screen: keep button in waiting state (visually locked),
-      // then automatically advance after a short reading pause.
       const delay = next.autoAdvanceDelay || 1500;
       this.isTransitioning = false;
       setTimeout(() => this.advance(), delay);
       return;
     } else if (next.btnLabel && titleChanged) {
-      // Normal transition: restore button from waiting state
-      // fromHidden = true when coming from a choice screen
       this.setBtnReady(next, current.showChoices);
     }
 
@@ -3249,7 +784,6 @@ class ScreenManager {
 
   /**
    * Render a screen state to the DOM
-   * @param {Object} screen - Screen data object
    */
   render(screen) {
     const canvas = $("app-canvas");
@@ -3265,10 +799,10 @@ class ScreenManager {
     const letterBalloonContainer = $("letter-balloon-container");
     const titleWrapper = $("title-wrapper");
 
-    // --- Background ---
+    // Background
     canvas.style.backgroundImage = `url("${screen.bg}")`;
 
-    // --- Overlay ---
+    // Overlay
     overlay.className = "";
     switch (screen.overlay) {
       case "blackout":
@@ -3284,7 +818,7 @@ class ScreenManager {
         break;
     }
 
-    // --- Subtitle ---
+    // Subtitle
     if (screen.subtitle) {
       subtitleEl.textContent = screen.subtitle;
       subtitleEl.style.display = "";
@@ -3292,14 +826,13 @@ class ScreenManager {
       subtitleEl.style.display = "none";
     }
 
-    // --- Title with optional typing animation ---
+    // Title with optional typing animation
     titleEl.textContent = screen.title;
     if (screen.showTyping) {
       titleWrapper.classList.add("typing-container");
       titleEl.classList.add("typing-text");
-      // Force animation restart
       titleEl.style.animation = "none";
-      titleEl.offsetHeight; // trigger reflow
+      titleEl.offsetHeight;
       titleEl.style.animation = "";
     } else {
       titleWrapper.classList.remove("typing-container");
@@ -3313,7 +846,7 @@ class ScreenManager {
       titleWrapper.parentElement.classList.remove("animate-pulse-gentle");
     }
 
-    // --- Action Button ---
+    // Action Button
     if (screen.btnLabel) {
       actionBtn.style.display = "";
       const iconEl = actionBtn.querySelector(".btn-icon");
@@ -3325,7 +858,7 @@ class ScreenManager {
       actionBtn.style.display = "none";
     }
 
-    // --- Choice Buttons ---
+    // Choice Buttons
     if (screen.showChoices) {
       choiceButtons.classList.add("active");
       actionBtn.style.display = "none";
@@ -3333,7 +866,7 @@ class ScreenManager {
       choiceButtons.classList.remove("active");
     }
 
-    // --- Spotify Widget ---
+    // Spotify Widget
     if (screen.spotify) {
       $("spotify-song-name").textContent = screen.spotify.song;
       $("spotify-artist-name").textContent = screen.spotify.artist;
@@ -3342,195 +875,16 @@ class ScreenManager {
       spotifyWidget.classList.remove("active");
     }
 
-    // --- Cake ---
+    // Cake
     if (screen.showCake) {
       cakeContainer.classList.add("active");
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-      const cakeEl = cakeContainer.querySelector(".cake");
-      if (screen.cakeLit) {
-        cakeEl.classList.remove("cake--unlit");
-      } else {
-        cakeEl.classList.add("cake--unlit");
-      }
-=======
       const flames = cakeContainer.querySelectorAll(".fuego");
       flames.forEach((f) => (f.style.display = screen.cakeUnlit ? "none" : ""));
->>>>>>> Stashed changes
-=======
-      const flames = cakeContainer.querySelectorAll(".fuego");
-      flames.forEach((f) => (f.style.display = screen.cakeUnlit ? "none" : ""));
->>>>>>> Stashed changes
-=======
-      const flames = cakeContainer.querySelectorAll(".fuego");
-      flames.forEach((f) => (f.style.display = screen.cakeUnlit ? "none" : ""));
->>>>>>> Stashed changes
-=======
-      const flames = cakeContainer.querySelectorAll(".fuego");
-      flames.forEach((f) => (f.style.display = screen.cakeUnlit ? "none" : ""));
->>>>>>> Stashed changes
-=======
-      const flames = cakeContainer.querySelectorAll(".fuego");
-      flames.forEach((f) => (f.style.display = screen.cakeUnlit ? "none" : ""));
->>>>>>> Stashed changes
-=======
-      const flames = cakeContainer.querySelectorAll(".fuego");
-      flames.forEach((f) => (f.style.display = screen.cakeUnlit ? "none" : ""));
->>>>>>> Stashed changes
-=======
-      const flames = cakeContainer.querySelectorAll(".fuego");
-      flames.forEach((f) => (f.style.display = screen.cakeUnlit ? "none" : ""));
->>>>>>> Stashed changes
-=======
-      const flames = cakeContainer.querySelectorAll(".fuego");
-      flames.forEach((f) => (f.style.display = screen.cakeUnlit ? "none" : ""));
->>>>>>> Stashed changes
-=======
-      const flames = cakeContainer.querySelectorAll(".fuego");
-      flames.forEach((f) => (f.style.display = screen.cakeUnlit ? "none" : ""));
->>>>>>> Stashed changes
-=======
-      const flames = cakeContainer.querySelectorAll(".fuego");
-      flames.forEach((f) => (f.style.display = screen.cakeUnlit ? "none" : ""));
->>>>>>> Stashed changes
-=======
-      const flames = cakeContainer.querySelectorAll(".fuego");
-      flames.forEach((f) => (f.style.display = screen.cakeUnlit ? "none" : ""));
->>>>>>> Stashed changes
-=======
-      const flames = cakeContainer.querySelectorAll(".fuego");
-      flames.forEach((f) => (f.style.display = screen.cakeUnlit ? "none" : ""));
->>>>>>> Stashed changes
-=======
-      const flames = cakeContainer.querySelectorAll(".fuego");
-      flames.forEach((f) => (f.style.display = screen.cakeUnlit ? "none" : ""));
->>>>>>> Stashed changes
-=======
-      const flames = cakeContainer.querySelectorAll(".fuego");
-      flames.forEach((f) => (f.style.display = screen.cakeUnlit ? "none" : ""));
->>>>>>> Stashed changes
-=======
-      const flames = cakeContainer.querySelectorAll(".fuego");
-      flames.forEach((f) => (f.style.display = screen.cakeUnlit ? "none" : ""));
->>>>>>> Stashed changes
-=======
-      const flames = cakeContainer.querySelectorAll(".fuego");
-      flames.forEach((f) => (f.style.display = screen.cakeUnlit ? "none" : ""));
->>>>>>> Stashed changes
-=======
-      const flames = cakeContainer.querySelectorAll(".fuego");
-      flames.forEach((f) => (f.style.display = screen.cakeUnlit ? "none" : ""));
->>>>>>> Stashed changes
-=======
-      const flames = cakeContainer.querySelectorAll(".fuego");
-      flames.forEach((f) => (f.style.display = screen.cakeUnlit ? "none" : ""));
->>>>>>> Stashed changes
-=======
-      const flames = cakeContainer.querySelectorAll(".fuego");
-      flames.forEach((f) => (f.style.display = screen.cakeUnlit ? "none" : ""));
->>>>>>> Stashed changes
-=======
-      const flames = cakeContainer.querySelectorAll(".fuego");
-      flames.forEach((f) => (f.style.display = screen.cakeUnlit ? "none" : ""));
->>>>>>> Stashed changes
-=======
-      const flames = cakeContainer.querySelectorAll(".fuego");
-      flames.forEach((f) => (f.style.display = screen.cakeUnlit ? "none" : ""));
->>>>>>> Stashed changes
-=======
-      const flames = cakeContainer.querySelectorAll(".fuego");
-      flames.forEach((f) => (f.style.display = screen.cakeUnlit ? "none" : ""));
->>>>>>> Stashed changes
-=======
-      const flames = cakeContainer.querySelectorAll(".fuego");
-      flames.forEach((f) => (f.style.display = screen.cakeUnlit ? "none" : ""));
->>>>>>> Stashed changes
-=======
-      const flames = cakeContainer.querySelectorAll(".fuego");
-      flames.forEach((f) => (f.style.display = screen.cakeUnlit ? "none" : ""));
->>>>>>> Stashed changes
-=======
-      const flames = cakeContainer.querySelectorAll(".fuego");
-      flames.forEach((f) => (f.style.display = screen.cakeUnlit ? "none" : ""));
->>>>>>> Stashed changes
-=======
-      const flames = cakeContainer.querySelectorAll(".fuego");
-      flames.forEach((f) => (f.style.display = screen.cakeUnlit ? "none" : ""));
->>>>>>> Stashed changes
-=======
-      const flames = cakeContainer.querySelectorAll(".fuego");
-      flames.forEach((f) => (f.style.display = screen.cakeUnlit ? "none" : ""));
->>>>>>> Stashed changes
-=======
-      const flames = cakeContainer.querySelectorAll(".fuego");
-      flames.forEach((f) => (f.style.display = screen.cakeUnlit ? "none" : ""));
->>>>>>> Stashed changes
-=======
-      const flames = cakeContainer.querySelectorAll(".fuego");
-      flames.forEach((f) => (f.style.display = screen.cakeUnlit ? "none" : ""));
->>>>>>> Stashed changes
-=======
-      const flames = cakeContainer.querySelectorAll(".fuego");
-      flames.forEach((f) => (f.style.display = screen.cakeUnlit ? "none" : ""));
->>>>>>> Stashed changes
-=======
-      const flames = cakeContainer.querySelectorAll(".fuego");
-      flames.forEach((f) => (f.style.display = screen.cakeUnlit ? "none" : ""));
->>>>>>> Stashed changes
-=======
-      const flames = cakeContainer.querySelectorAll(".fuego");
-      flames.forEach((f) => (f.style.display = screen.cakeUnlit ? "none" : ""));
->>>>>>> Stashed changes
-=======
-      const flames = cakeContainer.querySelectorAll(".fuego");
-      flames.forEach((f) => (f.style.display = screen.cakeUnlit ? "none" : ""));
->>>>>>> Stashed changes
-=======
-      const flames = cakeContainer.querySelectorAll(".fuego");
-      flames.forEach((f) => (f.style.display = screen.cakeUnlit ? "none" : ""));
->>>>>>> Stashed changes
-=======
-      const flames = cakeContainer.querySelectorAll(".fuego");
-      flames.forEach((f) => (f.style.display = screen.cakeUnlit ? "none" : ""));
->>>>>>> Stashed changes
     } else {
       cakeContainer.classList.remove("active");
     }
 
-    // --- Simple Balloons ---
+    // Simple Balloons
     if (screen.showBalloons && !this.simpleBalloonsCreated) {
       this.createSimpleBalloons();
       balloonContainer.classList.add("active");
@@ -3540,17 +894,16 @@ class ScreenManager {
       balloonContainer.classList.remove("active");
     }
 
-    // --- Banner ---
+    // Banner
     if (screen.showBanner) {
-      // Remove and re-add to restart animation
       bannerEl.classList.remove("active");
-      bannerEl.offsetHeight; // reflow
+      bannerEl.offsetHeight;
       bannerEl.classList.add("active");
     } else {
       bannerEl.classList.remove("active");
     }
 
-    // --- Letter Balloons ---
+    // Letter Balloons
     if (screen.showLetterBalloons && !this.letterBalloonsCreated) {
       this.createLetterBalloons();
       letterBalloonContainer.classList.add("active");
@@ -3626,7 +979,6 @@ class ScreenManager {
 
   /**
    * Grand Finale transition — orchestrates the climactic sequence
-   * @param {Object} screen - The finale screen data
    */
   transitionToFinale(screen) {
     this.isTransitioning = true;
@@ -3700,13 +1052,13 @@ class ScreenManager {
 
       let finalX, finalY;
       if (index < 6) {
-        // STASYA — arc formation (garis merah)
+        // STASYA — arc formation
         const angle = (index - 2.5) * 20;
         const rad = (angle - 90) * (Math.PI / 180);
         finalX = centerX + radiusXTop * Math.cos(rad) - 40;
         finalY = centerY + radiusYTop * Math.sin(rad) - 180;
       } else {
-        // ANNESTY — arc formation (garis hijau)
+        // ANNESTY — arc formation
         const angle = (index - 9) * 20;
         const rad = (angle - 90) * (Math.PI / 180);
         finalX = centerX + radiusXBottom * Math.cos(rad) - 40;
@@ -3738,10 +1090,6 @@ class ScreenManager {
 
 /**
  * Types a sentence character by character
- * @param {HTMLElement} el - Target element
- * @param {string} text - Text to type
- * @param {number} speed - Ms per character
- * @returns {Promise<void>}
  */
 function typeSentence(el, text, speed = 40) {
   return new Promise((resolve) => {
@@ -3759,9 +1107,6 @@ function typeSentence(el, text, speed = 40) {
 
 /**
  * Deletes text character by character
- * @param {HTMLElement} el - Target element
- * @param {number} speed - Ms per character
- * @returns {Promise<void>}
  */
 function deleteSentence(el, speed = 20) {
   return new Promise((resolve) => {
@@ -3831,7 +1176,7 @@ function showAditMessage() {
 
   balloons.forEach((b, index) => {
     if (index >= 6) {
-      // ANNESTY — arc formation (garis hijau)
+      // ANNESTY — arc formation
       const angle = (index - 9) * 20;
       const rad = (angle - 90) * (Math.PI / 180);
       const finalX = centerX + radiusXBottom * Math.cos(rad) - 40;
