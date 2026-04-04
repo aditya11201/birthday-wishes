@@ -87,7 +87,11 @@ const SCREENS = [
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     autoEraseAndAdvance: true,
+=======
+    autoAdvance: true,
+>>>>>>> Stashed changes
 =======
     autoAdvance: true,
 >>>>>>> Stashed changes
@@ -253,7 +257,11 @@ const SCREENS = [
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   // ── State 9: Room decorated — banner drops, auto-advance ────────────
+=======
+  // 8: Room decorated
+>>>>>>> Stashed changes
 =======
   // 8: Room decorated
 >>>>>>> Stashed changes
@@ -356,6 +364,7 @@ const SCREENS = [
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   // ── State 10B: Adit branch — auto-advance to cake ───────────────────
 =======
   // 10: Adit Branch
@@ -397,6 +406,36 @@ const SCREENS = [
   // 10: Adit Branch
 =======
   // 10: Adit Branch
+=======
+  // 10: Adit Branch
+  {
+    id: "adit-branch",
+    subtitle: "DIBUAT DENGAN SEPENUH HATI",
+    title: "NO NO YA STASYAA ADIT PUNYA AKUU ~KAREN CANGTIPP YANG NGOMONG",
+    btnLabel: "MENUNGGU PERINTAH...",
+    btnIcon: "auto_awesome",
+    btnIconFill: true,
+    bg: ASSETS.bg.litRoom,
+    overlay: "medium",
+    showTyping: true,
+    autoAdvance: true,
+  },
+  // 11: Unlit Cake
+  {
+    id: "unlit-cake",
+    subtitle: "",
+    title: "Nah Tinggal nyalain lilinnya",
+    btnLabel: "Nyalakan Lilinnya",
+    btnIcon: "local_fire_department",
+    btnIconFill: true,
+    bg: ASSETS.bg.partyRoom,
+    overlay: "none",
+    showTyping: true,
+    showCake: true,
+    cakeUnlit: true,
+  },
+  // 12: Cake appears
+>>>>>>> Stashed changes
   {
     id: "adit-branch",
     subtitle: "DIBUAT DENGAN SEPENUH HATI",
@@ -1039,8 +1078,13 @@ const SCREENS = [
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     btnIcon: "cake",
     btnIconFill: true,
+=======
+    btnIcon: "🥳🎉",
+    btnIconFill: false,
+>>>>>>> Stashed changes
 =======
     btnIcon: "🥳🎉",
     btnIconFill: false,
@@ -1154,8 +1198,13 @@ const SCREENS = [
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     btnIcon: "favorite",
     btnIconFill: true,
+=======
+    btnIcon: "💕",
+    btnIconFill: false,
+>>>>>>> Stashed changes
 =======
     btnIcon: "💕",
     btnIconFill: false,
@@ -1268,10 +1317,15 @@ const SCREENS = [
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     title: "Gelooooo... anjay...",
     btnLabel: "Pesan dari Adit",
     btnIcon: "mail",
     btnIconFill: true,
+=======
+    title: "",
+    btnLabel: "",
+>>>>>>> Stashed changes
 =======
     title: "",
     btnLabel: "",
@@ -1482,6 +1536,9 @@ class ScreenManager {
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -1655,6 +1712,7 @@ class ScreenManager {
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     // ── 11. Handle autoEraseAndAdvance (State 2 special behavior) ──────────
     if (nextScreen.autoEraseAndAdvance) {
       // Keep button in waiting state, pause to let user read, then erase and advance
@@ -1670,6 +1728,8 @@ class ScreenManager {
 
     // ── 12. Restore button with new screen's content ──────────────────────
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -2013,6 +2073,7 @@ class ScreenManager {
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     // ── Cake lit/unlit toggle ─────────────────────────────────────────
     if (next.showCake) {
       const cakeEl = cakeContainer.querySelector(".cake");
@@ -2022,6 +2083,8 @@ class ScreenManager {
         cakeEl.classList.add("cake--unlit");
       }
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -2083,6 +2146,9 @@ class ScreenManager {
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
@@ -2308,12 +2374,17 @@ class ScreenManager {
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
       const cakeEl = cakeContainer.querySelector(".cake");
       if (screen.cakeLit) {
         cakeEl.classList.remove("cake--unlit");
       } else {
         cakeEl.classList.add("cake--unlit");
       }
+=======
+      const flames = cakeContainer.querySelectorAll(".fuego");
+      flames.forEach((f) => (f.style.display = screen.cakeUnlit ? "none" : ""));
+>>>>>>> Stashed changes
 =======
       const flames = cakeContainer.querySelectorAll(".fuego");
       flames.forEach((f) => (f.style.display = screen.cakeUnlit ? "none" : ""));
