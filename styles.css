@@ -620,6 +620,21 @@ button {
     animation: fuego 0.2s ease-in-out infinite;
 }
 
+/* Unlit cake: hide flame and glow */
+.cake--unlit .fuego {
+    animation: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+/* Lit transition: flame fades in */
+.cake:not(.cake--unlit) .fuego {
+    opacity: 1;
+    transition: opacity 0.6s ease;
+}
+
 /* --------------------------------------------------------------------------
    10. Banner Component
    -------------------------------------------------------------------------- */

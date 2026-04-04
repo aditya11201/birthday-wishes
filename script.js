@@ -43,7 +43,7 @@ const ASSETS = Object.freeze({
    2. Screen Definitions (The Narrative)
    -------------------------------------------------------------------------- */
 const SCREENS = [
-  // 0: Dark Room - Nyalakan Lampu
+  // ── State 1: Dark Room — "Nyalakan Lampu" ─────────────────────────────
   {
     id: "dark-room",
     subtitle: "",
@@ -56,31 +56,32 @@ const SCREENS = [
     animatePulse: true,
     showTyping: false,
   },
-  // 1: Light is on
+  // ── State 2: Lights on — auto-erase → auto-advance ──────────────────
   {
     id: "light-on",
     subtitle: "DIBUAT DENGAN SEPENUH HATI",
     title: "Wih keren, sekarang lampunya udah nyala nih...",
-    btnLabel: "Putar Musik",
+    btnLabel: "MENUNGGU PERINTAH...",
     btnIcon: "auto_awesome",
     btnIconFill: true,
     bg: ASSETS.bg.litRoom,
     overlay: "light",
     showTyping: true,
+    autoEraseAndAdvance: true,
   },
-  // 2: Play music prompt
+  // ── State 3: Play music prompt ───────────────────────────────────────
   {
     id: "play-music",
     subtitle: "DIBUAT DENGAN SEPENUH HATI",
     title: "Nah sekarang coba kamu coba nyalain musik nya",
     btnLabel: "Putar Musik",
-    btnIcon: "auto_awesome",
+    btnIcon: "music_note",
     btnIconFill: true,
     bg: ASSETS.bg.litRoom,
     overlay: "light",
     showTyping: true,
   },
-  // 3: Wrong song playing
+  // ── State 4: Wrong song — Spotify appears, auto-advance ─────────────
   {
     id: "wrong-song",
     subtitle: "DIBUAT DENGAN SEPENUH HATI",
@@ -97,13 +98,13 @@ const SCREENS = [
       artist: "Cigarettes After Sex",
     },
   },
-  // 4: Fix the song
+  // ── State 5: Fix the song ────────────────────────────────────────────
   {
     id: "fix-song",
     subtitle: "DIBUAT DENGAN SEPENUH HATI",
     title: "Eh salah deng harusnya lagunya yang tema ulang tahun",
-    btnLabel: "PERBAIKI LAGUNYA",
-    btnIcon: "auto_awesome",
+    btnLabel: "Perbaiki lagunya",
+    btnIcon: "music_note",
     btnIconFill: true,
     bg: ASSETS.bg.litRoom,
     overlay: "light",
@@ -113,20 +114,21 @@ const SCREENS = [
       artist: "Cigarettes After Sex",
     },
   },
-  // 5: Correct song
+  // ── State 6: Correct song — auto-advance ─────────────────────────────
   {
     id: "correct-song",
     subtitle: "DIBUAT DENGAN SEPENUH HATI",
-    title: "Eh salah deng harusnya lagunya yang tema ulang tahun",
-    btnLabel: "PERBAIKI LAGUNYA",
+    title: "Nah Lagunya udah bener nih Stasyaaa",
+    btnLabel: "MENUNGGU PERINTAH...",
     btnIcon: "auto_awesome",
     btnIconFill: true,
     bg: ASSETS.bg.litRoom,
     overlay: "light",
     showTyping: true,
+    autoAdvance: true,
     spotify: { song: "Happy Birthday", artist: "Cigarettes After Sex" },
   },
-  // 6: Decorate prompt
+  // ── State 7: Spotify disappears — auto-advance ──────────────────────
   {
     id: "decorate-prompt",
     subtitle: "DIBUAT DENGAN SEPENUH HATI",
@@ -139,19 +141,19 @@ const SCREENS = [
     showTyping: true,
     autoAdvance: true,
   },
-  // 7: Help decorate
+  // ── State 8: Help decorate ───────────────────────────────────────────
   {
     id: "help-decorate",
     subtitle: "DIBUAT DENGAN SEPENUH HATI",
     title: "Bantu akuu yaa buat dekor ruangannya",
     btnLabel: "Tambahkan dekorasi",
-    btnIcon: "auto_awesome",
+    btnIcon: "celebration",
     btnIconFill: true,
     bg: ASSETS.bg.litRoom,
     overlay: "light",
     showTyping: true,
   },
-  // 8: Room decorated — banner is now visible as the decoration
+  // ── State 9: Room decorated — banner drops, auto-advance ────────────
   {
     id: "room-decorated",
     subtitle: "DIBUAT DENGAN SEPENUH HATI",
@@ -165,7 +167,7 @@ const SCREENS = [
     showBanner: true,
     autoAdvance: true,
   },
-  // 9: The Choice
+  // ── State 10: The Choice — "Kue" or "Adit" ──────────────────────────
   {
     id: "the-choice",
     subtitle: "DIBUAT DENGAN SEPENUH HATI",
@@ -175,73 +177,106 @@ const SCREENS = [
     showTyping: true,
     showChoices: true,
   },
-  // 10: Cake appears
+  // ── State 10B: Adit branch — auto-advance to cake ───────────────────
   {
-    id: "cake-appears",
+    id: "adit-branch",
     subtitle: "",
-    title: "Wih geloo apinya sekarang dah nyala nih stas",
-    btnLabel: "Menunggu perintah...",
-    btnIcon: "mode_fan",
+    title: "NO NO YA STASYAA ADIT PUNYA AKUU ~KAREN CANGTIPP YANG NGOMONG",
+    btnLabel: "MENUNGGU PERINTAH...",
+    btnIcon: "auto_awesome",
+    btnIconFill: true,
+    bg: ASSETS.bg.litRoom,
+    overlay: "medium",
+    showTyping: true,
+    autoAdvance: true,
+    autoAdvanceDelay: 3000,
+  },
+  // ── State 11: Unlit cake — "Nyalakan Lilinnya" ──────────────────────
+  {
+    id: "unlit-cake",
+    subtitle: "",
+    title: "Nah Tinggal nyalain lilinnya",
+    btnLabel: "Nyalakan Lilinnya",
+    btnIcon: "local_fire_department",
     btnIconFill: true,
     bg: ASSETS.bg.partyRoom,
     overlay: "none",
     showTyping: true,
     showCake: true,
+    cakeLit: false,
+  },
+  // ── State 12: Lit cake — auto-advance ───────────────────────────────
+  {
+    id: "cake-lit",
+    subtitle: "",
+    title: "Wih geloo apinya sekarang dah nyala nih stas",
+    btnLabel: "MENUNGGU PERINTAH...",
+    btnIcon: "auto_awesome",
+    btnIconFill: true,
+    bg: ASSETS.bg.partyRoom,
+    overlay: "none",
+    showTyping: true,
+    showCake: true,
+    cakeLit: true,
     autoAdvance: true,
   },
-  // 11: Release balloons
+  // ── State 13: Release balloons prompt ───────────────────────────────
   {
     id: "release-balloons",
     subtitle: "",
     title: "Nah sekarang tinggal terbang in balonnya",
-    btnLabel: "lepas balonnya",
-    btnIcon: "mode_fan",
+    btnLabel: "Lepas Balonnya",
+    btnIcon: "toys",
     btnIconFill: true,
     bg: ASSETS.bg.partyRoom,
     overlay: "none",
     showTyping: true,
     showCake: true,
+    cakeLit: true,
   },
-  // 12: Balloons flying
+  // ── State 14: Balloons flying ───────────────────────────────────────
   {
     id: "balloons-flying",
     subtitle: "",
     title: "Nah balonnya udah terbang nih stasyaa",
     btnLabel: "HAPPY BIRTHDAY",
-    btnIcon: "local_fire_department",
+    btnIcon: "cake",
     btnIconFill: true,
     bg: ASSETS.bg.partyRoom,
     overlay: "none",
     showTyping: true,
     showCake: true,
+    cakeLit: true,
     showBalloons: true,
   },
-  // 13: Banner drops - "Gelooo"
+  // ── State 15: Banner drops ──────────────────────────────────────────
   {
     id: "banner-drops",
     subtitle: "",
     title: "Gelooooo... anjay...",
     btnLabel: "stasyaa annesty",
-    btnIcon: "local_fire_department",
+    btnIcon: "favorite",
     btnIconFill: true,
     bg: ASSETS.bg.partyRoom,
     overlay: "none",
     showTyping: true,
     showCake: true,
+    cakeLit: true,
     showBalloons: true,
     showBanner: true,
   },
-  // 14: Grand Finale
+  // ── State 16: Grand Finale — letter balloons ────────────────────────
   {
     id: "grand-finale",
     subtitle: "",
     title: "Gelooooo... anjay...",
-    btnLabel: "Stasya Annesty",
-    btnIcon: "auto_awesome",
+    btnLabel: "Pesan dari Adit",
+    btnIcon: "mail",
     btnIconFill: true,
     bg: ASSETS.bg.finaleRoom,
     overlay: "none",
     showCake: true,
+    cakeLit: true,
     showBanner: true,
     showLetterBalloons: true,
     isFinale: true,
@@ -253,13 +288,13 @@ const SCREENS = [
  * @type {string[]}
  */
 const TYPEWRITER_SENTENCES = [
-  "Watching you grow another year older is the greatest gift of all.",
-  "You bring light into every room you enter, and I hope this year is as spectacular as the person you are.",
-  "May all your dreams take flight today.",
+  "On your birthday, I want to take a moment to express my love for you.",
+  "You're not just my girlfriend but my best friend and my rock.",
+  "Today, I celebrate you and all the wonderful qualities that make you so incredibly special.",
 ];
 
 const FINAL_MESSAGE =
-  "Watching you grow another year older is the greatest gift of all. You bring light into every room you enter, and I hope this year is as spectacular as the person you are. May all your dreams take flight today.";
+  "On your birthday, I want to take a moment to express my love for you. You're not just my girlfriend but my best friend and my rock. Today, I celebrate you and all the wonderful qualities that make you so incredibly special.";
 
 /** Letters for the balloon name reveal: STASYA (top arc) + ANNESTY (bottom row) */
 const BALLOON_LETTERS = [
@@ -335,9 +370,9 @@ class ScreenManager {
     // Main action button
     $("action-btn").addEventListener("click", () => this.advance());
 
-    // Choice buttons
-    $("choice-kue").addEventListener("click", () => this.advance());
-    $("choice-adit").addEventListener("click", () => this.advance());
+    // Choice buttons — track which was clicked
+    $("choice-kue").addEventListener("click", () => this.advanceChoice("kue"));
+    $("choice-adit").addEventListener("click", () => this.advanceChoice("adit"));
   }
 
   /**
@@ -364,6 +399,32 @@ class ScreenManager {
     }
 
     this.transitionTo(nextIndex);
+  }
+
+  /**
+   * Handle choice button clicks — routes to the correct branch.
+   * "Kue" → next screen (unlit cake). "Adit" → adit-branch screen.
+   * @param {string} choice - "kue" or "adit"
+   */
+  advanceChoice(choice) {
+    if (this.isTransitioning) return;
+
+    if (choice === "adit") {
+      // Find the adit-branch screen
+      const aditIndex = SCREENS.findIndex((s) => s.id === "adit-branch");
+      if (aditIndex !== -1) {
+        this.transitionTo(aditIndex);
+        return;
+      }
+    }
+
+    // "Kue" or fallback: skip the adit-branch screen, go straight to unlit-cake
+    const cakeIndex = SCREENS.findIndex((s) => s.id === "unlit-cake");
+    if (cakeIndex !== -1) {
+      this.transitionTo(cakeIndex);
+    } else {
+      this.advance();
+    }
   }
 
   /**
@@ -426,7 +487,20 @@ class ScreenManager {
     // ── 10. Remove cursor after typing completes ──────────────────────────
     titleEl.classList.remove("cursor-active");
 
-    // ── 11. Restore button with new screen's content ──────────────────────
+    // ── 11. Handle autoEraseAndAdvance (State 2 special behavior) ──────────
+    if (nextScreen.autoEraseAndAdvance) {
+      // Keep button in waiting state, pause to let user read, then erase and advance
+      this.isTransitioning = false;
+      setTimeout(async () => {
+        titleEl.classList.add("cursor-active");
+        await this.deleteTextAnimated(titleEl);
+        titleEl.classList.remove("cursor-active");
+        setTimeout(() => this.advance(), 500);
+      }, 1500);
+      return;
+    }
+
+    // ── 12. Restore button with new screen's content ──────────────────────
     this.setBtnReady(nextScreen);
 
     this.isTransitioning = false;
@@ -704,6 +778,16 @@ class ScreenManager {
       cakeContainer.classList.remove("active");
     }
 
+    // ── Cake lit/unlit toggle ─────────────────────────────────────────
+    if (next.showCake) {
+      const cakeEl = cakeContainer.querySelector(".cake");
+      if (next.cakeLit) {
+        cakeEl.classList.remove("cake--unlit");
+      } else {
+        cakeEl.classList.add("cake--unlit");
+      }
+    }
+
     // ── Simple balloons ───────────────────────────────────────────────
     if (next.showBalloons) {
       if (!this.simpleBalloonsCreated) this.createSimpleBalloons();
@@ -745,11 +829,22 @@ class ScreenManager {
           choiceButtons.style.opacity = "1";
         }, 60);
       }, 320);
+    } else if (next.autoEraseAndAdvance) {
+      // State 2 special: auto-erase text, then auto-advance (no button click)
+      this.isTransitioning = false;
+      setTimeout(async () => {
+        titleEl.classList.add("cursor-active");
+        await this.deleteTextAnimated(titleEl);
+        titleEl.classList.remove("cursor-active");
+        setTimeout(() => this.advance(), 500);
+      }, 1500);
+      return;
     } else if (next.autoAdvance) {
       // Auto-advance screen: keep button in waiting state (visually locked),
       // then automatically advance after a short reading pause.
+      const delay = next.autoAdvanceDelay || 1500;
       this.isTransitioning = false;
-      setTimeout(() => this.advance(), 1500);
+      setTimeout(() => this.advance(), delay);
       return;
     } else if (next.btnLabel && titleChanged) {
       // Normal transition: restore button from waiting state
@@ -858,6 +953,12 @@ class ScreenManager {
     // --- Cake ---
     if (screen.showCake) {
       cakeContainer.classList.add("active");
+      const cakeEl = cakeContainer.querySelector(".cake");
+      if (screen.cakeLit) {
+        cakeEl.classList.remove("cake--unlit");
+      } else {
+        cakeEl.classList.add("cake--unlit");
+      }
     } else {
       cakeContainer.classList.remove("active");
     }
@@ -892,7 +993,7 @@ class ScreenManager {
   }
 
   /**
-   * Create simple decorative bouncing balloons (14 total)
+   * Create simple decorative bouncing balloons (13 total per PRD spec)
    */
   createSimpleBalloons() {
     const container = $("balloon-container");
@@ -911,10 +1012,9 @@ class ScreenManager {
       [10.2, 14.8],
       [7.8, 10.4],
       [11.9, 13.1],
-      [9.4, 11.7],
     ];
 
-    for (let i = 0; i < 14; i++) {
+    for (let i = 0; i < 13; i++) {
       const img = document.createElement("img");
       img.className = "balloon-bounce";
       img.src = ASSETS.balloons[i % ASSETS.balloons.length];
