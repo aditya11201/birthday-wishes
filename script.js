@@ -19,14 +19,10 @@
    -------------------------------------------------------------------------- */
 const ASSETS = Object.freeze({
   bg: {
-    darkRoom:
-      "https://lh3.googleusercontent.com/aida/ADBb0ug1rfOgHBfEFztBx_OsY3-1LhpnwtLLitGYyGzgZBhX0NZGxrp6938ecvccBmSKfi5B0X8CmIkPz6-BBRnwWq_5zoS-7H7EDgbkD_CV8MWewZtfADTcOXwOCV-jiLG_cFJo4eg3tdn2WsR69uQ3HuI1KuHlJmGq6cg9dI4BBOPci7zcg9lw9GVKxMHZfzAXwXY4ftP0BAXSEXQSm2SyftcTl9f-xtim0YaroZ3iNib0c0gMemOiQPjpu0VOxTmSmsr5dx_Yj2d3eA",
-    litRoom:
-      "https://lh3.googleusercontent.com/aida/ADBb0uiY2obPATJueKQQStwLi1bUr9yv1ZBCPH4_Navf2lq1BqZCeDh7jTFtKV_JU4sUDyBsVtnPA1NepQmHaIrItnlDOuvYHEfRa3Q4Zl43zv_lv0CPPrT2Q4o0wnnQF5Eq0PPW1OM5zmHaynVQqZuPSfuRsOKyi64Mv8zrc1RMN_ozoB1SaRxQqRkvUdv5C7bmQDZpWzRoNpeDzg22c7qseBkS08uhuJYB9FjPY43x_ew4f76kh5Al6keV259j9E5MaYJdyqj_GNGpMA",
-    partyRoom:
-      "https://lh3.googleusercontent.com/aida/ADBb0ugWdFcQULafxPOdSf-g_c0sN5JDPoc_NXne4cUoxEpMMMSVzawL1rLGpL7dhHb7FV4FyGaI196XYSQhEwxnxA-8sl5zLSisjeGaBrJdZiCjjY_wOb6NRi34ttMzmcZ5wh5PBladkbZjgDlAkqkDymF3A-ea6UtukRBVLdQJZhOi_A3zgFMuFl_26VI1Sl3a9uQdqv2b-hqSf6N3CeigIkkhasNtq_txXncAC7CAgW9EtxGw2M2-dMtZYAvGF2WmHkkWBPo4vDbaJg",
-    finaleRoom:
-      "https://lh3.googleusercontent.com/aida/ADBb0uhGlOFboZxromCjaa_0A6NRr4LWi1b-OjPEBV2EgQhKiLHMDzl4Q1HYH6-JU8oQWHLkt7-_nFTKR3lEfTcmmdPVPMSTJ7GU_CsId6IPCAd9iCQbcELqsY8_j9Km4bffuD1DoWa-IQ0M_OaouOTPGviZ4Es0J4xcmbMy_j5kReK-XSBVBSHkwX3MPa4Qjo80oS1M0fAxmAnZ1oBVDOJemBnd91uk9oVrXCSlSta6rdVZy0PReNAFSxmNYEK4jPe6qZisa-4Rfd2m",
+    darkRoom: "ruang-gelap.png",
+    litRoom: "ruang-terang.png",
+    partyRoom: "ruang-pesta.png",
+    finaleRoom: "ruang-pesta.png",
   },
   balloons: [
     "b1.png",
@@ -52,7 +48,7 @@ const SCREENS = [
     btnIcon: "lightbulb",
     btnIconFill: true,
     bg: ASSETS.bg.darkRoom,
-    overlay: "blackout",
+    overlay: "none",
     animatePulse: true,
     showTyping: false,
   },
@@ -94,8 +90,8 @@ const SCREENS = [
     showTyping: true,
     autoAdvance: true,
     spotify: {
-      song: "Each Time You Fall in Love",
-      artist: "Cigarettes After Sex",
+      song: "we fell in love in october",
+      artist: "girl in red",
     },
   },
   // ── State 5: Fix the song ──────────────────────────────────────────────
@@ -110,8 +106,8 @@ const SCREENS = [
     overlay: "light",
     showTyping: true,
     spotify: {
-      song: "Each Time You Fall in Love",
-      artist: "Cigarettes After Sex",
+      song: "we fell in love in october",
+      artist: "girl in red",
     },
   },
   // ── State 6: Correct song — auto-advance ───────────────────────────────
@@ -126,7 +122,7 @@ const SCREENS = [
     overlay: "light",
     showTyping: true,
     autoAdvance: true,
-    spotify: { song: "Happy Birthday", artist: "Cigarettes After Sex" },
+    spotify: { song: "Happy Birthday", artist: "Stevie Wonder" },
   },
   // ── State 7: Spotify disappears — auto-advance ─────────────────────────
   {
@@ -153,7 +149,7 @@ const SCREENS = [
     overlay: "light",
     showTyping: true,
   },
-  // ── State 9: Room decorated — banner drops, auto-advance ───────────────
+  // ── State 9: Room decorated — auto-advance ───────────────
   {
     id: "room-decorated",
     subtitle: "DIBUAT DENGAN SEPENUH HATI",
@@ -161,10 +157,9 @@ const SCREENS = [
     btnLabel: "MENUNGGU PERINTAH...",
     btnIcon: "auto_awesome",
     btnIconFill: true,
-    bg: ASSETS.bg.litRoom,
+    bg: ASSETS.bg.partyRoom,
     overlay: "light",
     showTyping: true,
-    showBanner: true,
     autoAdvance: true,
   },
   // ── State 10: The Choice — "Kue" or "Adit" ────────────────────────────
@@ -172,7 +167,7 @@ const SCREENS = [
     id: "the-choice",
     subtitle: "DIBUAT DENGAN SEPENUH HATI",
     title: "Stasya biasanya kalau ultah kamu butuh apa sih?",
-    bg: ASSETS.bg.litRoom,
+    bg: ASSETS.bg.partyRoom,
     overlay: "medium",
     showTyping: true,
     showChoices: true,
@@ -185,11 +180,11 @@ const SCREENS = [
     btnLabel: "MENUNGGU PERINTAH...",
     btnIcon: "auto_awesome",
     btnIconFill: true,
-    bg: ASSETS.bg.litRoom,
+    bg: ASSETS.bg.partyRoom,
     overlay: "medium",
     showTyping: true,
-    autoAdvance: true,
-    autoAdvanceDelay: 3000,
+    autoEraseAndAdvance: true,
+    autoAdvanceDelay: 3500,
   },
   // ── State 11: Unlit cake ───────────────────────────────────────────────
   {
@@ -286,13 +281,15 @@ const SCREENS = [
  * @type {string[]}
  */
 const TYPEWRITER_SENTENCES = [
-  "On your birthday, I want to take a moment to express my love for you.",
-  "You're not just my girlfriend but my best friend and my rock.",
-  "Today, I celebrate you and all the wonderful qualities that make you so incredibly special.",
+  "Untuk Stasya Annesty yang cangtippp.",
+  "Maaf ya jika aku terlambat untuk menjadi yang pertama memberikan ucapan di hari spesialmu ini. Aku menyiapkan hadiah sederhana ini khusus untukmu; mungkin nilainya tidak besar, tapi proses pembuatannya sangat spesial karena aku melakukannya sambil membayangkan kebahagiaanmu di senyummu yang manis itu.",
+  "Selamat ulang tahun yang ke-24, Stasyaaaa. Di usiamu yang baru ini, doa terbaikku selalu menyertaimu. Semoga kamu selalu sehat, panjang umur, dan segala impian yang kamu genggam segera tercapai. Aku berharap duniamu selalu penuh kemudahan dan rezekimu terus mengalir luas. Tetaplah menjadi sosok yang baik hati kepada siapa pun, karena itulah yang membuatmu begitu istimewa.",
+  "Aku hanya ingin kamu tahu bahwa apa pun yang terjadi di depan nanti, aku akan selalu menjadi salah satu orang yang paling bahagia melihat kamu sukses dan bahagia. Terima kasih sudah lahir ke dunia dan menjadi bagian indah dalam ceritaku. Tetaplah bersinar, dan ingat kalau aku selalu di sini, mendukungmu dengan seluruh hatiku.",
+  "Selamat merayakan hari spesialmu, MBG (My Best Friend Gueh).",
 ];
 
 const FINAL_MESSAGE =
-  "On your birthday, I want to take a moment to express my love for you. You're not just my girlfriend but my best friend and my rock. Today, I celebrate you and all the wonderful qualities that make you so incredibly special.";
+  "Untuk Stasya Annesty yang cangtippp.\n\nMaaf ya jika aku terlambat untuk menjadi yang pertama memberikan ucapan di hari spesialmu ini. Aku menyiapkan hadiah sederhana ini khusus untukmu; mungkin nilainya tidak besar, tapi proses pembuatannya sangat spesial karena aku melakukannya sambil membayangkan kebahagiaanmu di senyummu yang manis itu.\n\nSelamat ulang tahun yang ke-24, Stasyaaaa. Di usiamu yang baru ini, doa terbaikku selalu menyertaimu. Semoga kamu selalu sehat, panjang umur, dan segala impian yang kamu genggam segera tercapai. Aku berharap duniamu selalu penuh kemudahan dan rezekimu terus mengalir luas. Tetaplah menjadi sosok yang baik hati kepada siapa pun, karena itulah yang membuatmu begitu istimewa.\n\nAku hanya ingin kamu tahu bahwa apa pun yang terjadi di depan nanti, aku akan selalu menjadi salah satu orang yang paling bahagia melihat kamu sukses dan bahagia. Terima kasih sudah lahir ke dunia dan menjadi bagian indah dalam ceritaku. Tetaplah bersinar, dan ingat kalau aku selalu di sini, mendukungmu dengan seluruh hatiku.\n\nSelamat merayakan hari spesialmu, MBG (My Best Friend Gueh).";
 
 /** Letters for the balloon name reveal: STASYA (top arc) + ANNESTY (bottom row) */
 const BALLOON_LETTERS = [
@@ -495,14 +492,14 @@ class ScreenManager {
           clearInterval(interval);
           resolve();
         }
-      }, 35);
+      }, 50);
     });
   }
 
   /**
    * Types text into an element character by character (typewriter effect).
    */
-  typeTextAnimated(element, text, speed = 45) {
+  typeTextAnimated(element, text, speed = 75) {
     return new Promise((resolve) => {
       element.textContent = "";
       let i = 0;
@@ -579,6 +576,24 @@ class ScreenManager {
         actionBtn.classList.remove("btn-waiting");
       }, 200);
     }
+  }
+
+  /**
+   * Fades in audio smoothly to prevent jarring the user.
+   */
+  fadeInAudio(audio, targetVolume = 1, duration = 3000) {
+    audio.volume = 0;
+    audio.play().catch((e) => console.log("Audio play blocked:", e));
+
+    const step = targetVolume / (duration / 50);
+    const fadeInterval = setInterval(() => {
+      if (audio.volume + step < targetVolume) {
+        audio.volume += step;
+      } else {
+        audio.volume = targetVolume;
+        clearInterval(fadeInterval);
+      }
+    }, 50);
   }
 
   /**
@@ -684,6 +699,44 @@ class ScreenManager {
     // Advance state index
     this.currentIndex = index;
 
+    // Audio Trigger
+    if (next.id === "wrong-song") {
+      let audio = $("audio-wrong");
+      if (!audio) {
+        audio = new Audio("girl-in-red-we-fell-in-love-in-october.mp3");
+        audio.id = "audio-wrong";
+        audio.loop = true;
+        document.body.appendChild(audio);
+      }
+      audio.currentTime = 130; // 2 minutes 10 seconds
+      this.fadeInAudio(audio, 1, 3000);
+    } else if (next.id === "correct-song") {
+      // Stop the wrong audio
+      let wrongAudio = $("audio-wrong");
+      if (wrongAudio) {
+        // Fade out slightly before pause to be smooth
+        const fadeOutInterval = setInterval(() => {
+          if (wrongAudio.volume > 0.1) {
+            wrongAudio.volume -= 0.1;
+          } else {
+            clearInterval(fadeOutInterval);
+            wrongAudio.pause();
+          }
+        }, 50);
+      }
+
+      // Play the correct audio
+      let correctAudio = $("audio-correct");
+      if (!correctAudio) {
+        correctAudio = new Audio("happy-birthday-stevie-wonder.mp3");
+        correctAudio.id = "audio-correct";
+        correctAudio.loop = true;
+        document.body.appendChild(correctAudio);
+      }
+      correctAudio.currentTime = 0;
+      this.fadeInAudio(correctAudio, 1, 3000);
+    }
+
     // Spotify widget
     if (next.spotify) {
       const songEl = $("spotify-song-name");
@@ -761,14 +814,15 @@ class ScreenManager {
         }, 60);
       }, 320);
     } else if (next.autoEraseAndAdvance) {
-      // State 2 special: auto-erase text, then auto-advance
+      // Auto-erase text, then auto-advance
+      const delay = next.autoAdvanceDelay || 1500;
       this.isTransitioning = false;
       setTimeout(async () => {
         titleEl.classList.add("cursor-active");
         await this.deleteTextAnimated(titleEl);
         titleEl.classList.remove("cursor-active");
         setTimeout(() => this.advance(), 500);
-      }, 1500);
+      }, delay);
       return;
     } else if (next.autoAdvance) {
       const delay = next.autoAdvanceDelay || 1500;
@@ -776,7 +830,10 @@ class ScreenManager {
       setTimeout(() => this.advance(), delay);
       return;
     } else if (next.btnLabel && titleChanged) {
-      this.setBtnReady(next, current.showChoices);
+      this.setBtnReady(
+        next,
+        current.showChoices || actionBtn.style.display === "none",
+      );
     }
 
     this.isTransitioning = false;
@@ -995,6 +1052,8 @@ class ScreenManager {
       const canvas = $("app-canvas");
       canvas.style.backgroundPosition = "center 85%";
 
+      $("content-area").classList.add("finale-mode");
+
       $("content-area").style.opacity = "1";
       this.isTransitioning = false;
 
@@ -1013,19 +1072,11 @@ class ScreenManager {
     const aditBtn = $("adit-message-btn");
     const cake = $("cake-container");
 
-    // Move cake down to center it between balloons and button
+    // Move cake down to its natural responsive position
     if (cake) {
-      cake.style.transform = "scale(1) translateY(80px)";
+      cake.style.transform = "scale(1)";
       cake.style.transition = "transform 1.5s ease-out";
     }
-
-    // Fade out trigger button and text
-    actionBtn.style.opacity = "0";
-    actionBtn.style.pointerEvents = "none";
-    actionBtn.style.transition = "opacity 0.8s ease-out";
-
-    textBlock.style.opacity = "0";
-    textBlock.style.transition = "opacity 0.8s ease-out";
 
     // Show "Pesan dari Adit" button after a delay
     setTimeout(() => {
@@ -1091,7 +1142,7 @@ class ScreenManager {
 /**
  * Types a sentence character by character
  */
-function typeSentence(el, text, speed = 40) {
+function typeSentence(el, text, speed = 70) {
   return new Promise((resolve) => {
     let i = 0;
     const interval = setInterval(() => {
@@ -1108,7 +1159,7 @@ function typeSentence(el, text, speed = 40) {
 /**
  * Deletes text character by character
  */
-function deleteSentence(el, speed = 20) {
+function deleteSentence(el, speed = 35) {
   return new Promise((resolve) => {
     const interval = setInterval(() => {
       el.textContent = el.textContent.slice(0, -1);

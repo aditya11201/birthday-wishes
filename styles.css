@@ -755,14 +755,18 @@ button {
 #typewriter-area {
     display: none;
     max-width: 42rem;
+    width: 100%;
     padding: 0 1.5rem;
     height: 10rem;
     align-items: center;
     justify-content: center;
     transition: opacity 0.7s ease;
-    position: relative;
-    top: 120px;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
+    z-index: 50;
 }
 
 #typewriter-area.active {
@@ -771,16 +775,16 @@ button {
 
 .typewriter-text {
     font-family: var(--font-epilogue);
-    font-size: 1.25rem;
-    font-weight: 300;
+    font-size: 0.85rem;
+    font-weight: 400;
     font-style: italic;
-    line-height: 1.6;
+    line-height: 1.5;
     color: white;
 }
 
 @media (min-width: 768px) {
     .typewriter-text {
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
 }
 
@@ -799,14 +803,41 @@ button {
    -------------------------------------------------------------------------- */
 #final-message {
     display: none;
-    max-width: 42rem;
-    padding: 0 1.5rem 2.5rem;
-    margin-top: 2rem;
+    width: 90%;
+    max-width: 600px;
+    max-height: 25vh;
+    overflow-y: auto;
+    padding: 1rem;
     opacity: 0;
     transition: all 1s ease-out;
-    position: relative;
-    top: 200px;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
+    z-index: 50;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Custom Scrollbar for the final message box */
+#final-message::-webkit-scrollbar {
+    width: 6px;
+}
+#final-message::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-block: 0.5rem;
+}
+#final-message::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+}
+#final-message::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.5);
 }
 
 #final-message.active {
@@ -819,18 +850,23 @@ button {
 
 .final-message-text {
     font-family: var(--font-epilogue);
-    font-size: 1.25rem;
-    font-weight: 500;
+    font-size: 0.85rem;
+    font-weight: 400;
     font-style: italic;
-    line-height: 1.6;
+    line-height: 1.5;
     color: white;
     text-align: center;
-    filter: drop-shadow(0 0 15px rgba(0, 118, 222, 0.4));
+    filter: drop-shadow(0 0 10px rgba(0, 118, 222, 0.3));
+    margin: 0;
 }
 
 @media (min-width: 768px) {
     .final-message-text {
-        font-size: 1.5rem;
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    #final-message {
+        padding: 1.5rem;
     }
 }
 
@@ -1047,4 +1083,20 @@ button {
         gap: 1.5rem;
         padding: 1rem;
     }
+}
+
+/* --------------------------------------------------------------------------
+   18. Finale Layout Mode
+   -------------------------------------------------------------------------- */
+#content-area.finale-mode {
+    height: 100vh;
+    height: 100dvh;
+    justify-content: flex-end;
+    padding-bottom: 8vh;
+    gap: 1.5rem;
+}
+
+#content-area.finale-mode #title-section,
+#content-area.finale-mode #action-btn {
+    display: none !important;
 }
