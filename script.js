@@ -67,7 +67,11 @@ const SCREENS = [
     bg: ASSETS.bg.litRoom,
     overlay: "light",
     showTyping: true,
+<<<<<<< Updated upstream
     autoEraseAndAdvance: true,
+=======
+    autoAdvance: true,
+>>>>>>> Stashed changes
   },
   // ── State 3: Play music prompt ───────────────────────────────────────
   {
@@ -153,7 +157,11 @@ const SCREENS = [
     overlay: "light",
     showTyping: true,
   },
+<<<<<<< Updated upstream
   // ── State 9: Room decorated — banner drops, auto-advance ────────────
+=======
+  // 8: Room decorated
+>>>>>>> Stashed changes
   {
     id: "room-decorated",
     subtitle: "DIBUAT DENGAN SEPENUH HATI",
@@ -164,7 +172,6 @@ const SCREENS = [
     bg: ASSETS.bg.litRoom,
     overlay: "light",
     showTyping: true,
-    showBanner: true,
     autoAdvance: true,
   },
   // ── State 10: The Choice — "Kue" or "Adit" ──────────────────────────
@@ -177,7 +184,38 @@ const SCREENS = [
     showTyping: true,
     showChoices: true,
   },
+<<<<<<< Updated upstream
   // ── State 10B: Adit branch — auto-advance to cake ───────────────────
+=======
+  // 10: Adit Branch
+  {
+    id: "adit-branch",
+    subtitle: "DIBUAT DENGAN SEPENUH HATI",
+    title: "NO NO YA STASYAA ADIT PUNYA AKUU ~KAREN CANGTIPP YANG NGOMONG",
+    btnLabel: "MENUNGGU PERINTAH...",
+    btnIcon: "auto_awesome",
+    btnIconFill: true,
+    bg: ASSETS.bg.litRoom,
+    overlay: "medium",
+    showTyping: true,
+    autoAdvance: true,
+  },
+  // 11: Unlit Cake
+  {
+    id: "unlit-cake",
+    subtitle: "",
+    title: "Nah Tinggal nyalain lilinnya",
+    btnLabel: "Nyalakan Lilinnya",
+    btnIcon: "local_fire_department",
+    btnIconFill: true,
+    bg: ASSETS.bg.partyRoom,
+    overlay: "none",
+    showTyping: true,
+    showCake: true,
+    cakeUnlit: true,
+  },
+  // 12: Cake appears
+>>>>>>> Stashed changes
   {
     id: "adit-branch",
     subtitle: "",
@@ -240,8 +278,13 @@ const SCREENS = [
     subtitle: "",
     title: "Nah balonnya udah terbang nih stasyaa",
     btnLabel: "HAPPY BIRTHDAY",
+<<<<<<< Updated upstream
     btnIcon: "cake",
     btnIconFill: true,
+=======
+    btnIcon: "🥳🎉",
+    btnIconFill: false,
+>>>>>>> Stashed changes
     bg: ASSETS.bg.partyRoom,
     overlay: "none",
     showTyping: true,
@@ -255,8 +298,13 @@ const SCREENS = [
     subtitle: "",
     title: "Gelooooo... anjay...",
     btnLabel: "stasyaa annesty",
+<<<<<<< Updated upstream
     btnIcon: "favorite",
     btnIconFill: true,
+=======
+    btnIcon: "💕",
+    btnIconFill: false,
+>>>>>>> Stashed changes
     bg: ASSETS.bg.partyRoom,
     overlay: "none",
     showTyping: true,
@@ -269,10 +317,15 @@ const SCREENS = [
   {
     id: "grand-finale",
     subtitle: "",
+<<<<<<< Updated upstream
     title: "Gelooooo... anjay...",
     btnLabel: "Pesan dari Adit",
     btnIcon: "mail",
     btnIconFill: true,
+=======
+    title: "",
+    btnLabel: "",
+>>>>>>> Stashed changes
     bg: ASSETS.bg.finaleRoom,
     overlay: "none",
     showCake: true,
@@ -370,9 +423,21 @@ class ScreenManager {
     // Main action button
     $("action-btn").addEventListener("click", () => this.advance());
 
+<<<<<<< Updated upstream
     // Choice buttons — track which was clicked
     $("choice-kue").addEventListener("click", () => this.advanceChoice("kue"));
     $("choice-adit").addEventListener("click", () => this.advanceChoice("adit"));
+=======
+    // Choice buttons
+    $("choice-kue").addEventListener("click", () => {
+      const targetIndex = SCREENS.findIndex((s) => s.id === "unlit-cake");
+      this.transitionTo(targetIndex);
+    });
+    $("choice-adit").addEventListener("click", () => {
+      const targetIndex = SCREENS.findIndex((s) => s.id === "adit-branch");
+      this.transitionTo(targetIndex);
+    });
+>>>>>>> Stashed changes
   }
 
   /**
@@ -487,6 +552,7 @@ class ScreenManager {
     // ── 10. Remove cursor after typing completes ──────────────────────────
     titleEl.classList.remove("cursor-active");
 
+<<<<<<< Updated upstream
     // ── 11. Handle autoEraseAndAdvance (State 2 special behavior) ──────────
     if (nextScreen.autoEraseAndAdvance) {
       // Keep button in waiting state, pause to let user read, then erase and advance
@@ -501,6 +567,15 @@ class ScreenManager {
     }
 
     // ── 12. Restore button with new screen's content ──────────────────────
+=======
+    if (nextScreen.autoAdvance) {
+      this.isTransitioning = false;
+      setTimeout(() => this.advance(), 1500);
+      return;
+    }
+
+    // ── 11. Restore button with new screen's content ──────────────────────
+>>>>>>> Stashed changes
     this.setBtnReady(nextScreen);
 
     this.isTransitioning = false;
@@ -778,6 +853,7 @@ class ScreenManager {
       cakeContainer.classList.remove("active");
     }
 
+<<<<<<< Updated upstream
     // ── Cake lit/unlit toggle ─────────────────────────────────────────
     if (next.showCake) {
       const cakeEl = cakeContainer.querySelector(".cake");
@@ -786,6 +862,12 @@ class ScreenManager {
       } else {
         cakeEl.classList.add("cake--unlit");
       }
+=======
+    // Toggle unlit state (flames)
+    if (next.showCake) {
+      const flames = cakeContainer.querySelectorAll(".fuego");
+      flames.forEach((f) => (f.style.display = next.cakeUnlit ? "none" : ""));
+>>>>>>> Stashed changes
     }
 
     // ── Simple balloons ───────────────────────────────────────────────
@@ -953,12 +1035,17 @@ class ScreenManager {
     // --- Cake ---
     if (screen.showCake) {
       cakeContainer.classList.add("active");
+<<<<<<< Updated upstream
       const cakeEl = cakeContainer.querySelector(".cake");
       if (screen.cakeLit) {
         cakeEl.classList.remove("cake--unlit");
       } else {
         cakeEl.classList.add("cake--unlit");
       }
+=======
+      const flames = cakeContainer.querySelectorAll(".fuego");
+      flames.forEach((f) => (f.style.display = screen.cakeUnlit ? "none" : ""));
+>>>>>>> Stashed changes
     } else {
       cakeContainer.classList.remove("active");
     }
@@ -1079,14 +1166,8 @@ class ScreenManager {
       $("content-area").style.opacity = "1";
       this.isTransitioning = false;
 
-      // Replace the main action button handler for the finale
-      const actionBtn = $("action-btn");
-      const newBtn = actionBtn.cloneNode(true);
-      actionBtn.parentNode.replaceChild(newBtn, actionBtn);
-
-      newBtn.addEventListener("click", () => {
-        this.triggerGrandFinale();
-      });
+      // Automatically trigger the finale animations
+      this.triggerGrandFinale();
     }, 600);
   }
 
@@ -1098,6 +1179,13 @@ class ScreenManager {
     const balloons = document.querySelectorAll(".letter-balloon");
     const textBlock = $("title-section");
     const aditBtn = $("adit-message-btn");
+    const cake = $("cake-container");
+
+    // Move cake down to center it between balloons and button
+    if (cake) {
+      cake.style.transform = "scale(1) translateY(80px)";
+      cake.style.transition = "transform 1.5s ease-out";
+    }
 
     // Fade out trigger button and text
     actionBtn.style.opacity = "0";
@@ -1119,7 +1207,9 @@ class ScreenManager {
     const centerX = window.innerWidth / 2;
     const centerY = window.innerHeight / 2;
     const radiusXTop = 280;
-    const radiusYTop = 130;
+    const radiusYTop = 100;
+    const radiusXBottom = 250;
+    const radiusYBottom = 80;
 
     balloons.forEach((b, index) => {
       const rect = b.getBoundingClientRect();
@@ -1130,16 +1220,17 @@ class ScreenManager {
 
       let finalX, finalY;
       if (index < 6) {
-        // STASYA — arc formation
+        // STASYA — arc formation (garis merah)
         const angle = (index - 2.5) * 20;
         const rad = (angle - 90) * (Math.PI / 180);
         finalX = centerX + radiusXTop * Math.cos(rad) - 40;
-        finalY = centerY + radiusYTop * Math.sin(rad) - 220;
+        finalY = centerY + radiusYTop * Math.sin(rad) - 180;
       } else {
-        // ANNESTY — horizontal row
-        const spacing = 100;
-        finalX = centerX + (index - 9) * spacing - 40;
-        finalY = centerY + 250;
+        // ANNESTY — arc formation (garis hijau)
+        const angle = (index - 9) * 20;
+        const rad = (angle - 90) * (Math.PI / 180);
+        finalX = centerX + radiusXBottom * Math.cos(rad) - 40;
+        finalY = centerY + radiusYBottom * Math.sin(rad) - 20;
       }
 
       b.style.left = finalX + "px";
@@ -1242,7 +1333,7 @@ function showAditMessage() {
 
   // Hide cake
   cake.style.opacity = "0";
-  cake.style.transform = "scale(0.8)";
+  cake.style.transform = "translateY(120px) scale(0.8)";
   cake.style.transition = "all 0.8s ease-in-out";
 
   // Hide button
@@ -1255,12 +1346,16 @@ function showAditMessage() {
   // Move ANNESTY balloons up beneath STASYA
   const centerX = window.innerWidth / 2;
   const centerY = window.innerHeight / 2;
+  const radiusXBottom = 250;
+  const radiusYBottom = 80;
 
   balloons.forEach((b, index) => {
     if (index >= 6) {
-      const spacing = 100;
-      const finalX = centerX + (index - 9) * spacing - 40;
-      const finalY = centerY - 100;
+      // ANNESTY — arc formation (garis hijau)
+      const angle = (index - 9) * 20;
+      const rad = (angle - 90) * (Math.PI / 180);
+      const finalX = centerX + radiusXBottom * Math.cos(rad) - 40;
+      const finalY = centerY + radiusYBottom * Math.sin(rad) - 20;
       b.style.left = finalX + "px";
       b.style.top = finalY + "px";
     }

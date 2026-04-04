@@ -760,6 +760,9 @@ button {
     align-items: center;
     justify-content: center;
     transition: opacity 0.7s ease;
+    position: relative;
+    top: 120px;
+    text-align: center;
 }
 
 #typewriter-area.active {
@@ -801,6 +804,9 @@ button {
     margin-top: 2rem;
     opacity: 0;
     transition: all 1s ease-out;
+    position: relative;
+    top: 200px;
+    text-align: center;
 }
 
 #final-message.active {
