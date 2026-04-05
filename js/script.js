@@ -19,10 +19,10 @@
    -------------------------------------------------------------------------- */
 const ASSETS = Object.freeze({
   bg: {
-    darkRoom: "assets/images/ruang-gelap.png",
-    litRoom: "assets/images/ruang-terang.png",
-    partyRoom: "assets/images/ruang-pesta.png",
-    finaleRoom: "assets/images/ruang-pesta.png",
+    darkRoom: "assets/images/ruang-gelap.webp",
+    litRoom: "assets/images/ruang-terang.webp",
+    partyRoom: "assets/images/ruang-pesta.webp",
+    finaleRoom: "assets/images/ruang-pesta.webp",
   },
   balloons: [
     "assets/images/b1.png",
