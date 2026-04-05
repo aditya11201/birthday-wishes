@@ -285,11 +285,11 @@ const TYPEWRITER_SENTENCES = [
   "Maaf ya jika aku terlambat untuk menjadi yang pertama memberikan ucapan di hari spesialmu ini. Aku menyiapkan hadiah sederhana ini khusus untukmu; mungkin nilainya tidak besar, tapi proses pembuatannya sangat spesial karena aku melakukannya sambil membayangkan kebahagiaanmu di senyummu yang manis itu.",
   "Selamat ulang tahun yang ke-24, Stasyaaaa. Di usiamu yang baru ini, doa terbaikku selalu menyertaimu. Semoga kamu selalu sehat, panjang umur, dan segala impian yang kamu genggam segera tercapai. Aku berharap duniamu selalu penuh kemudahan dan rezekimu terus mengalir luas. Tetaplah menjadi sosok yang baik hati kepada siapa pun, karena itulah yang membuatmu begitu istimewa.",
   "Aku hanya ingin kamu tahu bahwa apa pun yang terjadi di depan nanti, aku akan selalu menjadi salah satu orang yang paling bahagia melihat kamu sukses dan bahagia. Terima kasih sudah lahir ke dunia dan menjadi bagian indah dalam ceritaku. Tetaplah bersinar, dan ingat kalau aku selalu di sini, mendukungmu dengan seluruh hatiku.",
-  "Selamat merayakan hari spesialmu, MBG (My Best Friend Gueh).",
+  "Selamat merayakan hari spesialmu, MBG (My BestFriend Gueh).",
 ];
 
 const FINAL_MESSAGE =
-  "Untuk Stasya Annesty yang cangtippp.\n\nMaaf ya jika aku terlambat untuk menjadi yang pertama memberikan ucapan di hari spesialmu ini. Aku menyiapkan hadiah sederhana ini khusus untukmu; mungkin nilainya tidak besar, tapi proses pembuatannya sangat spesial karena aku melakukannya sambil membayangkan kebahagiaanmu di senyummu yang manis itu.\n\nSelamat ulang tahun yang ke-24, Stasyaaaa. Di usiamu yang baru ini, doa terbaikku selalu menyertaimu. Semoga kamu selalu sehat, panjang umur, dan segala impian yang kamu genggam segera tercapai. Aku berharap duniamu selalu penuh kemudahan dan rezekimu terus mengalir luas. Tetaplah menjadi sosok yang baik hati kepada siapa pun, karena itulah yang membuatmu begitu istimewa.\n\nAku hanya ingin kamu tahu bahwa apa pun yang terjadi di depan nanti, aku akan selalu menjadi salah satu orang yang paling bahagia melihat kamu sukses dan bahagia. Terima kasih sudah lahir ke dunia dan menjadi bagian indah dalam ceritaku. Tetaplah bersinar, dan ingat kalau aku selalu di sini, mendukungmu dengan seluruh hatiku.\n\nSelamat merayakan hari spesialmu, MBG (My Best Friend Gueh).";
+  "Untuk Stasya Annesty yang cangtippp.\n\nMaaf ya jika aku terlambat untuk menjadi yang pertama memberikan ucapan di hari spesialmu ini. Aku menyiapkan hadiah sederhana ini khusus untukmu; mungkin nilainya tidak besar, tapi proses pembuatannya sangat spesial karena aku melakukannya sambil membayangkan kebahagiaanmu di senyummu yang manis itu.\n\nSelamat ulang tahun yang ke-24, Stasyaaaa. Di usiamu yang baru ini, doa terbaikku selalu menyertaimu. Semoga kamu selalu sehat, panjang umur, dan segala impian yang kamu genggam segera tercapai. Aku berharap duniamu selalu penuh kemudahan dan rezekimu terus mengalir luas. Tetaplah menjadi sosok yang baik hati kepada siapa pun, karena itulah yang membuatmu begitu istimewa.\n\nAku hanya ingin kamu tahu bahwa apa pun yang terjadi di depan nanti, aku akan selalu menjadi salah satu orang yang paling bahagia melihat kamu sukses dan bahagia. Terima kasih sudah lahir ke dunia dan menjadi bagian indah dalam ceritaku. Tetaplah bersinar, dan ingat kalau aku selalu di sini, mendukungmu dengan seluruh hatiku.\n\nSelamat merayakan hari spesialmu, MBG (My BestFriend Gueh).";
 
 /** Letters for the balloon name reveal: STASYA (top arc) + ANNESTY (bottom row) */
 const BALLOON_LETTERS = [
@@ -760,6 +760,11 @@ class ScreenManager {
             artistEl.textContent = "Orang Spesial";
             songEl.style.opacity = "1";
             spotifyWidget.classList.add("active");
+
+            // Hide Spotify widget after 20 seconds
+            setTimeout(() => {
+              spotifyWidget.classList.remove("active");
+            }, 20000);
           }, 300);
         });
 
