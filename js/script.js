@@ -19,19 +19,19 @@
    -------------------------------------------------------------------------- */
 const ASSETS = Object.freeze({
   bg: {
-    darkRoom: "ruang-gelap.png",
-    litRoom: "ruang-terang.png",
-    partyRoom: "ruang-pesta.png",
-    finaleRoom: "ruang-pesta.png",
+darkRoom: "assets/images/ruang-gelap.png",
+litRoom: "assets/images/ruang-terang.png",
+partyRoom: "assets/images/ruang-pesta.png",
+finaleRoom: "assets/images/ruang-pesta.png",
   },
   balloons: [
-    "b1.png",
-    "b2.png",
-    "b3.png",
-    "b4.png",
-    "b5.png",
-    "b6.png",
-    "b7.png",
+"assets/images/b1.png",
+"assets/images/b2.png",
+"assets/images/b3.png",
+"assets/images/b4.png",
+"assets/images/b5.png",
+"assets/images/b6.png",
+"assets/images/b7.png",
   ],
 });
 
@@ -703,7 +703,7 @@ class ScreenManager {
     if (next.id === "wrong-song") {
       let audio = $("audio-wrong");
       if (!audio) {
-        audio = new Audio("girl-in-red-we-fell-in-love-in-october.mp3");
+audio = new Audio("assets/audio/girl-in-red-we-fell-in-love-in-october.mp3");
         audio.id = "audio-wrong";
         audio.loop = true;
         document.body.appendChild(audio);
@@ -728,7 +728,7 @@ class ScreenManager {
       // Play the correct audio
       let correctAudio = $("audio-correct");
       if (!correctAudio) {
-        correctAudio = new Audio("happy-birthday-stevie-wonder.mp3");
+correctAudio = new Audio("assets/audio/happy-birthday-stevie-wonder.mp3");
         correctAudio.id = "audio-correct";
         correctAudio.loop = true;
         document.body.appendChild(correctAudio);
