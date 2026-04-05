@@ -761,6 +761,35 @@ class ScreenManager {
             songEl.style.opacity = "1";
             spotifyWidget.classList.add("active");
 
+            // Show gift overlay
+            const giftOverlay = $("gift-overlay");
+            if (giftOverlay) {
+              giftOverlay.style.display = "flex";
+              giftOverlay.style.opacity = "0";
+              giftOverlay.style.transition = "opacity 1s ease";
+              setTimeout(() => {
+                giftOverlay.style.opacity = "1";
+              }, 100);
+
+              const giftBtn = $("gift-btn");
+              if (giftBtn && !giftBtn.hasAttribute("data-bound")) {
+                giftBtn.setAttribute("data-bound", "true");
+                giftBtn.addEventListener("click", () => {
+                  const finalMsgText = document.querySelector(
+                    ".final-message-text",
+                  );
+                  if (finalMsgText) {
+                    finalMsgText.innerHTML =
+                      '<img src="assets/images/leon-grace.webp" alt="Leon Grace" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">';
+                  }
+                  giftOverlay.style.opacity = "0";
+                  setTimeout(() => {
+                    giftOverlay.style.display = "none";
+                  }, 1000);
+                });
+              }
+            }
+
             // Hide Spotify widget after 20 seconds
             setTimeout(() => {
               spotifyWidget.classList.remove("active");
