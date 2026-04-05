@@ -763,7 +763,12 @@ class ScreenManager {
 
             // Show gift overlay
             const giftOverlay = $("gift-overlay");
+            const finalMessageBox = $("final-message");
             if (giftOverlay) {
+              if (finalMessageBox) {
+                finalMessageBox.scrollTop = 0;
+                finalMessageBox.style.overflow = "hidden";
+              }
               giftOverlay.style.display = "flex";
               giftOverlay.style.opacity = "0";
               giftOverlay.style.transition = "opacity 1s ease";
@@ -785,6 +790,9 @@ class ScreenManager {
                   giftOverlay.style.opacity = "0";
                   setTimeout(() => {
                     giftOverlay.style.display = "none";
+                    if (finalMessageBox) {
+                      finalMessageBox.style.overflow = "auto";
+                    }
                   }, 1000);
                 });
               }
