@@ -734,7 +734,35 @@ class ScreenManager {
           "assets/audio/happy-birthday-stevie-wonder.mp3",
         );
         correctAudio.id = "audio-correct";
-        correctAudio.loop = true;
+        correctAudio.loop = false;
+
+        // When Happy Birthday finishes, play "Menjadi-Rumahmu"
+        correctAudio.addEventListener("ended", () => {
+          let nextAudio = $("audio-next");
+          if (!nextAudio) {
+            nextAudio = new Audio("assets/audio/menjadi-rumahmu.mp3");
+            nextAudio.id = "audio-next";
+            nextAudio.loop = true;
+            document.body.appendChild(nextAudio);
+          }
+          nextAudio.currentTime = 0;
+          this.fadeInAudio(nextAudio, 1, 3000);
+
+          // Update and show Spotify widget
+          const spotifyWidget = $("spotify-widget");
+          const songEl = $("spotify-song-name");
+          const artistEl = $("spotify-artist-name");
+
+          songEl.style.transition = "opacity 0.3s ease";
+          songEl.style.opacity = "0";
+          setTimeout(() => {
+            songEl.textContent = "Menjadi-Rumahmu";
+            artistEl.textContent = "Orang Spesial";
+            songEl.style.opacity = "1";
+            spotifyWidget.classList.add("active");
+          }, 300);
+        });
+
         document.body.appendChild(correctAudio);
       }
       correctAudio.currentTime = 0;
