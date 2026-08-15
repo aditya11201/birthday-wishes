@@ -1,5 +1,5 @@
 /* ==========================================================================
-   BIRTHDAY WISHES — Stasya Annesty
+   GLAD-YOU-WERE-BORN — SASSY
    Consolidated Design System & Styles
    ========================================================================== */
 
@@ -82,6 +82,15 @@ button {
     color: inherit;
 }
 
+button:focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 4px;
+}
+
+button:disabled {
+    cursor: not-allowed;
+}
+
 /* --------------------------------------------------------------------------
    3. Material Symbols
    -------------------------------------------------------------------------- */
@@ -146,6 +155,10 @@ button {
     padding: 1.5rem;
     max-width: 42rem;
     width: 100%;
+}
+
+#title-section > * + * {
+    margin-top: 1rem;
 }
 
 /* --------------------------------------------------------------------------
@@ -232,6 +245,18 @@ button {
     transform: scale(0.95);
 }
 
+#choice-buttons button:disabled .glass-button {
+    background: rgba(0, 118, 222, 0.08);
+    border-color: rgba(0, 118, 222, 0.3);
+    box-shadow: none;
+    transform: none;
+}
+
+#choice-buttons button:disabled .btn-icon,
+#choice-buttons button:disabled .btn-label--white {
+    color: rgba(255, 255, 255, 0.65);
+}
+
 .glass-button--secondary {
     background: rgba(0, 118, 222, 0.15);
     backdrop-filter: blur(12px);
@@ -282,6 +307,32 @@ button {
     box-shadow:
         0 0 30px rgba(0, 118, 222, 0.6),
         0 0 50px rgba(0, 118, 222, 0.3);
+}
+
+.gift-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 4rem;
+    line-height: 1;
+    transform: scale(1);
+    transition: transform 0.3s ease;
+}
+
+.gift-button:hover,
+.gift-button:focus-visible {
+    transform: scale(1.2);
+}
+
+.gift-reveal-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
 /* ── Action button: waiting / disabled state during screen transitions ── */
@@ -414,6 +465,29 @@ button {
     text-overflow: ellipsis;
 }
 
+.audio-status {
+    position: fixed;
+    left: 1rem;
+    bottom: 1rem;
+    z-index: 60;
+    max-width: min(24rem, calc(100vw - 2rem));
+    padding: 0.75rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 0.75rem;
+    background: rgba(0, 0, 0, 0.82);
+    color: var(--color-on-surface);
+    font-size: 0.875rem;
+    line-height: 1.4;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+.audio-status.active {
+    opacity: 1;
+}
+
 /* Music equalizer bars */
 .music-bars {
     display: flex;
@@ -443,7 +517,9 @@ button {
    9. Cake Component (Pure CSS)
    -------------------------------------------------------------------------- */
 #cake-container {
-    transition: all 0.8s var(--ease-spring);
+    transition:
+        transform 0.8s var(--ease-spring),
+        opacity 0.8s var(--ease-spring);
     transform: scale(0.5);
     opacity: 0;
     display: none;
@@ -618,21 +694,6 @@ button {
 }
 .fuego:nth-child(5) {
     animation: fuego 0.2s ease-in-out infinite;
-}
-
-/* Unlit cake: hide flame and glow */
-.cake--unlit .fuego {
-    animation: none !important;
-    background: transparent !important;
-    box-shadow: none !important;
-    opacity: 0;
-    transition: opacity 0.6s ease;
-}
-
-/* Lit transition: flame fades in */
-.cake:not(.cake--unlit) .fuego {
-    opacity: 1;
-    transition: opacity 0.6s ease;
 }
 
 /* --------------------------------------------------------------------------
@@ -871,33 +932,6 @@ button {
 }
 
 /* --------------------------------------------------------------------------
-   14. Main Content Shift / Transitions
-   -------------------------------------------------------------------------- */
-.main-content-shift {
-    transition: transform 0.8s var(--ease-smooth);
-    z-index: 20;
-}
-
-.main-content {
-    transition: transform 1.2s var(--ease-spring);
-}
-
-/* Screen fade transitions */
-.screen-transition {
-    transition: opacity 0.6s ease-in-out;
-}
-
-.fade-out {
-    opacity: 0;
-    pointer-events: none;
-}
-
-.fade-in {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-/* --------------------------------------------------------------------------
    15. Keyframe Animations
    -------------------------------------------------------------------------- */
 
@@ -1026,13 +1060,6 @@ button {
     animation: gentle-pulse 3s ease-in-out infinite;
 }
 
-/* --------------------------------------------------------------------------
-   16. Utility / Helper Classes
-   -------------------------------------------------------------------------- */
-.hidden {
-    display: none !important;
-}
-
 .visually-hidden {
     position: absolute;
     width: 1px;
@@ -1099,4 +1126,22 @@ button {
 #content-area.finale-mode #title-section,
 #content-area.finale-mode #action-btn {
     display: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-delay: 0s !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        transition-delay: 0s !important;
+    }
+
+    .typing-text,
+    .title-editorial.cursor-active,
+    .cursor-blink {
+        animation: none !important;
+    }
 }

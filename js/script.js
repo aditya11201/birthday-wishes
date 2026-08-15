@@ -1,7 +1,7 @@
 /**
  * ==========================================================================
- * BIRTHDAY WISHES — Stasya Annesty
- * Interactive Birthday Experience for Stasya Annesty
+ * GLAD-YOU-WERE-BORN — SASSY
+ * Interactive Birthday Experience for Sassy
  * ==========================================================================
  *
  * Architecture: State Machine Pattern
@@ -22,7 +22,6 @@ const ASSETS = Object.freeze({
     darkRoom: "assets/images/ruang-gelap.webp",
     litRoom: "assets/images/ruang-terang.webp",
     partyRoom: "assets/images/ruang-pesta.webp",
-    finaleRoom: "assets/images/ruang-pesta.webp",
   },
   balloons: [
     "assets/images/b1.png",
@@ -35,6 +34,10 @@ const ASSETS = Object.freeze({
   ],
 });
 
+const PROJECT_NAME = "glad-you-were-born";
+const RECIPIENT_NAME = "Sassy";
+const SENDER_NAME = "user";
+
 /* --------------------------------------------------------------------------
    2. Screen Definitions (The Narrative)
    -------------------------------------------------------------------------- */
@@ -43,7 +46,7 @@ const SCREENS = [
   {
     id: "dark-room",
     subtitle: "",
-    title: "Gelap nih.... Coba nyalain lampunya ya stasya",
+    title: `Gelap nih.... Coba nyalain lampunya ya ${RECIPIENT_NAME}`,
     btnLabel: "Nyalakan Lampu",
     btnIcon: "lightbulb",
     btnIconFill: true,
@@ -114,7 +117,7 @@ const SCREENS = [
   {
     id: "correct-song",
     subtitle: "DIBUAT DENGAN SEPENUH HATI",
-    title: "Nah Lagunya udah bener nih Stasyaaa",
+    title: `Nah Lagunya udah bener nih ${RECIPIENT_NAME}`,
     btnLabel: "MENUNGGU PERINTAH...",
     btnIcon: "auto_awesome",
     btnIconFill: true,
@@ -128,7 +131,7 @@ const SCREENS = [
   {
     id: "decorate-prompt",
     subtitle: "DIBUAT DENGAN SEPENUH HATI",
-    title: "Nah sekarang Stasyaaaa",
+    title: `Nah sekarang ${RECIPIENT_NAME}`,
     btnLabel: "MENUNGGU PERINTAH...",
     btnIcon: "auto_awesome",
     btnIconFill: true,
@@ -153,7 +156,7 @@ const SCREENS = [
   {
     id: "room-decorated",
     subtitle: "DIBUAT DENGAN SEPENUH HATI",
-    title: "Nah sekarang ruangannya udah bagus nih stas",
+    title: `Nah sekarang ruangannya udah bagus nih ${RECIPIENT_NAME}`,
     btnLabel: "MENUNGGU PERINTAH...",
     btnIcon: "auto_awesome",
     btnIconFill: true,
@@ -162,21 +165,21 @@ const SCREENS = [
     showTyping: true,
     autoAdvance: true,
   },
-  // ── State 10: The Choice — "Kue" or "Adit" ────────────────────────────
+  // ── State 10: The Choice — "Kue" or "USER" ───────────────────────────
   {
     id: "the-choice",
     subtitle: "DIBUAT DENGAN SEPENUH HATI",
-    title: "Stasya biasanya kalau ultah kamu butuh apa sih?",
+    title: `${RECIPIENT_NAME} biasanya kalau ultah kamu butuh apa sih?`,
     bg: ASSETS.bg.partyRoom,
     overlay: "medium",
     showTyping: true,
     showChoices: true,
   },
-  // ── State 10B: Adit branch — auto-advance to cake ──────────────────────
+  // ── State 10B: USER branch — auto-advance to cake ──────────────────────
   {
-    id: "adit-branch",
+    id: "user-branch",
     subtitle: "DIBUAT DENGAN SEPENUH HATI",
-    title: "NO NO YA STASYAA ADIT PUNYA AKUU ~KAREN CANGTIPP YANG NGOMONG",
+    title: `NO NO YA ${RECIPIENT_NAME.toUpperCase()} ${SENDER_NAME.toUpperCase()} PUNYA AKUU ~KAREN CANGTIPP YANG NGOMONG`,
     btnLabel: "MENUNGGU PERINTAH...",
     btnIcon: "auto_awesome",
     btnIconFill: true,
@@ -204,7 +207,7 @@ const SCREENS = [
   {
     id: "cake-lit",
     subtitle: "",
-    title: "Wih geloo apinya sekarang dah nyala nih stas",
+    title: `Wih geloo apinya sekarang dah nyala nih ${RECIPIENT_NAME}`,
     btnLabel: "MENUNGGU PERINTAH...",
     btnIcon: "auto_awesome",
     btnIconFill: true,
@@ -233,7 +236,7 @@ const SCREENS = [
   {
     id: "balloons-flying",
     subtitle: "",
-    title: "Nah balonnya udah terbang nih stasyaa",
+    title: `Nah balonnya udah terbang nih ${RECIPIENT_NAME}`,
     btnLabel: "HAPPY BIRTHDAY",
     btnIcon: "cake",
     btnIconFill: true,
@@ -249,7 +252,7 @@ const SCREENS = [
     id: "banner-drops",
     subtitle: "",
     title: "Gelooooo... anjay...",
-    btnLabel: "stasyaa annesty",
+    btnLabel: RECIPIENT_NAME,
     btnIcon: "favorite",
     btnIconFill: true,
     bg: ASSETS.bg.partyRoom,
@@ -266,7 +269,7 @@ const SCREENS = [
     subtitle: "",
     title: "",
     btnLabel: "",
-    bg: ASSETS.bg.finaleRoom,
+    bg: ASSETS.bg.partyRoom,
     overlay: "none",
     showCake: true,
     cakeUnlit: false,
@@ -281,32 +284,15 @@ const SCREENS = [
  * @type {string[]}
  */
 const TYPEWRITER_SENTENCES = [
-  "Untuk Stasya Annesty yang cangtippp.",
+  `Untuk ${RECIPIENT_NAME} yang cangtippp.`,
   "Maaf ya jika aku terlambat untuk menjadi yang pertama memberikan ucapan di hari spesialmu ini. Aku menyiapkan hadiah sederhana ini khusus untukmu; mungkin nilainya tidak besar, tapi proses pembuatannya sangat spesial karena aku melakukannya sambil membayangkan kebahagiaanmu di senyummu yang manis itu.",
-  "Selamat ulang tahun yang ke-24, Stasyaaaa. Di usiamu yang baru ini, doa terbaikku selalu menyertaimu. Semoga kamu selalu sehat, panjang umur, dan segala impian yang kamu genggam segera tercapai. Aku berharap duniamu selalu penuh kemudahan dan rezekimu terus mengalir luas. Tetaplah menjadi sosok yang baik hati kepada siapa pun, karena itulah yang membuatmu begitu istimewa.",
+  `Selamat ulang tahun yang ke-24, ${RECIPIENT_NAME}. Di usiamu yang baru ini, doa terbaikku selalu menyertaimu. Semoga kamu selalu sehat, panjang umur, dan segala impian yang kamu genggam segera tercapai. Aku berharap duniamu selalu penuh kemudahan dan rezekimu terus mengalir luas. Tetaplah menjadi sosok yang baik hati kepada siapa pun, karena itulah yang membuatmu begitu istimewa.`,
   "Aku hanya ingin kamu tahu bahwa apa pun yang terjadi di depan nanti, aku akan selalu menjadi salah satu orang yang paling bahagia melihat kamu sukses dan bahagia. Terima kasih sudah lahir ke dunia dan menjadi bagian indah dalam ceritaku. Tetaplah bersinar, dan ingat kalau aku selalu di sini, mendukungmu dengan seluruh hatiku.",
   "Selamat merayakan hari spesialmu, MBG (My BestFriend Gueh).",
 ];
 
-const FINAL_MESSAGE =
-  "Untuk Stasya Annesty yang cangtippp.\n\nMaaf ya jika aku terlambat untuk menjadi yang pertama memberikan ucapan di hari spesialmu ini. Aku menyiapkan hadiah sederhana ini khusus untukmu; mungkin nilainya tidak besar, tapi proses pembuatannya sangat spesial karena aku melakukannya sambil membayangkan kebahagiaanmu di senyummu yang manis itu.\n\nSelamat ulang tahun yang ke-24, Stasyaaaa. Di usiamu yang baru ini, doa terbaikku selalu menyertaimu. Semoga kamu selalu sehat, panjang umur, dan segala impian yang kamu genggam segera tercapai. Aku berharap duniamu selalu penuh kemudahan dan rezekimu terus mengalir luas. Tetaplah menjadi sosok yang baik hati kepada siapa pun, karena itulah yang membuatmu begitu istimewa.\n\nAku hanya ingin kamu tahu bahwa apa pun yang terjadi di depan nanti, aku akan selalu menjadi salah satu orang yang paling bahagia melihat kamu sukses dan bahagia. Terima kasih sudah lahir ke dunia dan menjadi bagian indah dalam ceritaku. Tetaplah bersinar, dan ingat kalau aku selalu di sini, mendukungmu dengan seluruh hatiku.\n\nSelamat merayakan hari spesialmu, MBG (My BestFriend Gueh).";
-
-/** Letters for the balloon name reveal: STASYA (top arc) + ANNESTY (bottom row) */
-const BALLOON_LETTERS = [
-  "S",
-  "T",
-  "A",
-  "S",
-  "Y",
-  "A",
-  "A",
-  "N",
-  "N",
-  "E",
-  "S",
-  "T",
-  "Y",
-];
+/** Letters for the balloon name reveal: SASSY */
+const BALLOON_LETTERS = [..."SASSY"];
 
 /** Balloon animation durations and delays for each letter */
 const BALLOON_TIMINGS = [
@@ -315,14 +301,6 @@ const BALLOON_TIMINGS = [
   { dur: "11.2s, 8.7s", delay: "-4.5s, -1.8s" },
   { dur: "6.8s, 10.9s", delay: "-0.8s, -5.4s" },
   { dur: "12.1s, 9.5s", delay: "-6.7s, -2.2s" },
-  { dur: "8.3s, 14.1s", delay: "-3.2s, -7.8s" },
-  { dur: "10.4s, 7.2s", delay: "-5.1s, -4.6s" },
-  { dur: "7.9s, 12.8s", delay: "-1.9s, -0.9s" },
-  { dur: "13.2s, 10.1s", delay: "-8.2s, -6.3s" },
-  { dur: "9.7s, 11.9s", delay: "-4.1s, -5.8s" },
-  { dur: "11.5s, 8.4s", delay: "-0.4s, -2.7s" },
-  { dur: "6.4s, 13.9s", delay: "-6.1s, -8.4s" },
-  { dur: "14.3s, 9.2s", delay: "-9.5s, -4.9s" },
 ];
 
 /* --------------------------------------------------------------------------
@@ -332,6 +310,83 @@ const BALLOON_TIMINGS = [
 /** @returns {HTMLElement} Safe element getter */
 function $(id) {
   return document.getElementById(id);
+}
+
+const REDUCED_MOTION_QUERY = "(prefers-reduced-motion: reduce)";
+const prefersReducedMotion = () =>
+  window.matchMedia(REDUCED_MOTION_QUERY).matches;
+
+const motionDelay = (duration) => (prefersReducedMotion() ? 0 : duration);
+
+const scheduleMotion = (callback, duration) =>
+  setTimeout(callback, motionDelay(duration));
+
+const waitForSequence = (duration) =>
+  prefersReducedMotion()
+    ? Promise.resolve()
+    : new Promise((resolve) => setTimeout(resolve, duration));
+
+const seekAudio = (audio, seconds) => {
+  if (!audio || !Number.isFinite(seconds)) return;
+  const requestedTime = Math.max(0, seconds);
+
+  const applySeek = () => {
+    try {
+      const duration = Number(audio.duration);
+      if (!Number.isFinite(duration) || duration <= 0) return;
+      audio.currentTime = Math.min(
+        requestedTime,
+        Math.max(0, duration - 1),
+      );
+    } catch {
+      // Browsers can reject seeking while media metadata is unavailable.
+    }
+  };
+
+  try {
+    if (audio.readyState >= 1 && Number.isFinite(Number(audio.duration))) {
+      applySeek();
+    } else {
+      audio.addEventListener("loadedmetadata", applySeek, { once: true });
+    }
+  } catch {
+    // A detached or unsupported media element should not break the story.
+  }
+};
+
+function announceNarrativeStatus(message) {
+  const status = $("narrative-status");
+  if (status) status.textContent = message;
+}
+
+const FINALE_BALLOON_SIZE = 80;
+const FINALE_BALLOON_SCALE = 1.2;
+
+function getFinaleBalloonGeometry(index) {
+  const midpoint = (BALLOON_LETTERS.length - 1) / 2;
+  const angle = (index - midpoint) * 18;
+  const rad = (angle - 90) * (Math.PI / 180);
+  const centerX = window.innerWidth / 2;
+  const centerY = window.innerHeight / 2;
+  const sidePadding = Math.min(24, Math.max(8, window.innerWidth * 0.04));
+  const arcSin = Math.sin((midpoint * 18 * Math.PI) / 180);
+  const maxRadiusX = Math.max(
+    0,
+    (window.innerWidth / 2 -
+      sidePadding -
+      FINALE_BALLOON_SIZE * (FINALE_BALLOON_SCALE - 0.5)) /
+      arcSin,
+  );
+  const radiusX = Math.min(280, maxRadiusX);
+  const radiusY = Math.min(
+    100,
+    Math.max(0, window.innerHeight / 2 - 180 - 16),
+  );
+
+  return {
+    left: centerX + radiusX * Math.cos(rad) - FINALE_BALLOON_SIZE / 2,
+    top: centerY + radiusY * Math.sin(rad) - 180,
+  };
 }
 
 /* --------------------------------------------------------------------------
@@ -348,6 +403,9 @@ class ScreenManager {
     this.isTransitioning = false;
     this.simpleBalloonsCreated = false;
     this.letterBalloonsCreated = false;
+    this.autoAdvanceTimer = null;
+    this.audioRetryScreenId = null;
+    this.audioRequestToken = 0;
   }
 
   /**
@@ -363,7 +421,13 @@ class ScreenManager {
    */
   bindEvents() {
     // Main action button
-    $("action-btn").addEventListener("click", () => this.advance());
+    $("action-btn").addEventListener("click", () => {
+      if (this.audioRetryScreenId) {
+        this.retryBlockedAudio();
+        return;
+      }
+      this.advance();
+    });
 
     // Choice buttons — route to correct branch
     $("choice-kue").addEventListener("click", () => {
@@ -371,11 +435,36 @@ class ScreenManager {
       const targetIndex = SCREENS.findIndex((s) => s.id === "unlit-cake");
       this.transitionTo(targetIndex);
     });
-    $("choice-adit").addEventListener("click", () => {
+    $("choice-user").addEventListener("click", () => {
       if (this.isTransitioning) return;
-      const targetIndex = SCREENS.findIndex((s) => s.id === "adit-branch");
+      const targetIndex = SCREENS.findIndex((s) => s.id === "user-branch");
       this.transitionTo(targetIndex);
     });
+  }
+
+  clearAutoAdvance() {
+    if (this.autoAdvanceTimer !== null) {
+      clearTimeout(this.autoAdvanceTimer);
+      this.autoAdvanceTimer = null;
+    }
+  }
+
+  nextAudioRequestToken() {
+    this.audioRequestToken += 1;
+    return this.audioRequestToken;
+  }
+
+  isCurrentAudioRequest(requestToken) {
+    return requestToken === this.audioRequestToken;
+  }
+
+  scheduleAutoAdvance(callback, delay, screen) {
+    this.clearAutoAdvance();
+    if (this.audioRetryScreenId === screen.id) return;
+    this.autoAdvanceTimer = scheduleMotion(() => {
+      this.autoAdvanceTimer = null;
+      callback();
+    }, delay);
   }
 
   /**
@@ -410,6 +499,9 @@ class ScreenManager {
    */
   async transitionLampSwitch(index) {
     this.isTransitioning = true;
+    this.clearAutoAdvance();
+    this.nextAudioRequestToken();
+    this.setChoiceButtonsDisabled(true);
     const nextScreen = SCREENS[index];
 
     const canvas = $("app-canvas");
@@ -438,13 +530,13 @@ class ScreenManager {
     overlay.className = "";
     overlay.classList.add("overlay--light");
 
-    // Reveal subtitle with fade-in
+    // Reveal subtitle smoothly
     if (nextScreen.subtitle) {
       subtitleEl.textContent = nextScreen.subtitle;
       subtitleEl.style.opacity = "0";
       subtitleEl.style.display = "";
       subtitleEl.style.transition = "opacity 0.8s ease";
-      setTimeout(() => {
+      scheduleMotion(() => {
         subtitleEl.style.opacity = "1";
       }, 300);
     }
@@ -457,21 +549,24 @@ class ScreenManager {
 
     // Remove cursor after typing completes
     titleEl.classList.remove("cursor-active");
+    announceNarrativeStatus(nextScreen.title);
 
     // Handle autoEraseAndAdvance (State 2 special behavior)
     if (nextScreen.autoEraseAndAdvance) {
       this.isTransitioning = false;
-      setTimeout(async () => {
+      scheduleMotion(async () => {
         titleEl.classList.add("cursor-active");
         await this.deleteTextAnimated(titleEl);
         titleEl.classList.remove("cursor-active");
-        setTimeout(() => this.advance(), 500);
+        scheduleMotion(() => this.advance(), 500);
       }, 1500);
+      this.setChoiceButtonsDisabled(false);
       return;
     }
 
     // Restore button with new screen's content
     this.setBtnReady(nextScreen);
+    this.setChoiceButtonsDisabled(false);
     this.isTransitioning = false;
   }
 
@@ -482,6 +577,11 @@ class ScreenManager {
     return new Promise((resolve) => {
       let text = element.textContent;
       if (!text.length) {
+        resolve();
+        return;
+      }
+      if (prefersReducedMotion()) {
+        element.textContent = "";
         resolve();
         return;
       }
@@ -502,6 +602,11 @@ class ScreenManager {
   typeTextAnimated(element, text, speed = 75) {
     return new Promise((resolve) => {
       element.textContent = "";
+      if (prefersReducedMotion()) {
+        element.textContent = text;
+        resolve();
+        return;
+      }
       let i = 0;
       const interval = setInterval(() => {
         element.textContent += text[i];
@@ -519,6 +624,10 @@ class ScreenManager {
    */
   setBtnWaiting() {
     const actionBtn = $("action-btn");
+    actionBtn.disabled = true;
+    actionBtn.setAttribute("aria-disabled", "true");
+    actionBtn.setAttribute("aria-busy", "true");
+    this.setChoiceButtonsDisabled(true);
     if (actionBtn.classList.contains("btn-waiting")) return;
     const iconEl = actionBtn.querySelector(".btn-icon");
     const labelEl = actionBtn.querySelector(".btn-label");
@@ -528,14 +637,35 @@ class ScreenManager {
     iconEl.style.opacity = "0";
     labelEl.style.opacity = "0";
 
-    setTimeout(() => {
+    const applyWaitingState = () => {
       iconEl.textContent = "auto_awesome";
       iconEl.style.fontVariationSettings = '"FILL" 1';
       labelEl.textContent = "MENUNGGU PERINTAH...";
       iconEl.style.opacity = "1";
       labelEl.style.opacity = "1";
       actionBtn.classList.add("btn-waiting");
-    }, 150);
+    };
+
+    if (prefersReducedMotion()) applyWaitingState();
+    else scheduleMotion(applyWaitingState, 150);
+  }
+
+  /**
+   * Synchronizes semantic disabled state for both choice buttons.
+   */
+  setChoiceButtonsDisabled(disabled) {
+    ["choice-kue", "choice-user"].forEach((id) => {
+      const button = $(id);
+      if (!button) return;
+      button.disabled = disabled;
+      if (disabled) {
+        button.setAttribute("aria-disabled", "true");
+        button.setAttribute("aria-busy", "true");
+      } else {
+        button.removeAttribute("aria-disabled");
+        button.removeAttribute("aria-busy");
+      }
+    });
   }
 
   /**
@@ -546,17 +676,27 @@ class ScreenManager {
     const iconEl = actionBtn.querySelector(".btn-icon");
     const labelEl = actionBtn.querySelector(".btn-label");
 
-    if (fromHidden) {
+    const applyReadyContent = () => {
       iconEl.textContent = screen.btnIcon;
-      iconEl.style.fontVariationSettings = screen.btnIconFill ? '"FILL" 1' : "";
+      iconEl.style.fontVariationSettings = screen.btnIconFill
+        ? '"FILL" 1'
+        : "";
       labelEl.textContent = screen.btnLabel;
       iconEl.style.opacity = "1";
       labelEl.style.opacity = "1";
       actionBtn.classList.remove("btn-waiting");
+      actionBtn.disabled = false;
+      actionBtn.removeAttribute("aria-disabled");
+      actionBtn.removeAttribute("aria-busy");
+      actionBtn.setAttribute("aria-label", screen.btnLabel);
+    };
+
+    if (fromHidden) {
+      applyReadyContent();
       actionBtn.style.display = "";
       actionBtn.style.opacity = "0";
       actionBtn.style.transition = "opacity 0.5s ease";
-      setTimeout(() => {
+      scheduleMotion(() => {
         actionBtn.style.opacity = "1";
         actionBtn.style.transition = "";
       }, 60);
@@ -565,35 +705,278 @@ class ScreenManager {
       labelEl.style.transition = "opacity 0.2s ease";
       iconEl.style.opacity = "0";
       labelEl.style.opacity = "0";
-      setTimeout(() => {
-        iconEl.textContent = screen.btnIcon;
-        iconEl.style.fontVariationSettings = screen.btnIconFill
-          ? '"FILL" 1'
-          : "";
-        labelEl.textContent = screen.btnLabel;
-        iconEl.style.opacity = "1";
-        labelEl.style.opacity = "1";
-        actionBtn.classList.remove("btn-waiting");
-      }, 200);
+      if (prefersReducedMotion()) applyReadyContent();
+      else scheduleMotion(applyReadyContent, 200);
     }
+  }
+
+  /**
+   * Announces audio playback failures without interrupting the narrative.
+   */
+  showAudioStatus(message) {
+    const status = $("audio-status");
+    if (!status) return;
+    status.textContent = message;
+    status.classList.add("active");
+  }
+
+  clearAudioStatus() {
+    const status = $("audio-status");
+    if (!status) return;
+    status.textContent = "";
+    status.classList.remove("active");
+  }
+
+  handleAudioBlocked(screen, requestToken) {
+    if (!this.isCurrentAudioRequest(requestToken)) return;
+    this.clearAutoAdvance();
+    this.audioRetryScreenId = screen.id;
+    this.showAudioStatus(
+      'Musik diblokir browser. Tekan tombol "Putar Musik Lagi" untuk mencoba lagi.',
+    );
+
+    if (
+      !this.isTransitioning &&
+      this.currentIndex === SCREENS.indexOf(screen)
+    ) {
+      this.setAudioRetryReady(screen);
+    }
+  }
+
+  setAudioRetryReady(screen) {
+    const actionBtn = $("action-btn");
+    const iconEl = actionBtn.querySelector(".btn-icon");
+    const labelEl = actionBtn.querySelector(".btn-label");
+
+    actionBtn.style.display = "";
+    actionBtn.classList.remove("btn-waiting");
+    actionBtn.disabled = false;
+    actionBtn.removeAttribute("aria-disabled");
+    actionBtn.removeAttribute("aria-busy");
+    actionBtn.setAttribute("aria-label", "Putar Musik Lagi");
+    iconEl.textContent = "music_note";
+    iconEl.style.fontVariationSettings = screen.btnIconFill ? '"FILL" 1' : "";
+    iconEl.style.opacity = "1";
+    labelEl.textContent = "Putar Musik Lagi";
+    labelEl.style.opacity = "1";
+    this.setChoiceButtonsDisabled(false);
+  }
+
+  retryBlockedAudio() {
+    const screen = SCREENS[this.currentIndex];
+    if (!screen || this.audioRetryScreenId !== screen.id) return;
+
+    const audioId = screen.id === "wrong-song" ? "audio-wrong" : "audio-correct";
+    const audio = $(audioId);
+    if (!audio) return;
+
+    const requestToken = this.nextAudioRequestToken();
+    this.audioRetryScreenId = null;
+    this.setBtnWaiting();
+    this.showAudioStatus("Mencoba memutar musik...");
+    seekAudio(audio, screen.id === "wrong-song" ? 130 : 0);
+    this.fadeInAudio(
+      audio,
+      1,
+      3000,
+      () => this.handleAudioBlocked(screen, requestToken),
+      () => this.clearAudioStatus(),
+      requestToken,
+    );
+    this.scheduleAutoAdvance(
+      () => this.advance(),
+      screen.autoAdvanceDelay || 1500,
+      screen,
+    );
   }
 
   /**
    * Fades in audio smoothly to prevent jarring the user.
    */
-  fadeInAudio(audio, targetVolume = 1, duration = 3000) {
+  fadeInAudio(
+    audio,
+    targetVolume = 1,
+    duration = 3000,
+    onBlocked,
+    onStarted,
+    requestToken,
+  ) {
     audio.volume = 0;
-    audio.play().catch((e) => console.log("Audio play blocked:", e));
-
     const step = targetVolume / (duration / 50);
-    const fadeInterval = setInterval(() => {
-      if (audio.volume + step < targetVolume) {
-        audio.volume += step;
+    let fadeInterval;
+    const isCurrentRequest = () =>
+      requestToken === undefined || this.isCurrentAudioRequest(requestToken);
+
+    const handleBlocked = () => {
+      clearInterval(fadeInterval);
+      if (!isCurrentRequest()) return;
+      if (onBlocked) {
+        onBlocked();
       } else {
-        audio.volume = targetVolume;
-        clearInterval(fadeInterval);
+        this.showAudioStatus("Musik diblokir browser.");
       }
-    }, 50);
+    };
+
+    let playback;
+    try {
+      playback = audio.play();
+    } catch {
+      handleBlocked();
+      return;
+    }
+
+    Promise.resolve(playback).then(
+      () => {
+        if (isCurrentRequest() && onStarted) onStarted();
+        fadeInterval = setInterval(() => {
+          if (audio.paused) {
+            clearInterval(fadeInterval);
+            return;
+          }
+          if (audio.volume + step < targetVolume) {
+            audio.volume += step;
+          } else {
+            audio.volume = targetVolume;
+            clearInterval(fadeInterval);
+          }
+        }, 50);
+      },
+      handleBlocked,
+    );
+  }
+
+  startAudioForScreen(screen, requestToken = this.nextAudioRequestToken()) {
+    if (screen.id === "wrong-song") {
+      let audio = $("audio-wrong");
+      if (!audio) {
+        audio = new Audio(
+          "assets/audio/girl-in-red-we-fell-in-love-in-october.mp3",
+        );
+        audio.id = "audio-wrong";
+        audio.loop = true;
+        document.body.appendChild(audio);
+      }
+      seekAudio(audio, 130);
+      this.fadeInAudio(
+        audio,
+        1,
+        3000,
+        () => this.handleAudioBlocked(screen, requestToken),
+        () => this.clearAudioStatus(),
+        requestToken,
+      );
+      return;
+    }
+
+    if (screen.id !== "correct-song") return;
+
+    const wrongAudio = $("audio-wrong");
+    if (wrongAudio) {
+      const fadeOutInterval = setInterval(() => {
+        if (wrongAudio.paused || wrongAudio.volume <= 0.1) {
+          clearInterval(fadeOutInterval);
+          wrongAudio.pause();
+          return;
+        }
+        wrongAudio.volume = Math.max(0, wrongAudio.volume - 0.1);
+      }, 50);
+    }
+
+    let correctAudio = $("audio-correct");
+    if (!correctAudio) {
+      correctAudio = new Audio(
+        "assets/audio/happy-birthday-stevie-wonder.mp3",
+      );
+      correctAudio.id = "audio-correct";
+      correctAudio.loop = false;
+
+      correctAudio.addEventListener("ended", () => {
+        let nextAudio = $("audio-next");
+        if (!nextAudio) {
+          nextAudio = new Audio("assets/audio/menjadi-rumahmu.mp3");
+          nextAudio.id = "audio-next";
+          nextAudio.loop = true;
+          document.body.appendChild(nextAudio);
+        }
+        seekAudio(nextAudio, 0);
+        const followUpRequestToken = this.nextAudioRequestToken();
+        this.fadeInAudio(
+          nextAudio,
+          1,
+          3000,
+          () => this.showAudioStatus("Musik lanjutan diblokir browser."),
+          () => this.clearAudioStatus(),
+          followUpRequestToken,
+        );
+
+        const spotifyWidget = $("spotify-widget");
+        const songEl = $("spotify-song-name");
+        const artistEl = $("spotify-artist-name");
+
+        songEl.style.transition = "opacity 0.3s ease";
+        songEl.style.opacity = "0";
+        scheduleMotion(() => {
+          songEl.textContent = "Menjadi-Rumahmu";
+          artistEl.textContent = "Orang Spesial";
+          songEl.style.opacity = "1";
+          spotifyWidget.classList.add("active");
+
+          const giftOverlay = $("gift-overlay");
+          const finalMessageBox = $("final-message");
+          if (giftOverlay) {
+            if (finalMessageBox) {
+              finalMessageBox.scrollTop = 0;
+              finalMessageBox.style.overflow = "hidden";
+            }
+            giftOverlay.style.display = "flex";
+            giftOverlay.style.opacity = "0";
+            giftOverlay.style.transition = "opacity 1s ease";
+            scheduleMotion(() => {
+              giftOverlay.style.opacity = "1";
+            }, 100);
+
+            const giftBtn = $("gift-btn");
+            if (giftBtn && !giftBtn.hasAttribute("data-bound")) {
+              giftBtn.setAttribute("data-bound", "true");
+              giftBtn.addEventListener("click", () => {
+                const finalMsgText = document.querySelector(
+                  ".final-message-text",
+                );
+                if (finalMsgText) {
+                  const image = document.createElement("img");
+                  image.src = "assets/images/leon-grace.webp";
+                  image.alt = "Leon Grace";
+                  image.className = "gift-reveal-image";
+                  finalMsgText.replaceChildren(image);
+                }
+                giftOverlay.style.opacity = "0";
+                scheduleMotion(() => {
+                  giftOverlay.style.display = "none";
+                  if (finalMessageBox) {
+                    finalMessageBox.style.overflow = "auto";
+                  }
+                }, 1000);
+              });
+            }
+          }
+
+          setTimeout(() => {
+            spotifyWidget.classList.remove("active");
+          }, 20000);
+        }, 300);
+      });
+
+      document.body.appendChild(correctAudio);
+    }
+    seekAudio(correctAudio, 0);
+    this.fadeInAudio(
+      correctAudio,
+      1,
+      3000,
+      () => this.handleAudioBlocked(screen, requestToken),
+      () => this.clearAudioStatus(),
+      requestToken,
+    );
   }
 
   /**
@@ -601,6 +984,9 @@ class ScreenManager {
    */
   async transitionTo(index) {
     this.isTransitioning = true;
+    this.clearAutoAdvance();
+    const audioRequestToken = this.nextAudioRequestToken();
+    this.setChoiceButtonsDisabled(true);
     const current = SCREENS[this.currentIndex];
     const next = SCREENS[index];
 
@@ -644,20 +1030,28 @@ class ScreenManager {
 
     // Button: set to waiting state when title is animating
     const titleChanged = next.title !== current.title;
+    const revealingChoices = next.showChoices && !current.showChoices;
+    const leavingChoices = current.showChoices && !next.showChoices;
     if (titleChanged && current.btnLabel && !current.showChoices) {
       this.setBtnWaiting();
     }
 
     // Transitioning FROM a choice-screen → fade out choice buttons
-    if (current.showChoices && !next.showChoices) {
+    if (leavingChoices) {
       choiceButtons.style.transition = "opacity 0.3s ease";
       choiceButtons.style.opacity = "0";
-      setTimeout(() => {
+      scheduleMotion(() => {
         choiceButtons.classList.remove("active");
         choiceButtons.style.opacity = "";
         choiceButtons.style.transition = "";
+        this.setChoiceButtonsDisabled(false);
       }, 350);
     }
+
+    // Start requested audio before the first awaited title animation so the
+    // browser's user-activation window is still open.
+    this.currentIndex = index;
+    this.startAudioForScreen(next, audioRequestToken);
 
     // Title: delete old text
     if (titleChanged) {
@@ -676,139 +1070,24 @@ class ScreenManager {
         subtitleEl.style.opacity = "0";
         subtitleEl.style.display = "";
         subtitleEl.style.transition = "opacity 0.8s ease";
-        setTimeout(() => {
+        scheduleMotion(() => {
           subtitleEl.style.opacity = "1";
         }, 200);
       } else if (current.subtitle && !next.subtitle) {
         subtitleEl.style.transition = "opacity 0.5s ease";
         subtitleEl.style.opacity = "0";
-        setTimeout(() => {
+        scheduleMotion(() => {
           subtitleEl.style.display = "none";
           subtitleEl.style.opacity = "";
         }, 500);
       } else {
         subtitleEl.style.transition = "opacity 0.3s ease";
         subtitleEl.style.opacity = "0";
-        setTimeout(() => {
+        scheduleMotion(() => {
           subtitleEl.textContent = next.subtitle;
           subtitleEl.style.opacity = "1";
         }, 300);
       }
-    }
-
-    // Advance state index
-    this.currentIndex = index;
-
-    // Audio Trigger
-    if (next.id === "wrong-song") {
-      let audio = $("audio-wrong");
-      if (!audio) {
-        audio = new Audio(
-          "assets/audio/girl-in-red-we-fell-in-love-in-october.mp3",
-        );
-        audio.id = "audio-wrong";
-        audio.loop = true;
-        document.body.appendChild(audio);
-      }
-      audio.currentTime = 130; // 2 minutes 10 seconds
-      this.fadeInAudio(audio, 1, 3000);
-    } else if (next.id === "correct-song") {
-      // Stop the wrong audio
-      let wrongAudio = $("audio-wrong");
-      if (wrongAudio) {
-        // Fade out slightly before pause to be smooth
-        const fadeOutInterval = setInterval(() => {
-          if (wrongAudio.volume > 0.1) {
-            wrongAudio.volume -= 0.1;
-          } else {
-            clearInterval(fadeOutInterval);
-            wrongAudio.pause();
-          }
-        }, 50);
-      }
-
-      // Play the correct audio
-      let correctAudio = $("audio-correct");
-      if (!correctAudio) {
-        correctAudio = new Audio(
-          "assets/audio/happy-birthday-stevie-wonder.mp3",
-        );
-        correctAudio.id = "audio-correct";
-        correctAudio.loop = false;
-
-        // When Happy Birthday finishes, play "Menjadi-Rumahmu"
-        correctAudio.addEventListener("ended", () => {
-          let nextAudio = $("audio-next");
-          if (!nextAudio) {
-            nextAudio = new Audio("assets/audio/menjadi-rumahmu.mp3");
-            nextAudio.id = "audio-next";
-            nextAudio.loop = true;
-            document.body.appendChild(nextAudio);
-          }
-          nextAudio.currentTime = 0;
-          this.fadeInAudio(nextAudio, 1, 3000);
-
-          // Update and show Spotify widget
-          const spotifyWidget = $("spotify-widget");
-          const songEl = $("spotify-song-name");
-          const artistEl = $("spotify-artist-name");
-
-          songEl.style.transition = "opacity 0.3s ease";
-          songEl.style.opacity = "0";
-          setTimeout(() => {
-            songEl.textContent = "Menjadi-Rumahmu";
-            artistEl.textContent = "Orang Spesial";
-            songEl.style.opacity = "1";
-            spotifyWidget.classList.add("active");
-
-            // Show gift overlay
-            const giftOverlay = $("gift-overlay");
-            const finalMessageBox = $("final-message");
-            if (giftOverlay) {
-              if (finalMessageBox) {
-                finalMessageBox.scrollTop = 0;
-                finalMessageBox.style.overflow = "hidden";
-              }
-              giftOverlay.style.display = "flex";
-              giftOverlay.style.opacity = "0";
-              giftOverlay.style.transition = "opacity 1s ease";
-              setTimeout(() => {
-                giftOverlay.style.opacity = "1";
-              }, 100);
-
-              const giftBtn = $("gift-btn");
-              if (giftBtn && !giftBtn.hasAttribute("data-bound")) {
-                giftBtn.setAttribute("data-bound", "true");
-                giftBtn.addEventListener("click", () => {
-                  const finalMsgText = document.querySelector(
-                    ".final-message-text",
-                  );
-                  if (finalMsgText) {
-                    finalMsgText.innerHTML =
-                      '<img src="assets/images/leon-grace.webp" alt="Leon Grace" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">';
-                  }
-                  giftOverlay.style.opacity = "0";
-                  setTimeout(() => {
-                    giftOverlay.style.display = "none";
-                    if (finalMessageBox) {
-                      finalMessageBox.style.overflow = "auto";
-                    }
-                  }, 1000);
-                });
-              }
-            }
-
-            // Hide Spotify widget after 20 seconds
-            setTimeout(() => {
-              spotifyWidget.classList.remove("active");
-            }, 20000);
-          }, 300);
-        });
-
-        document.body.appendChild(correctAudio);
-      }
-      correctAudio.currentTime = 0;
-      this.fadeInAudio(correctAudio, 1, 3000);
     }
 
     // Spotify widget
@@ -819,7 +1098,7 @@ class ScreenManager {
         if (next.spotify.song !== current.spotify.song) {
           songEl.style.transition = "opacity 0.3s ease";
           songEl.style.opacity = "0";
-          setTimeout(() => {
+          scheduleMotion(() => {
             songEl.textContent = next.spotify.song;
             artistEl.textContent = next.spotify.artist;
             songEl.style.opacity = "1";
@@ -869,12 +1148,13 @@ class ScreenManager {
       await this.typeTextAnimated(titleEl, next.title, 45);
       titleEl.classList.remove("cursor-active");
     }
+    if (next.title) announceNarrativeStatus(next.title);
 
     // Restore button / reveal choices AFTER title finishes typing
     if (next.showChoices && !current.showChoices) {
       actionBtn.style.transition = "opacity 0.3s ease";
       actionBtn.style.opacity = "0";
-      setTimeout(() => {
+      scheduleMotion(() => {
         actionBtn.style.display = "none";
         actionBtn.style.opacity = "";
         actionBtn.style.transition = "";
@@ -883,25 +1163,32 @@ class ScreenManager {
         choiceButtons.style.opacity = "0";
         choiceButtons.classList.add("active");
         choiceButtons.style.transition = "opacity 0.6s ease";
-        setTimeout(() => {
+        scheduleMotion(() => {
           choiceButtons.style.opacity = "1";
+          this.setChoiceButtonsDisabled(false);
         }, 60);
       }, 320);
     } else if (next.autoEraseAndAdvance) {
       // Auto-erase text, then auto-advance
       const delay = next.autoAdvanceDelay || 1500;
+      if (!leavingChoices) this.setChoiceButtonsDisabled(false);
       this.isTransitioning = false;
-      setTimeout(async () => {
+      scheduleMotion(async () => {
         titleEl.classList.add("cursor-active");
         await this.deleteTextAnimated(titleEl);
         titleEl.classList.remove("cursor-active");
-        setTimeout(() => this.advance(), 500);
+        scheduleMotion(() => this.advance(), 500);
       }, delay);
       return;
     } else if (next.autoAdvance) {
       const delay = next.autoAdvanceDelay || 1500;
+      if (!leavingChoices) this.setChoiceButtonsDisabled(false);
       this.isTransitioning = false;
-      setTimeout(() => this.advance(), delay);
+      if (this.audioRetryScreenId === next.id) {
+        this.setAudioRetryReady(next);
+        return;
+      }
+      this.scheduleAutoAdvance(() => this.advance(), delay, next);
       return;
     } else if (next.btnLabel && titleChanged) {
       this.setBtnReady(
@@ -910,6 +1197,9 @@ class ScreenManager {
       );
     }
 
+    if (!revealingChoices && !leavingChoices) {
+      this.setChoiceButtonsDisabled(false);
+    }
     this.isTransitioning = false;
   }
 
@@ -969,6 +1259,11 @@ class ScreenManager {
       titleWrapper.classList.remove("typing-container");
       titleEl.classList.remove("typing-text");
     }
+    if (screen.title) {
+      announceNarrativeStatus(screen.title);
+    } else if (screen.isFinale) {
+      announceNarrativeStatus("Finale dimulai.");
+    }
 
     // Pulse effect for dark room
     if (screen.animatePulse) {
@@ -980,6 +1275,10 @@ class ScreenManager {
     // Action Button
     if (screen.btnLabel) {
       actionBtn.style.display = "";
+      actionBtn.disabled = false;
+      actionBtn.removeAttribute("aria-disabled");
+      actionBtn.removeAttribute("aria-busy");
+      actionBtn.setAttribute("aria-label", screen.btnLabel);
       const iconEl = actionBtn.querySelector(".btn-icon");
       const labelEl = actionBtn.querySelector(".btn-label");
       iconEl.textContent = screen.btnIcon;
@@ -1041,6 +1340,8 @@ class ScreenManager {
     } else if (screen.showLetterBalloons) {
       letterBalloonContainer.classList.add("active");
     }
+
+    this.setChoiceButtonsDisabled(this.isTransitioning);
   }
 
   /**
@@ -1048,7 +1349,7 @@ class ScreenManager {
    */
   createSimpleBalloons() {
     const container = $("balloon-container");
-    container.innerHTML = "";
+    container.replaceChildren();
     const durations = [
       [8.2, 11.4],
       [10.5, 13.8],
@@ -1078,12 +1379,12 @@ class ScreenManager {
   }
 
   /**
-   * Create letter balloons that spell STASYA + ANNESTY
+   * Create letter balloons that spell SASSY
    */
   createLetterBalloons() {
     const container = $("letter-balloon-container");
-    container.innerHTML = "";
-    const balloonImgCycle = [0, 2, 1, 3, 0, 2, 1, 3, 0, 2, 1, 3, 0];
+    container.replaceChildren();
+    const balloonImgCycle = [0, 2, 1, 3];
 
     BALLOON_LETTERS.forEach((letter, i) => {
       const wrapper = document.createElement("div");
@@ -1093,7 +1394,7 @@ class ScreenManager {
       wrapper.style.animationDelay = BALLOON_TIMINGS[i].delay;
 
       const img = document.createElement("img");
-      img.src = ASSETS.balloons[balloonImgCycle[i]];
+      img.src = ASSETS.balloons[balloonImgCycle[i % balloonImgCycle.length]];
       img.alt = `Balloon ${letter}`;
 
       const span = document.createElement("span");
@@ -1113,13 +1414,16 @@ class ScreenManager {
    */
   transitionToFinale(screen) {
     this.isTransitioning = true;
+    this.clearAutoAdvance();
+    this.nextAudioRequestToken();
+    this.setBtnWaiting();
 
     // Hide simple balloons, fade content
     $("balloon-container").classList.remove("active");
     $("content-area").style.opacity = "0";
     $("content-area").style.transition = "opacity 0.6s ease-out";
 
-    setTimeout(() => {
+    scheduleMotion(() => {
       this.render(screen);
 
       // Setup the finale layout
@@ -1129,6 +1433,7 @@ class ScreenManager {
       $("content-area").classList.add("finale-mode");
 
       $("content-area").style.opacity = "1";
+      this.setChoiceButtonsDisabled(false);
       this.isTransitioning = false;
 
       // Automatically trigger the finale animations
@@ -1140,11 +1445,23 @@ class ScreenManager {
    * Grand Finale animation — converges letter balloons, reveals message button
    */
   triggerGrandFinale() {
-    const actionBtn = $("action-btn");
     const balloons = document.querySelectorAll(".letter-balloon");
-    const textBlock = $("title-section");
-    const aditBtn = $("adit-message-btn");
+    const userMessageBtn = $("user-message-btn");
     const cake = $("cake-container");
+
+    const userMessageLabel = userMessageBtn.querySelector(
+      ".btn-label--small",
+    );
+    if (userMessageLabel) {
+      userMessageLabel.textContent = `Pesan dari ${SENDER_NAME}`;
+    }
+    userMessageBtn.setAttribute(
+      "aria-label",
+      `Open message from ${SENDER_NAME}`,
+    );
+    userMessageBtn.disabled = false;
+    userMessageBtn.removeAttribute("aria-disabled");
+    userMessageBtn.removeAttribute("aria-busy");
 
     // Move cake down to its natural responsive position
     if (cake) {
@@ -1152,21 +1469,13 @@ class ScreenManager {
       cake.style.transition = "transform 1.5s ease-out";
     }
 
-    // Show "Pesan dari Adit" button after a delay
-    setTimeout(() => {
-      aditBtn.style.display = "flex";
-      aditBtn.offsetHeight; // reflow
-      aditBtn.style.opacity = "1";
-      aditBtn.style.pointerEvents = "auto";
+    // Show "Pesan dari user" button after a delay
+    scheduleMotion(() => {
+      userMessageBtn.style.display = "flex";
+      userMessageBtn.offsetHeight; // reflow
+      userMessageBtn.style.opacity = "1";
+      userMessageBtn.style.pointerEvents = "auto";
     }, 1500);
-
-    // Converge balloons into formation
-    const centerX = window.innerWidth / 2;
-    const centerY = window.innerHeight / 2;
-    const radiusXTop = 280;
-    const radiusYTop = 100;
-    const radiusXBottom = 250;
-    const radiusYBottom = 80;
 
     balloons.forEach((b, index) => {
       const rect = b.getBoundingClientRect();
@@ -1175,20 +1484,7 @@ class ScreenManager {
       b.offsetHeight; // reflow
       b.classList.add("converged");
 
-      let finalX, finalY;
-      if (index < 6) {
-        // STASYA — arc formation
-        const angle = (index - 2.5) * 20;
-        const rad = (angle - 90) * (Math.PI / 180);
-        finalX = centerX + radiusXTop * Math.cos(rad) - 40;
-        finalY = centerY + radiusYTop * Math.sin(rad) - 180;
-      } else {
-        // ANNESTY — arc formation
-        const angle = (index - 9) * 20;
-        const rad = (angle - 90) * (Math.PI / 180);
-        finalX = centerX + radiusXBottom * Math.cos(rad) - 40;
-        finalY = centerY + radiusYBottom * Math.sin(rad) - 20;
-      }
+      const { left: finalX, top: finalY } = getFinaleBalloonGeometry(index);
 
       b.style.left = finalX + "px";
       b.style.top = finalY + "px";
@@ -1196,14 +1492,14 @@ class ScreenManager {
       b.style.zIndex = "30";
 
       // Reveal letter text after convergence
-      setTimeout(() => {
+      scheduleMotion(() => {
         const text = b.querySelector(".balloon-text");
         if (text) text.classList.add("visible");
       }, 1400);
     });
 
     // Darken the background
-    setTimeout(() => {
+    scheduleMotion(() => {
       document.body.style.backgroundColor = "#050505";
     }, 500);
   }
@@ -1218,6 +1514,11 @@ class ScreenManager {
  */
 function typeSentence(el, text, speed = 70) {
   return new Promise((resolve) => {
+    if (prefersReducedMotion()) {
+      el.textContent += text;
+      resolve();
+      return;
+    }
     let i = 0;
     const interval = setInterval(() => {
       el.textContent += text[i];
@@ -1235,6 +1536,11 @@ function typeSentence(el, text, speed = 70) {
  */
 function deleteSentence(el, speed = 35) {
   return new Promise((resolve) => {
+    if (prefersReducedMotion()) {
+      el.textContent = "";
+      resolve();
+      return;
+    }
     const interval = setInterval(() => {
       el.textContent = el.textContent.slice(0, -1);
       if (el.textContent.length === 0) {
@@ -1255,64 +1561,61 @@ async function startTypewriterSequence() {
 
   for (let i = 0; i < TYPEWRITER_SENTENCES.length; i++) {
     await typeSentence(display, TYPEWRITER_SENTENCES[i]);
-    await new Promise((r) => setTimeout(r, 1000));
+    announceNarrativeStatus(
+      `Pesan ${i + 1} dari ${TYPEWRITER_SENTENCES.length} selesai.`,
+    );
+    await waitForSequence(1000);
     await deleteSentence(display);
-    await new Promise((r) => setTimeout(r, 500));
+    await waitForSequence(500);
   }
 
   // Fade out typewriter, show final message
   typewriterArea.style.opacity = "0";
-  setTimeout(() => {
+  scheduleMotion(() => {
     typewriterArea.classList.remove("active");
     finalMessage.classList.add("active");
-    setTimeout(() => {
+    scheduleMotion(() => {
       finalMessage.classList.add("visible");
     }, 50);
   }, 500);
 }
 
 /**
- * "Pesan dari Adit" button handler — transitions to typewriter mode
+ * "Pesan dari user" button handler — transitions to typewriter mode
  */
-function showAditMessage() {
+function showUserMessage() {
   const cake = $("cake-container");
-  const aditBtn = $("adit-message-btn");
+  const userMessageBtn = $("user-message-btn");
   const balloons = document.querySelectorAll(".letter-balloon");
   const footerDate = $("footer-date");
   const typewriterArea = $("typewriter-area");
 
+  if (!userMessageBtn || userMessageBtn.disabled) return;
+  userMessageBtn.disabled = true;
+  userMessageBtn.setAttribute("aria-disabled", "true");
+  userMessageBtn.setAttribute("aria-busy", "true");
+
   // Hide cake
   cake.style.opacity = "0";
   cake.style.transform = "translateY(120px) scale(0.8)";
-  cake.style.transition = "all 0.8s ease-in-out";
+  cake.style.transition =
+    "transform 0.8s ease-in-out, opacity 0.8s ease-in-out";
 
   // Hide button
-  aditBtn.style.opacity = "0";
-  aditBtn.style.pointerEvents = "none";
+  userMessageBtn.style.opacity = "0";
+  userMessageBtn.style.pointerEvents = "none";
 
   // Hide footer
   if (footerDate) footerDate.style.opacity = "0";
 
-  // Move ANNESTY balloons up beneath STASYA
-  const centerX = window.innerWidth / 2;
-  const centerY = window.innerHeight / 2;
-  const radiusXBottom = 250;
-  const radiusYBottom = 80;
-
   balloons.forEach((b, index) => {
-    if (index >= 6) {
-      // ANNESTY — arc formation
-      const angle = (index - 9) * 20;
-      const rad = (angle - 90) * (Math.PI / 180);
-      const finalX = centerX + radiusXBottom * Math.cos(rad) - 40;
-      const finalY = centerY + radiusYBottom * Math.sin(rad) - 20;
-      b.style.left = finalX + "px";
-      b.style.top = finalY + "px";
-    }
+    const { left: finalX, top: finalY } = getFinaleBalloonGeometry(index);
+    b.style.left = finalX + "px";
+    b.style.top = finalY + "px";
   });
 
   // After cake fades, show typewriter
-  setTimeout(() => {
+  scheduleMotion(() => {
     cake.style.display = "none";
     typewriterArea.classList.add("active");
     startTypewriterSequence();
@@ -1323,9 +1626,10 @@ function showAditMessage() {
    6. Initialization
    -------------------------------------------------------------------------- */
 document.addEventListener("DOMContentLoaded", () => {
+  document.title = PROJECT_NAME;
   const app = new ScreenManager();
   app.init();
 
-  // Bind the "Pesan dari Adit" button
-  $("adit-message-btn").addEventListener("click", showAditMessage);
+  // Bind the "Pesan dari user" button
+  $("user-message-btn").addEventListener("click", showUserMessage);
 });
