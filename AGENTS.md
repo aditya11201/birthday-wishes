@@ -1,87 +1,103 @@
 # PROJECT KNOWLEDGE BASE
 
-**Generated:** 2026-04-25
-**Commit:** fce2ab6
-**Branch:** main
+**Project:** `glad-you-were-born`
+**Canonical recipient:** `Sassy`
+**Canonical sender:** `user` (`USER` only for the visual branch label)
 
 ## OVERVIEW
-Static single-page birthday experience. Plain HTML + vanilla JS + custom CSS, with Tailwind loaded from CDN and no npm/build pipeline.
+
+Static single-page birthday experience built with plain HTML, vanilla browser
+JavaScript, custom CSS, local media, Google Fonts, and Material Symbols. It has
+no package manager, build pipeline, framework, or test runner.
 
 ## STRUCTURE
+
 ```text
-birthday-wishes/
-├── index.html          # only runtime HTML entry
-├── js/
-│   └── script.js       # full interaction/state machine
-├── css/
-│   ├── styles.css      # production styles + animations
-│   └── cake.less       # legacy/reference cake styling source
-├── assets/
-│   ├── images/         # backgrounds, banner, balloon art, gift image
-│   └── audio/          # wrong-song, birthday song, finale audio
-├── raw/                # ignored prototype/archive snapshots
-└── PRD.md              # original product requirements
+glad-you-were-born/
+├── index.html          # only runtime entry point
+├── js/script.js        # narrative state machine and interactions
+├── css/styles.css      # production styles and animations
+├── assets/images/      # room, balloon, banner, and gift artwork
+├── assets/audio/       # three local soundtrack files
+├── README.md           # public setup and usage
+├── CONTRIBUTING.md     # contributor workflow
+├── ASSET-LICENSES.md   # provenance and redistribution notes
+└── PRD.md              # current product requirements
 ```
 
 ## WHERE TO LOOK
+
 | Task | Location | Notes |
 |------|----------|-------|
-| App startup | `index.html`, `js/script.js:1325` | `DOMContentLoaded` creates `ScreenManager` |
-| Narrative flow | `js/script.js:41` | `SCREENS` array order is the user journey |
-| Main controller | `js/script.js:345` | `ScreenManager` owns transitions, audio, finale |
-| DOM contracts | `index.html` + `js/script.js` | IDs are hard dependencies; rename in both places |
-| Typewriter finale | `js/script.js:283`, `js/script.js:1251` | Sentence list + sequence runner |
-| Visual system | `css/styles.css` | Tokens, component styles, animations, responsive rules |
-| Cake styling history | `css/cake.less` | Not wired into runtime build |
-| Product intent | `PRD.md` | Good for narrative/spec checks |
-| Prototype history | `raw/*` | Archived iterations, not production source of truth |
+| App startup | `index.html`, `js/script.js:1416` | `DOMContentLoaded` creates `ScreenManager` |
+| Narrative flow | `js/script.js:44` | `SCREENS` order is the user journey |
+| Main controller | `js/script.js:343` | `ScreenManager` owns transitions, audio, and finale |
+| DOM contracts | `index.html` + `js/script.js` | IDs are hard dependencies; update both together |
+| Typewriter finale | `js/script.js:286`, `js/script.js:1344` | Sentence list and sequence runner |
+| Letter balloons | `js/script.js:295`, `js/script.js:1164` | Exactly five letters spelling `SASSY` |
+| Visual system | `css/styles.css` | Tokens, components, animation, and responsive rules |
+| Product intent | `PRD.md` | Current narrative and release decisions |
 
 ## CODE MAP
-| Symbol | Type | Location | Refs | Role |
-|--------|------|----------|------|------|
-| `SCREENS` | constant array | `js/script.js:41` | many internal reads | Defines every narrative state |
-| `TYPEWRITER_SENTENCES` | constant array | `js/script.js:283` | typewriter flow | Finale message staging |
-| `BALLOON_LETTERS` | constant array | `js/script.js:295` | letter balloon creation | STASYA/ANNESTY reveal |
-| `$` | function | `js/script.js:333` | used throughout | Central DOM lookup helper |
-| `ScreenManager` | class | `js/script.js:345` | app entrypoint | Transition orchestration |
-| `startTypewriterSequence` | async function | `js/script.js:1251` | called from finale path | Runs message reveal |
-| `showAditMessage` | function | `js/script.js:1277` | click handler | Swaps finale into message mode |
+
+| Symbol | Type | Location | Role |
+|--------|------|----------|------|
+| `SCREENS` | constant array | `js/script.js:44` | Defines every narrative state |
+| `TYPEWRITER_SENTENCES` | constant array | `js/script.js:286` | Staged finale copy |
+| `BALLOON_LETTERS` | constant array | `js/script.js:295` | `SASSY` letter data |
+| `$` | function | `js/script.js:311` | Central DOM lookup helper |
+| `ScreenManager` | class | `js/script.js:343` | Transition orchestration |
+| `startTypewriterSequence` | async function | `js/script.js:1344` | Runs the message reveal |
+| `showUserMessage` | function | `js/script.js:1370` | Switches finale to message mode |
 
 ## CONVENTIONS
-- Runtime is file-based: open `index.html`; no build, bundler, or package scripts.
-- Keep IDs stable. JS queries many elements directly via `getElementById` helper.
-- New story steps belong in `SCREENS`, not scattered boolean flags.
-- Audio/image paths are relative string literals under `assets/`.
-- Tailwind config is inline in `index.html`; custom styling lives in `css/styles.css`.
-- Project language is Indonesian in the user-facing story copy.
 
-## ANTI-PATTERNS (THIS PROJECT)
-- Do not treat `raw/` as production code; `.gitignore` excludes it.
-- Do not assume tooling exists; there is no `package.json`, test runner, linter, or CI.
-- Do not change DOM IDs in HTML without updating JS references.
-- Do not add a second runtime entry page unless you also redefine startup/documentation.
-- Do not rely on `cake.less` being compiled automatically.
+- Run locally with `python3 -m http.server 8000`; HTTP is preferred over a
+  direct file URL.
+- Keep `index.html` as the only runtime entry point and keep new story steps in
+  `SCREENS`.
+- Preserve DOM IDs, especially `choice-user`, `user-message-btn`, and
+  `user-branch`; JavaScript queries them directly.
+- Keep media paths relative under `assets/` and record provenance in
+  `ASSET-LICENSES.md`.
+- Keep active production styles in `css/styles.css`.
+- User-facing story copy is Indonesian; use `Sassy` and `user` consistently.
+- The page stores no personal data.
+
+## ANTI-PATTERNS
+
+- Do not add npm, a bundler, a framework, or a test runner.
+- Do not change a DOM ID in one file without updating its counterpart.
+- Do not scatter narrative steps across ad-hoc flags; extend `SCREENS`.
+- Do not replace relative local media paths with unapproved external assets.
+- Do not edit `assets/images/ruang-pesta.webp`; its embedded text is an
+  approved and documented artwork limitation.
 
 ## UNIQUE STYLES
-- Cinematic state-machine narrative rather than section-by-section scroll page.
-- Mixed styling model: Tailwind CDN utilities in HTML + large handcrafted CSS file.
-- Heavy animation vocabulary: glow, typewriter, banner drop, balloon bounce, finale convergence.
-- Finale logic couples text, cake, balloons, and audio timing tightly.
+
+- Cinematic state-machine narrative rather than a scroll-based page.
+- Handcrafted CSS with glow, typewriter, banner, balloon, and finale motion.
+- Finale logic coordinates text, cake, balloons, and audio timing.
 
 ## COMMANDS
+
 ```bash
 # run locally
-open index.html
+python3 -m http.server 8000
 
-# alternative simple local server if needed
-python -m http.server 8000
-
-# inspect tracked files
-git ls-files
+# syntax and whitespace checks
+node --check js/script.js
+git diff --check
 ```
 
 ## NOTES
-- LSP TypeScript codemap was unavailable because the repo has no local TypeScript install.
-- `raw/` contains numbered design snapshots (`code.html`, `screen.png`, optional `DESIGN.md`).
-- `assets/audio/` drives the story timing; missing files will break narrative progression.
-- `index.html` embeds the Tailwind theme config instead of using a config file.
+
+- The wrong-song state loops `we fell in love in october` by `girl in red`.
+- The corrected state plays `Happy Birthday` by `Stevie Wonder`; its end
+  starts the looping `Menjadi-Rumahmu` track by `Orang Spesial`.
+- The balloon release creates 13 decorative balloons; the finale creates five
+  letter balloons spelling `SASSY` above the cake.
+- Browser autoplay policy may block audio; the runtime exposes a visible
+  status message for that path.
+- The owner confirmed redistribution permission for local media. Google Fonts
+  and Material Symbols remain external resources under upstream terms.

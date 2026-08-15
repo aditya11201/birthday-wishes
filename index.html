@@ -1,13 +1,13 @@
 <!doctype html>
-<html class="dark" lang="id">
+<html lang="id">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
             name="description"
-            content="A special birthday celebration experience for Stasya Annesty — an interactive, cinematic birthday wishes journey."
+            content="An interactive birthday experience from glad-you-were-born for Sassy."
         />
-        <title>Stasyaa — Birthday Wishes</title>
+        <title>glad-you-were-born — Birthday Wishes</title>
         <link
             rel="icon"
             href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>❤️</text></svg>"
@@ -26,50 +26,6 @@
             href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
             rel="stylesheet"
         />
-
-        <!-- ============================================================
-       TailwindCSS CDN (consolidated config)
-       ============================================================ -->
-        <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-        <script>
-            tailwind.config = {
-                darkMode: "class",
-                theme: {
-                    extend: {
-                        colors: {
-                            primary: "#0076DE",
-                            "primary-dim": "#005bb0",
-                            "primary-container": "#004a8c",
-                            surface: "#0e0e0e",
-                            "surface-container-lowest": "#000000",
-                            "surface-container-low": "#131313",
-                            "surface-container": "#1a1a1a",
-                            "surface-container-high": "#20201f",
-                            "surface-container-highest": "#262626",
-                            "surface-bright": "#2c2c2c",
-                            "on-surface": "#ffffff",
-                            "on-surface-variant": "#adaaaa",
-                            outline: "#767575",
-                            "outline-variant": "#484847",
-                            background: "#0e0e0e",
-                            error: "#ff6e84",
-                        },
-                        fontFamily: {
-                            headline: ["Noto Serif", "serif"],
-                            body: ["Plus Jakarta Sans", "sans-serif"],
-                            label: ["Plus Jakarta Sans", "sans-serif"],
-                            epilogue: ["Epilogue", "serif"],
-                        },
-                        borderRadius: {
-                            DEFAULT: "1rem",
-                            lg: "2rem",
-                            xl: "3rem",
-                            full: "9999px",
-                        },
-                    },
-                },
-            };
-        </script>
 
         <!-- ============================================================
        Custom Styles
@@ -97,15 +53,23 @@
             <!-- Simple Decorative Balloons Container -->
             <div id="balloon-container" aria-hidden="true"></div>
 
-            <!-- Letter Balloons Container (STASYA + ANNESTY) -->
-            <div id="letter-balloon-container" aria-hidden="true"></div>
+            <!-- Letter Balloons Container (SASSY) -->
+            <div
+                id="letter-balloon-container"
+                role="img"
+                aria-label="SASSY"
+            ></div>
 
             <!-- ========================================================
          CENTRAL CONTENT AREA
          ======================================================== -->
             <div id="content-area">
                 <!-- CSS Cake with Animated Flame -->
-                <div id="cake-container" aria-label="Birthday Cake">
+                <div
+                    id="cake-container"
+                    role="img"
+                    aria-label="Birthday Cake"
+                >
                     <div class="cake">
                         <!-- Candle -->
                         <div class="velas">
@@ -124,7 +88,7 @@
                 </div>
 
                 <!-- Title Section -->
-                <div id="title-section" class="space-y-4">
+                <div id="title-section">
                     <span id="screen-subtitle" class="label-subtle"></span>
                     <div id="title-wrapper">
                         <h1 id="screen-title" class="title-editorial"></h1>
@@ -134,7 +98,6 @@
                 <!-- Primary Action Button -->
                 <button
                     id="action-btn"
-                    class="group"
                     type="button"
                     aria-label="Continue"
                 >
@@ -146,13 +109,13 @@
                     </div>
                 </button>
 
-                <!-- Choice Buttons (KUE vs ADIT) -->
+                <!-- Choice Buttons (KUE vs USER) -->
                 <div
                     id="choice-buttons"
                     role="group"
                     aria-label="Birthday choices"
                 >
-                    <button id="choice-kue" class="group" type="button">
+                    <button id="choice-kue" type="button">
                         <div class="glass-button glow-effect">
                             <span
                                 class="material-symbols-outlined btn-icon"
@@ -164,7 +127,7 @@
                             <span class="btn-label--white">KUE</span>
                         </div>
                     </button>
-                    <button id="choice-adit" class="group" type="button">
+                    <button id="choice-user" type="button">
                         <div class="glass-button glow-effect">
                             <span
                                 class="material-symbols-outlined btn-icon"
@@ -173,15 +136,14 @@
                                 "
                                 >favorite</span
                             >
-                            <span class="btn-label--white">ADIT</span>
+                            <span class="btn-label--white">USER</span>
                         </div>
                     </button>
                 </div>
 
-                <!-- "Pesan dari Adit" Button (hidden until finale) -->
+                <!-- "Pesan dari user" Button (hidden until finale) -->
                 <button
-                    id="adit-message-btn"
-                    class="group"
+                    id="user-message-btn"
                     type="button"
                     style="
                         display: none;
@@ -189,7 +151,7 @@
                         pointer-events: none;
                         transition: opacity 1s ease-out;
                     "
-                    aria-label="Open message from Adit"
+                    aria-label="Open message from user"
                 >
                     <div
                         class="glass-button glass-button--secondary glow-effect"
@@ -199,12 +161,12 @@
                             style="font-size: 1.25rem"
                             >mail</span
                         >
-                        <span class="btn-label--small">Pesan dari adit</span>
+                        <span class="btn-label--small">Pesan dari user</span>
                     </div>
                 </button>
 
-                <!-- Typewriter Area (hidden until Adit's message) -->
-                <div id="typewriter-area" aria-live="polite">
+                <!-- Typewriter Area (hidden until user's message) -->
+                <div id="typewriter-area" aria-live="off">
                     <p class="typewriter-text">
                         <span id="typewriter-text"></span
                         ><span class="cursor-blink"></span>
@@ -214,14 +176,14 @@
                 <!-- Final Grand Message (hidden until typewriter completes) -->
                 <div id="final-message">
                     <p class="final-message-text" id="final-message-text">
-                        Untuk Stasya Annesty yang cangtippp.<br /><br />
+                        Untuk Sassy yang cangtippp.<br /><br />
                         Maaf ya jika aku terlambat untuk menjadi yang pertama
                         memberikan ucapan di hari spesialmu ini. Aku menyiapkan
                         hadiah sederhana ini khusus untukmu; mungkin nilainya
                         tidak besar, tapi proses pembuatannya sangat spesial
                         karena aku melakukannya sambil membayangkan
                         kebahagiaanmu di senyummu yang manis itu.<br /><br />
-                        Selamat ulang tahun yang ke-24, Stasyaaaa. Di usiamu
+                        Selamat ulang tahun yang ke-24, Sassy. Di usiamu
                         yang baru ini, doa terbaikku selalu menyertaimu. Semoga
                         kamu selalu sehat, panjang umur, dan segala impian yang
                         kamu genggam segera tercapai. Aku berharap duniamu
@@ -239,47 +201,54 @@
                         Gueh).
                     </p>
 
-                    <!-- Gift Overlay (hidden by default) -->
-                    <div
-                        id="gift-overlay"
-                        style="
-                            display: none;
-                            position: absolute;
-                            top: 0;
-                            left: 0;
-                            width: 100%;
-                            height: 100%;
-                            justify-content: center;
-                            align-items: center;
-                            z-index: 10;
-                            background: rgba(0, 0, 0, 0.6);
-                            backdrop-filter: blur(8px);
-                            -webkit-backdrop-filter: blur(8px);
-                            border-radius: inherit;
-                        "
-                    >
-                        <button
-                            id="gift-btn"
-                            style="
-                                background: none;
-                                border: none;
-                                cursor: pointer;
-                                transform: scale(1);
-                                transition: transform 0.3s;
-                                font-size: 64px;
-                            "
-                            onmouseover="this.style.transform = 'scale(1.2)'"
-                            onmouseout="this.style.transform = 'scale(1)'"
-                        >
-                            🎁
-                        </button>
-                    </div>
+                </div>
+
+                <!-- Gift Overlay (hidden by default) -->
+                <div
+                    id="gift-overlay"
+                    style="
+                        display: none;
+                        position: fixed;
+                        inset: 0;
+                        width: 100%;
+                        height: 100%;
+                        justify-content: center;
+                        align-items: center;
+                        z-index: 60;
+                        background: rgba(0, 0, 0, 0.6);
+                        backdrop-filter: blur(8px);
+                        -webkit-backdrop-filter: blur(8px);
+                        border-radius: inherit;
+                    "
+                >
+                    <button
+                        id="gift-btn"
+                        class="gift-button"
+                        type="button"
+                        aria-label="Buka hadiah"
+                    >🎁</button>
                 </div>
 
                 <!-- Footer Date -->
                 <p id="footer-date" class="footer-date">05-April-2002</p>
             </div>
         </main>
+
+        <p
+            id="narrative-status"
+            class="visually-hidden"
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
+        ></p>
+
+        <p
+            id="audio-status"
+            class="audio-status"
+            role="status"
+            aria-live="polite"
+            aria-atomic="true"
+        ></p>
 
         <!-- ============================================================
        SPOTIFY "NOW PLAYING" WIDGET
@@ -318,7 +287,7 @@
        Suppressed Navigation (SEO / Accessibility)
        ============================================================ -->
         <nav class="visually-hidden" aria-label="Page sections">
-            <h2>Stasya-BirthdayWishes</h2>
+            <h2>glad-you-were-born</h2>
             <ul>
                 <li>Our Story</li>
                 <li>The Reveal</li>
